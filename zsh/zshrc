@@ -30,3 +30,9 @@ antigen apply
 source /usr/local/share/chruby/chruby.sh
 # Default ruby:
 chruby ruby-2.2.0
+
+#
+# GO-lang
+#
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
