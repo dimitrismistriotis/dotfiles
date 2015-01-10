@@ -1,0 +1,12 @@
+#!env /bin/zsh
+
+# http://unix.stackexchange.com/questions/76505/portable-way-to-get-scripts-absolute-path
+MYDIR=${0:a:h}
+
+# echo $MYDIR
+
+#
+# TODO: Missing antigen, required by dot-zshrc
+#
+echo "Linking .zshrc"
+ln -s $MYDIR/zsh/zshrc ~/.zshrc

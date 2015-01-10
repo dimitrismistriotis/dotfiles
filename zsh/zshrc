@@ -1,0 +1,32 @@
+source ~/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle bundler
+antigen bundle chruby
+antigen bundle docker
+antigen bundle git
+antigen bundle heroku
+antigen bundle rails
+antigen bundle ruby
+antigen bundle sublime
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme gentoo
+
+# Tell antigen that you're done.
+antigen apply
+
+#
+# Chruby
+# https://github.com/postmodern/chruby
+#
+# Source:
+source /usr/local/share/chruby/chruby.sh
+# Default ruby:
+chruby ruby-2.2.0
