@@ -36,3 +36,6 @@ chruby ruby-2.2.0
 #
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
+
+# Bin path:
+export PATH=$PATH:$HOME/bin

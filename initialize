@@ -11,6 +11,7 @@ ANTIGEN_LOCATION=~
 git clone git@github.com:zsh-users/antigen.git $ANTIGEN_LOCATION/antigen
 
 mkdir ~/go
+mkdir ~/bin
 
 echo "Linking .zshrc"
 ln -s $MYDIR/zsh/zshrc ~/.zshrc
