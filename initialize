@@ -15,3 +15,10 @@ mkdir ~/bin
 
 echo "Linking .zshrc"
 ln -s $MYDIR/zsh/zshrc ~/.zshrc
+
+for binfile in ${MYDIR}/bin/*; do
+	if [[ ! -a ${binfile:t} ]]; then
+		# echo ${binfile:t} does not exist
+		ln -s $binfile ~/bin/${binfile:t}
+	fi
+done

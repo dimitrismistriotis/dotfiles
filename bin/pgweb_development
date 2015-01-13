@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+~/pgweb/pgweb --host localhost --user dimitry --db hsa_connected_home_development
+
