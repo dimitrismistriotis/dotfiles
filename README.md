@@ -1,8 +1,9 @@
 # dotfiles
 
-## Linking dotfiles
+## Initialization
 
-By running linkscript, example:
+By running "initialize" script:
+
 ```bash
-./link_script
+./initialize
 ```
