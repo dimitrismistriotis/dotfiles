@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+if [[ $# -ne 1 ]]; then
+	PORT_NUMBER=8000
+else
+	PORT_NUMBER=$1
+fi
+
+# Ruby from:
+# https://gist.github.com/willurd/5720255
+ruby -run -ehttpd . -p$PORT_NUMBER
+
