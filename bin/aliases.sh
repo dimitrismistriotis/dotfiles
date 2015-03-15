@@ -1,6 +1,6 @@
 alias gai='git add -i'
 
-# Connected Home:
+# Rails
 alias reset_test_db='rake db:drop db:create db:schema:load RAILS_ENV=test'
 
 # Git (not existing on zsh plugin)
