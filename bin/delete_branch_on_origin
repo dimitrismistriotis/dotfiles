@@ -1,0 +1,3 @@
+#!/bin/zsh
+# Always forget syntaz
+git push origin :$1
