@@ -42,3 +42,7 @@ export PATH=$PATH:$HOME/bin
 
 # Aliases
 source $HOME/bin/aliases.sh
+
+# Apply rocket to prompt:
+export PS1="🚀  $PS1"
+
