@@ -6,6 +6,14 @@ else
 	PORT_NUMBER=$1
 fi
 
+# Possible addresses from
+# http://unix.stackexchange.com/questions/119269/how-to-get-ip-address-using-shell-script
+echo "Access from:"
+for a in `ifconfig | awk '/inet addr/{print substr($2,6)}'`; do
+	echo $a:$PORT_NUMBER
+done
+echo ""
+
 # Ruby from:
 # https://gist.github.com/willurd/5720255
 ruby -run -ehttpd . -p$PORT_NUMBER
