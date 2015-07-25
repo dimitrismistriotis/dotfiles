@@ -22,3 +22,13 @@ for binfile in ${MYDIR}/bin/*; do
 		ln -s $binfile ~/bin/${binfile:t}
 	fi
 done
+
+# .vimrc
+
+if [[ ! -d ~/vim ]]; then
+	mkdir ~/vim
+fi
+if [[ ! -d ~/.vim/bundle ]] then
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
