@@ -62,4 +62,6 @@ set hlsearch            " highlight matches
 let g:vim_markdown_folding_disabled=1
 
 set colorcolumn=80
+" http://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
+set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 
