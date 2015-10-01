@@ -40,8 +40,10 @@ export PATH=$PATH:$GOPATH/bin
 # Bin path:
 export PATH=$PATH:$HOME/bin
 
-# Aliases
+# Aliases:
 source $HOME/bin/aliases.sh
+# Functions:
+source $HOME/bin/functions.sh
 
 # Apply rocket to prompt:
 export PS1="🚀  $PS1"
