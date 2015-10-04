@@ -12,6 +12,6 @@ function strip_diff_leading_symbols(){
 
 ## Print a horizontal rule
 rule () {
-    printf "%$(tput cols)s\n"|tr " " "-"}}
+    printf "%$(tput cols)s\n"|tr " " "-"
 }
 
