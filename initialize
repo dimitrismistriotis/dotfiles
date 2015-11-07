@@ -16,6 +16,9 @@ mkdir ~/bin
 echo "Linking .zshrc"
 ln -s $MYDIR/zsh/zshrc ~/.zshrc
 
+echo "Linking fish shell's .config"
+ln -s $MYDIR/fish/config.fish ~/.config/fish/config.fish
+
 for binfile in ${MYDIR}/bin/*; do
 	if [[ ! -a ${binfile:t} ]]; then
 		# echo ${binfile:t} does not exist
