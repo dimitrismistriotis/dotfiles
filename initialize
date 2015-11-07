@@ -16,10 +16,6 @@ mkdir ~/bin
 echo "Linking .zshrc"
 ln -s $MYDIR/zsh/zshrc ~/.zshrc
 
-# It would make more sense to run this from a fish script
-echo "Linking fish shell's .config"
-ln -s $MYDIR/fish/config.fish ~/.config/fish/config.fish
-
 for binfile in ${MYDIR}/bin/*; do
 	if [[ ! -a ${binfile:t} ]]; then
 		# echo ${binfile:t} does not exist
@@ -39,3 +35,11 @@ if [[ ! -e ~/.vimrc ]]; then
 	ln -s $MYDIR/vim/vimrc ~/.vimrc
 	echo "Linked .vimrc, do not forget to run: :PluginInstall"
 fi
+
+if [[ -a /usr/bin/fish ]]; then
+	echo "Running fish shell initialization"
+	/usr/bin/fish $MYDIR/fish/initialize
+else
+	echo "No fish shell detected will not run it's initialization"
+fi
+

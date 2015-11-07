@@ -1,0 +1,6 @@
+#!env /usr/bin/fish
+
+# It would make more sense to run this from a fish script
+echo "Linking fish shell's .config"
+ln -s config.fish ~/.config/fish/config.fish
+
