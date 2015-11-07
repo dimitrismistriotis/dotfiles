@@ -16,6 +16,7 @@ mkdir ~/bin
 echo "Linking .zshrc"
 ln -s $MYDIR/zsh/zshrc ~/.zshrc
 
+# It would make more sense to run this from a fish script
 echo "Linking fish shell's .config"
 ln -s $MYDIR/fish/config.fish ~/.config/fish/config.fish
 
