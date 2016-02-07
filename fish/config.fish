@@ -7,4 +7,14 @@ set -gx OMF_PATH /home/dimitry/.local/share/omf
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
+# Chruby
+# https://github.com/postmodern/chruby
+# and
+# https://github.com/JeanMertz/chruby-fish
+#
+# Source:
+source /usr/local/share/chruby/chruby.fish
+# Default ruby:
+chruby ruby-2.2.1
+
 set PATH ~/bin/ $PATH
