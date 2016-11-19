@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#
+# http://stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git
+#
+
+git branch | grep \* | cut -d ' ' -f2
+
