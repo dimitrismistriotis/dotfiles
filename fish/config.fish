@@ -15,6 +15,8 @@ source $OMF_PATH/init.fish
 # Source:
 source /usr/local/share/chruby/chruby.fish
 # Default ruby:
-chruby ruby-2.3.0
+if test (which chruby)
+  chruby ruby-2.3.0
+end
 
 set PATH ~/bin/ $PATH
