@@ -1,0 +1,8 @@
+[user]
+	name = Dimitrios Mistriotis
+	email = dimitrios@mistriotis.com
+[push]
+	default = simple
+[alias]
+	plr = pull --rebase
+
