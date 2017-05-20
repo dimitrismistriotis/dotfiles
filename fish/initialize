@@ -1,9 +1,10 @@
 #!env /usr/bin/fish
 set current_dir (dirname (status --current-filename))
-# echo {$current_dir}/dd
+echo {$current_dir}
 
 echo "Linking fish shell's .config"
-ln -s {$current_dir}/config.fish ~/.config/fish/config.fish
+# ln -s {$current_dir}/config.fish ~/.config/fish/config.fish
+ln {$current_dir}/config.fish ~/.config/fish/config.fish
 
 echo "Linking fish shell's functions"
 ln -s {$current_dir}/functions ~/.config/fish/functions
