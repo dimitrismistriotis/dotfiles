@@ -9,3 +9,5 @@ alias delete_merged_branches='git branch --merged | grep -v "\*" | grep -v "mast
 # Overwrite gd:
 alias gd='git diff --color | diff-highlight | strip_diff_leading_symbols' # Git diff with diff-highlight
 
+alias l='ls -G'
+
