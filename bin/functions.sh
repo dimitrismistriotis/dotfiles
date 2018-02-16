@@ -15,3 +15,7 @@ rule () {
     printf "%$(tput cols)s\n"|tr " " "-"
 }
 
+gcm () {
+  git checkout master
+}
+
