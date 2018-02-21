@@ -10,3 +10,9 @@
 
 brew install diff-so-fancy
 brew install fish
+
+# Open JDK for Java 8 on Mac:
+# https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac
+brew tap caskroom/versions
+brew cask install java8
+
