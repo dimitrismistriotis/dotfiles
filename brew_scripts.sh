@@ -8,7 +8,10 @@
 # Start here: https://brew.sh/
 #
 
+# Better git diff (suggest to use from an alias "gd" or something):
 brew install diff-so-fancy
+
+# Favourite shell, mostly for personal scripts:
 brew install fish
 
 # Open JDK for Java 8 on Mac:
