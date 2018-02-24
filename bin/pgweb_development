@@ -1,4 +1,8 @@
-#!/bin/zsh
+#!/bin/sh
 
-~/pgweb/pgweb --host localhost --user dimitry --db hsa_connected_home_development
+~/bin/pgweb --url "postgres://podcastwebapp:podcastwebpass@localhost:5432/podcastwebapp_development"
+
+#~/bin/pgweb --host localhost \
+#	--user podcastwebap \
+#	--db podcastwebapp_development
 
