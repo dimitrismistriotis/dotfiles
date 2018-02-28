@@ -1,5 +1,7 @@
 alias gai='git add -i'
 alias gca='git commit -a'
+alias gp='git push'
+alias g_push_to_origin='git push --set-upstream origin `git branch | grep "*" | cut -d " " -f 2`'
 
 # Rails
 alias reset_test_db='rake db:drop db:create db:schema:load RAILS_ENV=test'
@@ -13,3 +15,5 @@ alias gd='git diff --color | diff-so-fancy'
 
 alias l='ls -G'
 
+# OS/X
+alias cls='reset'

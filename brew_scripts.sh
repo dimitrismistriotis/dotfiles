@@ -10,6 +10,7 @@
 
 # Better git diff (suggest to use from an alias "gd" or something):
 brew install diff-so-fancy
+brew install colordiff
 
 # Favourite shell, mostly for personal scripts:
 brew install fish
