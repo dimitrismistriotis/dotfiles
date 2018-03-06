@@ -20,3 +20,6 @@ brew install fish
 brew tap caskroom/versions
 brew cask install java8
 
+# Pinta (image editior):
+brew cask install pinta
+
