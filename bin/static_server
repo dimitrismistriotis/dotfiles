@@ -9,9 +9,7 @@ fi
 # Possible addresses from
 # http://unix.stackexchange.com/questions/119269/how-to-get-ip-address-using-shell-script
 echo "Access from:"
-for a in `ifconfig | awk '/inet addr/{print substr($2,6)}'`; do
-	echo $a:$PORT_NUMBER
-done
+ip route get 8.8.8.8 | awk '{print $NF; exit}'
 echo ""
 
 # Ruby from:
