@@ -23,3 +23,9 @@ brew cask install java8
 # Pinta (image editior):
 brew cask install pinta
 
+# NodeJS:
+brew install nodejs
+
+# Amazon CLI
+brew install awscli
+
