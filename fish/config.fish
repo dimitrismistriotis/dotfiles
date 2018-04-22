@@ -1,11 +1,11 @@
 # Path to Oh My Fish install.
-set -gx OMF_PATH "/home/dimitry/.local/share/omf"
+# set -gx OMF_PATH "/home/dimitry/.local/share/omf"
 
 # Customize Oh My Fish configuration path.
 #set -gx OMF_CONFIG "/home/dimitry/.config/omf"
 
 # Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
+# source $OMF_PATH/init.fish
 
 # Chruby
 # https://github.com/postmodern/chruby
@@ -14,15 +14,11 @@ source $OMF_PATH/init.fish
 #
 # Source:
 source /usr/local/share/chruby/chruby.fish
-# Fish integration
-source /usr/local/share/chruby/auto.fish
 # Default ruby:
-if test (which chruby)
-  chruby ruby-2.3.1
-end
+chruby ruby-2.5.0
 
-set PATH /home/dimitry/google-cloud-sdk/bin $PATH
+# set PATH /home/dimitry/google-cloud-sdk/bin $PATH
 set PATH ~/bin/ $PATH
 
-eval (python -m virtualfish)
+#eval (python -m virtualfish)
 
