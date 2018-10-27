@@ -7,15 +7,18 @@
 # Load oh-my-fish configuration.
 # source $OMF_PATH/init.fish
 
-# Chruby
-# https://github.com/postmodern/chruby
-# and
-# https://github.com/JeanMertz/chruby-fish
 #
-# Source:
-source /usr/local/share/chruby/chruby.fish
+# Chruby
+#
+#set CHRUBY_ROOT '/usr/share/chruby/chruby.sh'
+set CHRUBY_ROOT '/usr/'
+source ~/chruby-fish/share/chruby/chruby.fish
+source ~/chruby-fish/share/chruby/auto.fish
+
 # Default ruby:
-chruby ruby-2.5.0
+# chruby ruby-2.5.0
+
+
 
 # set PATH /home/dimitry/google-cloud-sdk/bin $PATH
 set PATH ~/bin/ $PATH
