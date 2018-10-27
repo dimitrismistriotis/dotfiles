@@ -17,6 +17,7 @@ source ~/chruby-fish/share/chruby/auto.fish
 
 # Default ruby:
 # chruby ruby-2.5.0
+chruby ruby-2.5.3
 
 
 
