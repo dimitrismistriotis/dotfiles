@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 if [[ $# -ne 1 ]]; then
 	PORT_NUMBER=8000
