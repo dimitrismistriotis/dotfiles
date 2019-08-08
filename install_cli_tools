@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pip3 install --upgrade pip --user
+
+#
+# pipx — Install and Run Python Applications in Isolated Environments
+# https://pipxproject.github.io/pipx/
+#
+python3 -m pip install --user pipx
