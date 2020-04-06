@@ -1,44 +1,42 @@
-#!env /bin/zsh
+#!/usr/bin/env bash
 
-# http://unix.stackexchange.com/questions/76505/portable-way-to-get-scripts-absolute-path
-MYDIR=${0:a:h}
-
-# echo $MYDIR
-
-ANTIGEN_LOCATION=~
-
-# echo $ANTIGEN_LOCATION
-git clone git@github.com:zsh-users/antigen.git $ANTIGEN_LOCATION/antigen
+# https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+# echo ${DIR}
 
 mkdir ~/go
 mkdir ~/bin
 
 echo "Linking .gitconfig"
-ln -s $MYDIR/dot_gitconfig ~/.gitconfig
-
-echo "Linking .zshrc"
-ln -s $MYDIR/zsh/zshrc ~/.zshrc
+ln -s ${MYDIR}/dot_gitconfig ~/.gitconfig
 
 for binfile in ${MYDIR}/bin/*; do
-	if [[ ! -a ${binfile:t} ]]; then
+	echo "Linking ${binfile} if not there"
+	if [[ ! -f "${binfile}" ]]; then
 		# echo ${binfile:t} does not exist
 		ln -s $binfile ~/bin/${binfile:t}
 	fi
 done
 
+#
 # .vimrc
-
+#
 if [[ ! -d ~/vim ]]; then
 	mkdir ~/vim
 fi
+
 if [[ ! -d ~/.vim/bundle ]]; then
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
 if [[ ! -e ~/.vimrc ]]; then
 	ln -s $MYDIR/vim/vimrc ~/.vimrc
 	echo "Linked .vimrc, do not forget to run: :PluginInstall"
 fi
 
+#
+# Fish shell
+#
 if [[ -a /usr/bin/fish ]]; then
 	echo "Running fish shell initialization"
 	/usr/bin/fish $MYDIR/fish/initialize
