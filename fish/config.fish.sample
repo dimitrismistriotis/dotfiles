@@ -7,22 +7,26 @@
 # Load oh-my-fish configuration.
 # source $OMF_PATH/init.fish
 
-#
 # Chruby
+# https://github.com/postmodern/chruby
+# and
+# https://github.com/JeanMertz/chruby-fish
 #
-#set CHRUBY_ROOT '/usr/share/chruby/chruby.sh'
-set CHRUBY_ROOT '/usr/'
-source ~/chruby-fish/share/chruby/chruby.fish
-source ~/chruby-fish/share/chruby/auto.fish
-
+# Source:
+source /usr/local/share/chruby/chruby.fish
 # Default ruby:
-# chruby ruby-2.5.0
-chruby ruby-2.5.3
+chruby ruby-2.5.0
 
-
+#
+# GO-lang
+#
+set -gx GOPATH $HOME/Go
+set -gx GOROOT (go env GOROOT)
+set PATH $GOROOT/bin $PATH
 
 # set PATH /home/dimitry/google-cloud-sdk/bin $PATH
 set PATH ~/bin/ $PATH
+set PATH ~/.local/bin $PATH
 
 #eval (python -m virtualfish)
 

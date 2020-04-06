@@ -53,3 +53,6 @@ export NVM_DIR="/home/dimitry/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm use v4.1.1 > /dev/null
 
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/dimitry/bin/vault vault
