@@ -1,4 +1,4 @@
-#!env /usr/local/bin/fish
+#!/usr/bin/env fish
 # set current_dir (dirname (status --current-filename))
 set current_dir (basename $PWD)
 echo {$current_dir}
