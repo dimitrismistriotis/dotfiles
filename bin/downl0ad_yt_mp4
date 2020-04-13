@@ -1,0 +1,27 @@
+#!/bin/env fish
+
+echo "Downloading $argv[1]"
+
+#
+# Add checks:
+# * vf exists if not bark
+# * if no virtual env, create one
+# * if no youtube-dl add it
+# * Check if argv[1] is a URL
+# * Check if argv[1] is a youtube URL
+#
+
+set first_argument_length (string length $argv[1])
+
+# echo $first_argument_length
+if test "$first_argument_length" -eq 0
+	echo "First argument should be the YT URL"
+end
+
+vf activate ytdl
+
+# Check:
+# python -V
+# which python
+
+youtube-dl $argv[1] --recode-video=mp4
