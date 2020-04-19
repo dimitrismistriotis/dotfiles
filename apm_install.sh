@@ -12,3 +12,10 @@ apm install editorconfig
 # https://atom.io/packages/project-manager
 #
 apm install project-manager
+
+#
+# Adds syntax highlighting for Terraform.io
+# configuration files to Atom.
+# https://atom.io/packages/language-terraform
+#
+apm install language-terraform
