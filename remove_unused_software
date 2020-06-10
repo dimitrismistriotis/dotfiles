@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#
+# Screen Reader, Reference: https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader#278697
+#
+
+sudo apt-get remove -y orca
+sudo apt-get remove -y gnome-orca
+killall orca
+
