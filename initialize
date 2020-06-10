@@ -19,22 +19,6 @@ for binfile in ${MYDIR}/bin/*; do
 done
 
 #
-# .vimrc
-#
-if [[ ! -d ~/vim ]]; then
-	mkdir ~/vim
-fi
-
-if [[ ! -d ~/.vim/bundle ]]; then
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-if [[ ! -e ~/.vimrc ]]; then
-	ln -s $MYDIR/vim/vimrc ~/.vimrc
-	echo "Linked .vimrc, do not forget to run: :PluginInstall"
-fi
-
-#
 # Fish shell
 #
 if [[ -a /usr/bin/fish ]]; then
