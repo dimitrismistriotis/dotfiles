@@ -1,4 +1,4 @@
-# Defined in - @ line 2
+# Defined in /tmp/fish.8RX3si/fish_prompt.fish @ line 2
 function fish_prompt
 	set -l last_command_status $status
     set -l cwd
@@ -51,4 +51,8 @@ function fish_prompt
     end
 
     echo -n -s " "
+
+    if set -q VIRTUAL_ENV
+      echo -n -s (set_color -b 000 white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+    end
 end
