@@ -5,4 +5,4 @@
 # https://coderwall.com/p/tr_arg/calculate-billable-days-from-git-logs
 #
 
-git log --author=`git config user.email` | grep "^Date" | awk '{print $2 " "  $3 " " $4 " " $6}' | uniq
+git log --author=`git config user.email` | grep "^Date" | awk '{print $2 " "  $3 " " $4 " " $6}' | sort | uniq
