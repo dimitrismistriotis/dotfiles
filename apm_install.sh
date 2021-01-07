@@ -19,3 +19,8 @@ apm install project-manager
 # https://atom.io/packages/language-terraform
 #
 apm install language-terraform
+#
+# Wrapper to
+# https://github.com/gajus/pg-formatter
+#
+apm install pg-formatter
