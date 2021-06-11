@@ -24,3 +24,8 @@ apm install language-terraform
 # https://github.com/gajus/pg-formatter
 #
 apm install pg-formatter
+#
+# API Blueprint Grammar for Atom
+# https://atom.io/packages/language-api-blueprint
+#
+apm install language-api-blueprint
