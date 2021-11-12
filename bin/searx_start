@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# https://searx.github.io/searx/admin/installation-docker.html#installation-docker
+#
+PORT=8085
+docker pull searx/searx
+docker run --rm -d -v ${PWD}/searx:/etc/searx -p $PORT:8080 -e BASE_URL=http://localhost:$PORT/ searx/searx
