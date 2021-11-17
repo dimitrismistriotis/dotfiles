@@ -1,9 +1,14 @@
 #!/bin/bash
 #
+# https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+#
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+#
 # https://searx.github.io/searx/admin/installation-docker.html#installation-docker
 #
 CONTAINER_NAME="local_searx"
 TARGET_IMAGE="searx/searx"
 PORT=8085
 docker inspect ${TARGET_IMAGE} --type=image || docker pull ${TARGET_IMAGE}
-docker run --name ${CONTAINER_NAME} --rm -d -v ${PWD}/searx:/etc/searx -p $PORT:8080 -e BASE_URL=http://localhost:$PORT/ ${TARGET_IMAGE}
+docker run --name ${CONTAINER_NAME} --rm -d -v ${DIR}/../searx:/etc/searx -p $PORT:8080 -e BASE_URL=http://localhost:$PORT/ ${TARGET_IMAGE}
