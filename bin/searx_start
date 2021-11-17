@@ -3,6 +3,7 @@
 # https://searx.github.io/searx/admin/installation-docker.html#installation-docker
 #
 CONTAINER_NAME="local_searx"
+TARGET_IMAGE="searx/searx"
 PORT=8085
-docker pull searx/searx
-docker run --name ${CONTAINER_NAME} --rm -d -v ${PWD}/searx:/etc/searx -p $PORT:8080 -e BASE_URL=http://localhost:$PORT/ searx/searx
+docker inspect ${TARGET_IMAGE} --type=image || docker pull ${TARGET_IMAGE}
+docker run --name ${CONTAINER_NAME} --rm -d -v ${PWD}/searx:/etc/searx -p $PORT:8080 -e BASE_URL=http://localhost:$PORT/ ${TARGET_IMAGE}
