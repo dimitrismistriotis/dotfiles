@@ -29,3 +29,8 @@ apm install pg-formatter
 # https://atom.io/packages/language-api-blueprint
 #
 apm install language-api-blueprint
+#
+# Dracula Theme
+# https://draculatheme.com/atom
+#
+apm install dracula-syntax
