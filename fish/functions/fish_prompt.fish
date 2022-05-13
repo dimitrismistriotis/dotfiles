@@ -12,12 +12,13 @@ function fish_prompt
     set cwd (prompt_pwd)
   end
 
-  set -l fish     "⋊>"
-  set -l ahead    "↑"
-  set -l behind   "↓"
-  set -l diverged "⥄ "
-  set -l dirty    "⨯"
-  set -l none     "◦"
+  set -l fish      "🚀"
+  set -l had_error "💥"
+  set -l ahead     "↑"
+  set -l behind    "↓"
+  set -l diverged  "⥄ "
+  set -l dirty     "⨯"
+  set -l none      "◦"
 
   set -l normal_color     (set_color normal)
   set -l success_color    (set_color $fish_pager_color_progress 2> /dev/null; or set_color cyan)
@@ -26,9 +27,11 @@ function fish_prompt
   set -l repository_color (set_color $fish_color_cwd 2> /dev/null; or set_color green)
 
   if test $last_command_status -eq 0
-    echo -n -s $success_color $fish $normal_color
+    # echo -n -s $success_color $fish $normal_color
+    echo -n -s $normal_color $fish $normal_color
   else
-    echo -n -s $error_color $fish $normal_color
+    # echo -n -s $error_color $fish $normal_color
+    echo -n -s $error_color $had_error $normal_color
   end
 
   if git_is_repo
@@ -52,7 +55,7 @@ function fish_prompt
 
   echo -n -s " "
 
-#  if set -q VIRTUAL_ENV
-#    echo -n -s (set_color -b "000" white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
-#  end
+  if set -q VIRTUAL_ENV
+    echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+  end
 end
