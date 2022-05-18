@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+#
+# When you click an icon in the launcher, it opens the application. You click the icon again and nothing happens.
+#
+# I don’t like this. I prefer that when I click on the icon of an application in focus, it gets minimized.
+#
+# Source: https://itsfoss.com/things-to-do-after-installing-ubuntu-22-04/
+#
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action minimize
