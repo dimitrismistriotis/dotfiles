@@ -28,3 +28,7 @@ else
 	echo "No fish shell detected will not run it's initialization"
 fi
 
+#
+# Gnome Customisation
+#
+"${MYDIR}"/gnome_customisation
