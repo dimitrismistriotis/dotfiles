@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#
+# Maintenance
+#
+sudo apt autoremove
+
+#
+# Exfat support for USB drives: allows to copy files larger than 4.3Gb
+# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
+#
+sudo apt install -y exfat-fuse
