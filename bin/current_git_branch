@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 #
 # http://stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git
