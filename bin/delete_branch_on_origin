@@ -1,3 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
+
 # Always forget syntaz
 git push origin :$1
