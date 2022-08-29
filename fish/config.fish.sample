@@ -30,3 +30,16 @@ set PATH ~/.local/bin $PATH
 
 #eval (python -m virtualfish)
 
+# Generated for envman. Do not edit.
+test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load>
+
+#
+# Zoxide
+# https://github.com/ajeetdsouza/zoxide
+#
+zoxide init fish | source
+#
+# Homebrew:
+# https://docs.brew.sh/Homebrew-on-Linux
+#
+eval "$(/home/dimitry/.linuxbrew/bin/brew shellenv)"
