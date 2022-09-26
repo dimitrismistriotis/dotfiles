@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#
+# The Missing Package Manager for macOS (or Linux)
+#
+# https://brew.sh/
+# https://docs.brew.sh/Homebrew-on-Linux
+#
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
