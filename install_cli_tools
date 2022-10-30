@@ -7,3 +7,20 @@ pip3 install --upgrade pip --user
 # https://pipxproject.github.io/pipx/
 #
 python3 -m pip install --user pipx
+
+#
+# A smarter cd command. Supports all major shells.
+# https://github.com/ajeetdsouza/zoxide
+#
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+echo ""
+echo "Zoxide or bash:"
+echo ""
+echo 'eval "$(zoxide init bash)"'
+
+echo ""
+echo "Zoxide or fish:"
+echo ""
+echo "Add this to your configuration (usually ~/.config/fish/config.fish)"
+echo "zoxide init fish | source"
