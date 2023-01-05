@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-dconf dump \
+dconf load \
 	'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' \
-	> custom_keybindings.conf
+	< custom_keybindings.conf
