@@ -24,3 +24,5 @@
 	ff = no
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true
