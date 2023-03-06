@@ -12,3 +12,9 @@ Run first one only
 codium --list-extensions > installed_extensions.txt
 ```
 
+Settings
+
+```shell
+cp ~/.config/VSCodium/User/settings.json .
+```
+
