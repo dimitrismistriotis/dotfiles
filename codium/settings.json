@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "[terraform]": {
+        "editor.formatOnSave": true
+    }
+}
