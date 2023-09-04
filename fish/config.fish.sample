@@ -43,3 +43,17 @@ zoxide init fish | source
 # https://docs.brew.sh/Homebrew-on-Linux
 #
 eval "$(/home/dimitry/.linuxbrew/bin/brew shellenv)"
+
+#
+# Micro Editor
+#
+if type -q 'micro'
+     # echo "micro exists"
+     #
+     # Expors for any editor:
+     #
+     export EDITOR='micro'
+     export VISUAL='micro'
+     # Specific to micro:
+     export MICRO_TRUECOLOR=1
+end
