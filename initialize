@@ -31,3 +31,8 @@ fi
 # Gnome Customisation
 #
 "${MYDIR}"/gnome_customisation
+
+#
+# Micro Editor
+#
+"${MYDIR}"/micro_dot_config
