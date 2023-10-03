@@ -1,3 +1,4 @@
 function l
-    ls -lah
+    #ls -lah
+    lsd -lah
 end
