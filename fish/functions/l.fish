@@ -1,4 +1,7 @@
 function l
-    #ls -lah
+  if command -v lsd  
     lsd -lah
+  else
+    ls -lah
+  end
 end
