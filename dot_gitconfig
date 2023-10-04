@@ -27,6 +27,10 @@
 [pull]
 	rebase = true
 
+#
+# Use Delta https://github.com/dandavison/delta for diffs
+# brew install git-delta
+#
 [core]
     pager = delta
 
