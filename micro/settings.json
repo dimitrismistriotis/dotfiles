@@ -1,7 +1,7 @@
 {
     "colorscheme": "dracula",
     "softwrap": true,
-    "wordwrap": true,
     "tabsize": 2,
-    "tabstospaces": true
+    "tabstospaces": true,
+    "wordwrap": true
 }
