@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+figlet "$1" | \
+  python -c 'import sys;[sys.stdout.write(line.rstrip() + "\n") for line in sys.stdin]'
+
+echo ""
