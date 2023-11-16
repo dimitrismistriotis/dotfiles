@@ -1,5 +1,5 @@
 function l
-  if command -v lsd  
+  if command -q lsd  
     lsd -lah
   else
     echo "Consider installing lsd: "
