@@ -1,7 +1,7 @@
 #
 # http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 #
-function git_delete_merged_branches
+function delete_merged_branches
   #
   # Existing merged branches
   #
