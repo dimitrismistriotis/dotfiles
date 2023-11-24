@@ -8,7 +8,8 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install node
 	brew install corepack
 	brew install zoxide
-
+	brew install gping
+	
 zoxide_for_fish:
 	echo "Run:"
 	echo "zoxide init fish | source"
