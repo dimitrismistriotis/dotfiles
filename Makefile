@@ -9,7 +9,8 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install corepack
 	brew install zoxide
 	brew install gping
-	
+	brew install python@3.12
+
 zoxide_for_fish:
 	echo "Run:"
 	echo "zoxide init fish | source"
