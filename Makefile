@@ -11,6 +11,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install gping
 	brew install python@3.12
 	brew install figlet
+	brew install lsd
 
 .PHONY zoxide_for_bash:
 zoxide_for_fish:
