@@ -10,6 +10,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install zoxide
 	brew install gping
 	brew install python@3.12
+	brew install figlet
 
 .PHONY zoxide_for_bash:
 zoxide_for_fish:
@@ -19,4 +20,5 @@ zoxide_for_fish:
 .PHONY help:
 help:
 	@echo "make brew_packages"
+	@echo "make zoxide_for_fish"
 	@echo "make help"
