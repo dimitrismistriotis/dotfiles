@@ -1,0 +1,11 @@
+[brave-browser.desktop][Global Shortcuts]
+_launch=F11
+new-private-window=
+new-window=
+
+[chromium.desktop][Global Shortcuts]
+_launch=F12
+
+[org.telegram.desktop.desktop][Global Shortcuts]
+Quit=
+_launch=F7
