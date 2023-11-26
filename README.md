@@ -10,6 +10,8 @@ By running "initialize" script:
 
 ## Links - Suggestions
 
+[Modern Unix](https://github.com/ibraheemdev/modern-unix)
+
 [Things to do After Installing Ubuntu 22.04](https://itsfoss.com/things-to-do-after-installing-ubuntu-22-04/)
 
 ### Other Software
