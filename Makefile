@@ -12,6 +12,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install python@3.12
 	brew install figlet
 	brew install lsd
+	brew install httpie
 
 .PHONY zoxide_for_bash:
 zoxide_for_fish:
