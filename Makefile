@@ -34,14 +34,12 @@ zoxide_for_bash_and_fish:
 
 #
 # https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
-#
-# Need to allow it to fail, example when not gnome package installed
+# To allow removal if packages not there, example KDE:
+# https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
 #
 .PHONY remove_screen_reader:
 remove_screen_reader:
-	sudo apt-get remove orca
-	# sudo apt-get remove gnome-orca
-	killall orca
+	sudo dpkg --purge orca gnome-orca
 
 
 .PHONY help:
