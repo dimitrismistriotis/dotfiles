@@ -32,6 +32,18 @@ zoxide_for_bash_and_fish:
 	@echo "zoxide init fish | source"
 
 
+#
+# https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
+#
+# Need to allow it to fail, example when not gnome package installed
+#
+.PHONY remove_screen_reader:
+remove_screen_reader:
+	sudo apt-get remove orca
+	# sudo apt-get remove gnome-orca
+	killall orca
+
+
 .PHONY help:
 help:
 	@echo "make brew_packages"
