@@ -1,6 +1,7 @@
 [user]
 	name = Dimitrios Mistriotis
 	email = dimitrios@mistriotis.com
+	signingkey = 96EAA46DAE3289FA
 [push]
 	default = simple
 [alias]
@@ -46,3 +47,5 @@
 
 [diff]
     colorMoved = default
+[commit]
+	gpgsign = true
