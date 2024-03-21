@@ -41,6 +41,9 @@ zoxide_for_bash_and_fish:
 remove_screen_reader:
 	sudo dpkg --purge orca gnome-orca
 
+.PHONY link_starship_configuration:
+link_starship_configuration:
+	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
 
 .PHONY help:
 help:
