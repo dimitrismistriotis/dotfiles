@@ -51,3 +51,5 @@ help:
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
+	@echo "make link_starship_configuration"
+
