@@ -13,6 +13,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install figlet
 	brew install lsd
 	brew install httpie
+	brew install starship
 
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
@@ -50,3 +51,5 @@ help:
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
+	@echo "make link_starship_configuration"
+
