@@ -19,6 +19,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install lsd
 	brew install httpie
 	brew install starship
+	brew install micro  # The text editor
 
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
