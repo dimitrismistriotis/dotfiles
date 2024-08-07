@@ -56,8 +56,14 @@ link_starship_configuration:
 git_config:
 	# Sign by dedault:
 	git config --global commit.gpgsign true
+	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
+
+.PHONY oh_my_fish:
+oh_my_fish:
+	# From Website:
+	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 	
 .PHONY help:
 help:
@@ -66,3 +72,4 @@ help:
 	@echo "make help"
 	@echo "make link_starship_configuration"
 	@echo "make git_config"
+	@echo "make oh_my_fish"
