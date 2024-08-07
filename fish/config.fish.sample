@@ -42,7 +42,7 @@ zoxide init fish | source
 # Homebrew:
 # https://docs.brew.sh/Homebrew-on-Linux
 #
-eval "$(/home/dimitry/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #
 # Micro Editor
