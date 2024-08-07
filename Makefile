@@ -1,3 +1,8 @@
+.PHONY install_brew:
+install_brew:  # Run Homebrew Installation Script
+	./install_homebrew
+
+
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
 	brew update
