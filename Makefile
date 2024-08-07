@@ -1,3 +1,8 @@
+.PHONY install_brew:
+install_brew:  # Run Homebrew Installation Script
+	./install_homebrew
+
+
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
 	brew update
@@ -14,6 +19,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install lsd
 	brew install httpie
 	brew install starship
+	brew install micro  # The text editor
 
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
@@ -46,10 +52,24 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
 
+.PHONY git_config:
+git_config:
+	# Sign by dedault:
+	git config --global commit.gpgsign true
+	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
+	git config --global merge.commit no
+	git config --global merge.ff no
+
+.PHONY oh_my_fish:
+oh_my_fish:
+	# From Website:
+	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+	
 .PHONY help:
 help:
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
 	@echo "make link_starship_configuration"
-
+	@echo "make git_config"
+	@echo "make oh_my_fish"
