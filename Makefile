@@ -7,7 +7,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install git-delta
 	brew install node
 	brew install corepack
-	brew install zoxide
+	# brew install zoxide
 	brew install gping
 	brew install python@3.12
 	brew install figlet
