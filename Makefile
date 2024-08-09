@@ -21,6 +21,9 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install starship
 	brew install micro  # The text editor
 
+	@echo "Instructions for Git-Delta"
+	bat git_delta.md
+
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
 	#
