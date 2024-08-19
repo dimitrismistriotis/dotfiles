@@ -8,21 +8,27 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew update
 	brew upgrade
 	brew install gcc
+	brew install python@3.12
 	brew install bat
 	brew install git-delta
-	brew install node
 	brew install corepack
-	# brew install zoxide
 	brew install gping
-	brew install python@3.12
 	brew install figlet
-	brew install lsd
 	brew install httpie
 	brew install starship
 	brew install micro  # The text editor
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
+
+	#
+	# These are currently installed from Omakumb
+	# here for reference:
+	#
+  # brew install node
+  # brew install zoxide
+  # brew install lsd
+
 
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
