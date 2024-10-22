@@ -61,6 +61,10 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
 
+.PHONY link_tmux_configuration:
+link_tmux_configuration:
+	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf 
+
 .PHONY git_config:
 git_config:
 	# Sign by dedault:
@@ -80,5 +84,6 @@ help:
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
 	@echo "make link_starship_configuration"
+	@echo "make link_tmux_configuration"
 	@echo "make git_config"
 	@echo "make oh_my_fish"
