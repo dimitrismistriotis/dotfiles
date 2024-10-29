@@ -17,6 +17,8 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install httpie
 	brew install starship
 	brew install micro  # The text editor
+	brew install tmux
+	brew install tpm  # Tmux Package Manager
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
