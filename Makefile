@@ -17,6 +17,8 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install httpie
 	brew install starship
 	brew install micro  # The text editor
+	brew install tmux
+	brew install tpm  # Tmux Package Manager
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
@@ -61,6 +63,10 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
 
+.PHONY link_tmux_configuration:
+link_tmux_configuration:
+	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf 
+
 .PHONY git_config:
 git_config:
 	# Sign by dedault:
@@ -80,5 +86,6 @@ help:
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
 	@echo "make link_starship_configuration"
+	@echo "make link_tmux_configuration"
 	@echo "make git_config"
 	@echo "make oh_my_fish"
