@@ -1,3 +1,14 @@
+.PHONY help:
+help:
+	@echo "make brew_packages"
+	@echo "make zoxide_for_bash_and_fish"
+	@echo "make help"
+	@echo "make link_starship_configuration"
+	@echo "make link_tmux_configuration"
+	@echo "make git_config"
+	@echo "make oh_my_fish"
+
+
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
@@ -79,13 +90,3 @@ git_config:
 oh_my_fish:
 	# From Website:
 	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-	
-.PHONY help:
-help:
-	@echo "make brew_packages"
-	@echo "make zoxide_for_bash_and_fish"
-	@echo "make help"
-	@echo "make link_starship_configuration"
-	@echo "make link_tmux_configuration"
-	@echo "make git_config"
-	@echo "make oh_my_fish"
