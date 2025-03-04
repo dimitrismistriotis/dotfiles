@@ -4,6 +4,7 @@
 	signingkey = 96EAA46DAE3289FA
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	plr = pull --rebase
 [color]
@@ -15,6 +16,24 @@
 [pull]
 	rebase = true
 
+#
+#
+# Setup from following article:
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+#
+[column]
+ 	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[commit]
+	# gpgsign = true
+	verbose = true
 #
 # Use Delta https://github.com/dandavison/delta for diffs
 # brew install git-delta
