@@ -7,6 +7,7 @@
 	autoSetupRemote = true
 [alias]
 	plr = pull --rebase
+  commitlog = log --pretty=format:'%ad - %an: %s' --date=iso
 [color]
 	ui = true
 [merge]
