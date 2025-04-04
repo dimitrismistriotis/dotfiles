@@ -5,8 +5,9 @@ help:
 	@echo "make help"
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
-	@echo "make git_config"
+	@echo "make link_wezterm_config"
 	@echo "make oh_my_fish"
+	@echo "make git_config"
 
 
 .PHONY install_brew:
@@ -91,3 +92,7 @@ git_config:
 oh_my_fish:
 	# From Website:
 	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+.PHONY link_wezterm_config:
+link_wezterm_config:
+	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
