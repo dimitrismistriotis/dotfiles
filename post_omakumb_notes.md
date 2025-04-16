@@ -149,3 +149,25 @@ In detail, order maintained from above:
 
 **Comment**: Stay removed
 
+
+## Add Mine (just 1)
+
+### Burn My Windows
+
+<https://extensions.gnome.org/extension/4679/burn-my-windows/>, <https://github.com/Schneegans/Burn-My-Windows>
+
+```shell
+gext install burn-my-windows@schneegans.github.com
+```
+
+Effects I liked (needed to enable manually):
+
+- Broken Glass
+- Energize B
+- Fire
+- Glitch
+- Matrix
+- Pixel Wipe
+- Snap of Disintegration
+- TV Glitch
+
