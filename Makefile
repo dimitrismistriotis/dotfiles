@@ -8,6 +8,7 @@ help:
 	@echo "make link_wezterm_config"
 	@echo "make oh_my_fish"
 	@echo "make git_config"
+	@3cho "make post_omakumb_gnome_tweaking"
 
 
 .PHONY install_brew:
@@ -96,3 +97,50 @@ oh_my_fish:
 .PHONY link_wezterm_config:
 link_wezterm_config:
 	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
+
+.PHONY post_omakumb_gnome_tweaking:
+post_omakumb_gnome_tweaking:
+	@echo "Post Omakumb Gnome Tweaking"
+	#
+	# Install Burn My Windows
+	#
+	gnome-extensions enable burn-my-windows@schneegans.github.com
+	#
+	# Copy gsettings schemas so that they can be set from command line:
+	#
+	sudo cp ~/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas/org.gnome.shell.extensions.burn-my-windows.gschema.xml /usr/share/glib-2.0/schemas/
+	sudo cp ~/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas/org.gnome.shell.extensions.burn-my-windows-profile.gschema.xml /usr/share/glib-2.0/schemas/
+	#
+	# Recompile
+	#
+	sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+	#
+	# Set values, my preferences - smiley
+	#
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-a-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-b-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile focus-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile paint-brush-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixelate-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wheel-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wipe-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile snap-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-enable-effect false
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-enable-effect true
+	gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-enable-effect false
+
