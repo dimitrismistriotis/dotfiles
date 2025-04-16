@@ -3,9 +3,12 @@ local wezterm = require 'wezterm'
 home=os.getenv( "HOME" )
 
 local config = {
+  initial_rows = 50,
+  initial_cols = 100,
+
 --  font = wezterm.font('Hack Nerd Font', { weight = 'Regular' }),
   font_size = 12,
-  color_scheme = 'Tokyo Night',
+  color_scheme = 'Tokyo Night (Gogh)',
 --   background = {
 --     {
 --       source = {
@@ -25,6 +28,19 @@ local config = {
 --     -- You can adjust the saturation also.
 --     saturation = 1.0,
 --   }
+  keys = {
+    -- Keybindings:
+    {
+      key = "\\",
+      mods = "CTRL",
+      action = wezterm.action.SplitHorizontal,
+    },
+    {
+      key = "-",
+      mods = "CTRL",
+      action = wezterm.action.SplitVertical,
+    },
+  },
 }
 
 return config
