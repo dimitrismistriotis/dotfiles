@@ -28,6 +28,9 @@ local config = {
 --     -- You can adjust the saturation also.
 --     saturation = 1.0,
 --   }
+  -- Spawn a fish shell in login mode
+  default_prog = { '/usr/bin/fish', '-l' },
+
   keys = {
     -- Keybindings:
     {
