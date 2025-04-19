@@ -8,8 +8,8 @@ help:
 	@echo "make link_wezterm_config"
 	@echo "make oh_my_fish"
 	@echo "make git_config"
-	@3cho "make post_omakumb_gnome_tweaking"
-
+	@echo "make post_omakumb_gnome_tweaking"
+	@echo "make download_nerdfonts"
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
@@ -144,3 +144,22 @@ post_omakumb_gnome_tweaking:
 	gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-enable-effect true
 	gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-enable-effect false
 
+.PHONY download_nerdfonts:
+download_nerdfonts:
+	@echo "Download NerdFonts"
+	# 
+	# References:
+	# 
+	# https://www.nerdfonts.com/font-downloads
+	# https://medium.com/@almatins/install-nerdfont-or-any-fonts-using-the-command-line-in-debian-or-other-linux-f3067918a88c
+	# 
+	# Follow Ups:
+	# 
+	# Do not Download if already there
+	# Add more fonts, perhaps all?
+	# 
+	wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
+	cd ~/.local/share/fonts \
+	unzip FiraCode.zip
+	rm ~/.local/share/fonts/FiraCode.zip*
+	fc-cache -fv
