@@ -16,8 +16,15 @@ config.window_padding = {
   bottom = '0.5cell',
 }
 
+--
+-- Font
+--
 config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
 config.font_size = 12
+
+--
+-- Theme
+--
 config.color_scheme = 'Tokyo Night (Gogh)'
 --   background = {
 --     {
