@@ -3,3 +3,4 @@ gsettings
 omakumb
 wezterm
 nerdfonts
+FiraCode

@@ -7,6 +7,14 @@ home=os.getenv( "HOME" )
 
 config.initial_rows = 50
 config.initial_cols = 100
+config.window_decorations = "TITLE | RESIZE"  -- Default for reference
+-- Thin on left, larger scrollbar:
+config.window_padding = {
+  left = '0.5cell',
+  right = '1.25cell', -- right: size of scrollbar
+  top = '0.5cell',
+  bottom = '0.5cell',
+}
 
 config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
 config.font_size = 12
