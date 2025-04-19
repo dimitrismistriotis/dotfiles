@@ -5,7 +5,7 @@ help:
 	@echo "make help"
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
-	@echo "make link_wezterm_config"
+	@echo "make wezterm_config"
 	@echo "make oh_my_fish"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
@@ -15,6 +15,10 @@ help:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
 
+
+.PHONY install_fish_shell:
+install_fish_shell:
+	sudo apt get install fish
 
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
@@ -94,8 +98,12 @@ oh_my_fish:
 	# From Website:
 	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
-.PHONY link_wezterm_config:
-link_wezterm_config:
+.PHONY wezterm_config:
+wezterm_config:
+	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
+	echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+	sudo apt update
+	sudo apt install wezterm
 	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
 
 .PHONY post_omakumb_gnome_tweaking:
