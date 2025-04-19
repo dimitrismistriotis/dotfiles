@@ -1,0 +1,5 @@
+# Custom Dictionary Words
+gsettings
+omakumb
+wezterm
+nerdfonts
