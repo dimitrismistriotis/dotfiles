@@ -1,5 +1,6 @@
 .PHONY help:
 help:
+	@echo "make additional_packages"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make help"
@@ -10,6 +11,10 @@ help:
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make download_nerdfonts"
+
+.PHONY additional_packages:
+additional_packages:
+
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
@@ -79,11 +84,11 @@ remove_screen_reader:
 
 .PHONY link_starship_configuration:
 link_starship_configuration:
-	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
+	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
-	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf 
+	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
 
 .PHONY git_config:
 git_config:
@@ -112,6 +117,7 @@ post_omakumb_gnome_tweaking:
 	#
 	# Install Burn My Windows
 	#
+	gext install burn-my-windows@schneegans.github.com
 	gnome-extensions enable burn-my-windows@schneegans.github.com
 	#
 	# Copy gsettings schemas so that they can be set from command line:
@@ -155,17 +161,17 @@ post_omakumb_gnome_tweaking:
 .PHONY download_nerdfonts:
 download_nerdfonts:
 	@echo "Download NerdFonts"
-	# 
+	#
 	# References:
-	# 
+	#
 	# https://www.nerdfonts.com/font-downloads
 	# https://medium.com/@almatins/install-nerdfont-or-any-fonts-using-the-command-line-in-debian-or-other-linux-f3067918a88c
-	# 
+	#
 	# Follow Ups:
-	# 
+	#
 	# Do not Download if already there
 	# Add more fonts, perhaps all?
-	# 
+	#
 	wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
 	cd ~/.local/share/fonts \
 	unzip FiraCode.zip
