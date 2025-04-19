@@ -6,7 +6,7 @@ local config = {
   initial_rows = 50,
   initial_cols = 100,
 
---  font = wezterm.font('Hack Nerd Font', { weight = 'Regular' }),
+  font = wezterm.font('Oxygen Mono', { weight = 'Regular' }),
   font_size = 12,
   color_scheme = 'Tokyo Night (Gogh)',
 --   background = {
