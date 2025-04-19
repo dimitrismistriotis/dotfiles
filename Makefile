@@ -14,7 +14,14 @@ help:
 
 .PHONY additional_packages:
 additional_packages:
-
+	@echo "Install Additional Packages"
+	@echo "Cromium"
+	sudo apt install -y chromium
+	@echo "Enpass"
+	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
+	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
+	sudo apt-get update
+	sudo apt-get install -y enpass
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
