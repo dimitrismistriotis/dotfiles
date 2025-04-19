@@ -41,9 +41,9 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# These are currently installed from Omakumb
 	# here for reference:
 	#
-  # brew install node
-  # brew install zoxide
-  # brew install lsd
+	# brew install node
+	# brew install zoxide
+	# brew install lsd
 
 
 .PHONY zoxide_for_bash_and_fish:
