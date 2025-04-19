@@ -1,14 +1,16 @@
 local wezterm = require 'wezterm'
+-- This will hold the configuration.
+local config = wezterm.config_builder()
 
 home=os.getenv( "HOME" )
 
-local config = {
-  initial_rows = 50,
-  initial_cols = 100,
 
-  font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' }),
-  font_size = 12,
-  color_scheme = 'Tokyo Night (Gogh)',
+config.initial_rows = 50
+config.initial_cols = 100
+
+config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
+config.font_size = 12
+config.color_scheme = 'Tokyo Night (Gogh)'
 --   background = {
 --     {
 --       source = {
@@ -28,10 +30,11 @@ local config = {
 --     -- You can adjust the saturation also.
 --     saturation = 1.0,
 --   }
-  -- Spawn a fish shell in login mode
-  default_prog = { '/usr/bin/fish', '-l' },
 
-  keys = {
+-- Spawn a fish shell in login mode
+config.default_prog = { '/usr/bin/fish', '-l' }
+
+config.keys = {
     -- Keybindings:
     {
       key = "\\",
@@ -43,7 +46,6 @@ local config = {
       mods = "CTRL",
       action = wezterm.action.SplitVertical,
     },
-  },
-}
+  }
 
 return config
