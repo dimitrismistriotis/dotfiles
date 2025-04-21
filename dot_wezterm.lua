@@ -26,25 +26,22 @@ config.font_size = 12
 -- Theme
 --
 config.color_scheme = 'Tokyo Night (Gogh)'
---   background = {
---     {
---       source = {
---         File = home .."/Pictures/terminal_wallpaper.jpg",
---       },
---       -- opacity = 0.3,
---       brightness = 0.3,
---     },
---   },
---     -- Darken the background image by reducing it to 1/3rd
---     brightness = 0.3,
 -- 
---     -- You can adjust the hue by scaling its value.
---     -- a multiplier of 1.0 leaves the value unchanged.
---     hue = 1.0,
+-- This should have a if-file-exists check:
 -- 
---     -- You can adjust the saturation also.
---     saturation = 1.0,
---   }
+config.window_background_image = home .."/dotfiles/images/gradient-particle-wave-background_45176454.jpg"
+config.window_background_image_hsb = {
+  -- Darken the background image by reducing it to 1/3rd
+  brightness = 0.02,
+
+  -- You can adjust the hue by scaling its value.
+  -- a multiplier of 1.0 leaves the value unchanged.
+  hue = 1.0,
+
+  -- You can adjust the saturation also.
+  saturation = 1.0,
+}
+-- config.text_background_opacity = 0.9
 
 -- Spawn a fish shell in login mode
 config.default_prog = { '/usr/bin/fish', '-l' }
