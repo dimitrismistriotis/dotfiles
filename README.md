@@ -34,3 +34,9 @@ then use `make`.
 VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
 
 <https://vscodium.com/>
+
+## Attribution
+
+Background image:
+
+<https://www.freepik.com/free-vector/gradient-particle-wave-background_45176454.htm>
