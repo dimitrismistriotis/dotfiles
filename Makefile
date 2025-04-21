@@ -1,8 +1,8 @@
 .PHONY help:
 help:
+	@echo "make help"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
-	@echo "make help"
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make link_wezterm_config"
@@ -10,6 +10,8 @@ help:
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make download_nerdfonts"
+	@echo "make install_additional_packages"
+
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
@@ -21,7 +23,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew update
 	brew upgrade
 	brew install gcc
-	brew install python@3.12
+	brew install python@3.13
 	brew install bat
 	brew install git-delta
 	brew install corepack
@@ -163,3 +165,17 @@ download_nerdfonts:
 	unzip FiraCode.zip
 	rm ~/.local/share/fonts/FiraCode.zip*
 	fc-cache -fv
+
+,PHONY: install_additional_packages
+install_additional_packages:
+	@echo "Install Additional Packages"
+	#
+	# Maintenance
+	#
+	sudo apt autoremove
+
+	#
+	# Exfat support for USB drives: allows to copy files larger than 4.3Gb
+	# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
+	#
+	sudo apt install -y exfat-fuse
