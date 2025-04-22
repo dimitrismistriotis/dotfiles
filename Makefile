@@ -1,11 +1,12 @@
 .PHONY help:
 help:
 	@echo "make help"
+	@echo "make additional_packages"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
-	@echo "make link_wezterm_config"
+	@echo "make wezterm_config"
 	@echo "make oh_my_fish"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
@@ -13,10 +14,25 @@ help:
 	@echo "make install_additional_packages"
 
 
+.PHONY additional_packages:
+additional_packages:
+	@echo "Install Additional Packages"
+	@echo "Cromium"
+	sudo apt install -y chromium
+	@echo "Enpass"
+	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
+	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
+	sudo apt-get update
+	sudo apt-get install -y enpass
+
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
 
+
+.PHONY install_fish_shell:
+install_fish_shell:
+	sudo apt get install fish
 
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
@@ -43,9 +59,9 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# These are currently installed from Omakumb
 	# here for reference:
 	#
-  # brew install node
-  # brew install zoxide
-  # brew install lsd
+	# brew install node
+	# brew install zoxide
+	# brew install lsd
 
 
 .PHONY zoxide_for_bash_and_fish:
@@ -77,11 +93,11 @@ remove_screen_reader:
 
 .PHONY link_starship_configuration:
 link_starship_configuration:
-	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml 
+	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
-	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf 
+	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
 
 .PHONY git_config:
 git_config:
@@ -96,8 +112,12 @@ oh_my_fish:
 	# From Website:
 	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
-.PHONY link_wezterm_config:
-link_wezterm_config:
+.PHONY wezterm_config:
+wezterm_config:
+	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
+	echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+	sudo apt update
+	sudo apt install wezterm
 	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
 
 .PHONY post_omakumb_gnome_tweaking:
@@ -106,6 +126,7 @@ post_omakumb_gnome_tweaking:
 	#
 	# Install Burn My Windows
 	#
+	gext install burn-my-windows@schneegans.github.com
 	gnome-extensions enable burn-my-windows@schneegans.github.com
 	#
 	# Copy gsettings schemas so that they can be set from command line:
@@ -149,17 +170,17 @@ post_omakumb_gnome_tweaking:
 .PHONY download_nerdfonts:
 download_nerdfonts:
 	@echo "Download NerdFonts"
-	# 
+	#
 	# References:
-	# 
+	#
 	# https://www.nerdfonts.com/font-downloads
 	# https://medium.com/@almatins/install-nerdfont-or-any-fonts-using-the-command-line-in-debian-or-other-linux-f3067918a88c
-	# 
+	#
 	# Follow Ups:
-	# 
+	#
 	# Do not Download if already there
 	# Add more fonts, perhaps all?
-	# 
+	#
 	wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
 	cd ~/.local/share/fonts \
 	unzip FiraCode.zip

@@ -1,37 +1,17 @@
 # Path to Oh My Fish install.
 # set -gx OMF_PATH "/home/dimitry/.local/share/omf"
 
+#
+# After version 4.0.1: https://fishshell.com/docs/current/cmds/fish_add_path.html
+# fish_add_path ~/bin
+#
+set PATH ~/bin $PATH
+
 # Customize Oh My Fish configuration path.
 #set -gx OMF_CONFIG "/home/dimitry/.config/omf"
 
 # Load oh-my-fish configuration.
 # source $OMF_PATH/init.fish
-
-# Chruby
-# https://github.com/postmodern/chruby
-# and
-# https://github.com/JeanMertz/chruby-fish
-#
-# Source:
-source /usr/local/share/chruby/chruby.fish
-# Default ruby:
-chruby ruby-2.5.0
-
-#
-# GO-lang
-#
-set -gx GOPATH $HOME/Go
-set -gx GOROOT (go env GOROOT)
-set PATH $GOROOT/bin $PATH
-
-# set PATH /home/dimitry/google-cloud-sdk/bin $PATH
-set PATH ~/bin/ $PATH
-set PATH ~/.local/bin $PATH
-
-#eval (python -m virtualfish)
-
-# Generated for envman. Do not edit.
-test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load>
 
 #
 # Zoxide
@@ -61,4 +41,4 @@ end
 #
 # Startfish
 #
-source (/home/linuxbrew/.linuxbrew/bin/starship init fish --print-full-init | psub)⏎
+source (/home/linuxbrew/.linuxbrew/bin/starship init fish --print-full-init | psub)

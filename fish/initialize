@@ -8,7 +8,4 @@ echo "Linking fish shell's .config"
 ln {$current_dir}/config.fish ~/.config/fish/config.fish
 
 echo "Linking fish shell's functions"
-#ln -s {$current_dir}/functions ~/.config/fish
-
-echo "OMF packages"
-fish omf_list
+ln -s {$current_dir}/functions ~/.config/fish
