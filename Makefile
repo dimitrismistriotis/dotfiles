@@ -124,6 +124,12 @@ wezterm_config:
 post_omakumb_gnome_tweaking:
 	@echo "Post Omakumb Gnome Tweaking"
 	#
+	# Follow up:
+	# Add :
+	# 	https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+	# 	https://github.com/martinpl/tray-icons-reloaded
+	#
+	#
 	# Install Burn My Windows
 	#
 	gext install burn-my-windows@schneegans.github.com
