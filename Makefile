@@ -18,6 +18,7 @@ additional_packages:
 	@echo "Install Additional Packages"
 	@echo "Cromium"
 	sudo apt install -y chromium
+	sudo apt-get install -y wl-clipboard
 	@echo "Enpass"
 	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
 	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
