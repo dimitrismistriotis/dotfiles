@@ -112,6 +112,9 @@ oh_my_fish:
 	# From Website:
 	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
+	@echo "Plugins:"
+	omf install pbcopy
+
 .PHONY wezterm_config:
 wezterm_config:
 	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
