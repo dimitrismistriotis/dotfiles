@@ -7,7 +7,6 @@ help:
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make wezterm_config"
-	@echo "make oh_my_fish"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make download_nerdfonts"
@@ -106,14 +105,6 @@ git_config:
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
-
-.PHONY oh_my_fish:
-oh_my_fish:
-	# From Website:
-	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-
-	@echo "Plugins:"
-	omf install pbcopy
 
 .PHONY wezterm_config:
 wezterm_config:
