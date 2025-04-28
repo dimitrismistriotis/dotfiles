@@ -7,7 +7,6 @@ help:
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make wezterm_config"
-	@echo "make oh_my_fish"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make download_nerdfonts"
@@ -19,6 +18,7 @@ additional_packages:
 	@echo "Install Additional Packages"
 	@echo "Cromium"
 	sudo apt install -y chromium
+	sudo apt-get install -y wl-clipboard
 	@echo "Enpass"
 	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
 	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
@@ -39,6 +39,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew update
 	brew upgrade
 	brew install gcc
+	brew install fd
 	brew install python@3.13
 	brew install bat
 	brew install git-delta
@@ -51,6 +52,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install tmux
 	brew install tpm  # Tmux Package Manager
 	brew install ripgrep
+	brew install xh
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
@@ -106,11 +108,6 @@ git_config:
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
-
-.PHONY oh_my_fish:
-oh_my_fish:
-	# From Website:
-	curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 .PHONY wezterm_config:
 wezterm_config:
