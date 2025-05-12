@@ -53,6 +53,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install tpm  # Tmux Package Manager
 	brew install ripgrep
 	brew install xh
+	brew install git-trim
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
