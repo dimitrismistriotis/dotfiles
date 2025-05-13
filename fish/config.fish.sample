@@ -38,3 +38,8 @@ end
 # Startfish
 #
 source (/home/linuxbrew/.linuxbrew/bin/starship init fish --print-full-init | psub)
+
+#
+# Run on new terminal; nothing amazing just geeokness
+#
+fastfetch

@@ -11,6 +11,7 @@ help:
 	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make download_nerdfonts"
 	@echo "make install_additional_packages"
+	@echo "make configure_fastfetch"
 
 
 .PHONY additional_packages:
@@ -204,6 +205,17 @@ install_additional_packages:
 	# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
 	#
 	sudo apt install -y exfat-fuse
+
+
+.PHONY configure_fastfetch:
+configure_fastfetch:
+	@echo "Configure Fastfetch"
+	mkdir -p ~/.config/fastfetch/assets
+	rm -rf ~/.config/fastfetch/config.jsonc
+	ln -s $(CURDIR)/config_files/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+	rm -rf ~/.config/fastfetch/assets/greek_fire_no_background.png
+	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
+
 
 #
 # Follow Ups:
