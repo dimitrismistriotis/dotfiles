@@ -26,9 +26,9 @@ config.font_size = 12
 -- Theme
 --
 config.color_scheme = 'Tokyo Night (Gogh)'
--- 
+--
 -- This should have a if-file-exists check:
--- 
+--
 config.window_background_image = home .."/dotfiles/images/gradient-particle-wave-background_45176454.jpg"
 config.window_background_image_hsb = {
   -- Darken the background image by reducing it to 1/3rd
@@ -58,6 +58,11 @@ config.keys = {
       mods = "CTRL",
       action = wezterm.action.SplitVertical,
     },
+    {
+      key="\"",
+      mods="CTRL|SHIFT",
+      action=wezterm.action.ActivateTab(1),
+    }
   }
 
 return config
