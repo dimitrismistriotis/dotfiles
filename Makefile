@@ -55,6 +55,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew install ripgrep
 	brew install xh
 	brew install git-trim
+	brew install dust	# https://github.com/bootandy/dust du + rust = dust. Like du but more intuitive.
 
 	@echo "Instructions for Git-Delta"
 	bat git_delta.md
