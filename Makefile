@@ -41,6 +41,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	brew upgrade
 	brew install gcc
 	brew install fd
+	brew install fzf
 	brew install python@3.13
 	brew install bat
 	brew install git-delta
