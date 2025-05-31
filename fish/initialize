@@ -5,7 +5,16 @@ echo {$current_dir}
 
 echo "Linking fish shell's .config"
 # ln -s {$current_dir}/config.fish ~/.config/fish/config.fish
-ln {$current_dir}/config.fish ~/.config/fish/config.fish
+if not test -d ~/.config/fish
+    mkdir -p ~/.config/fish
+end
+if test -f ~/.config/fish/config.fish
+    echo "Config file already exists, skipping link."
+else
+    echo "Linking config.fish to ~/.config/fish/config.fish"
+    ln {$current_dir}/config.fish ~/.config/fish/config.fish
+end
+
 
 echo "Linking fish shell's functions"
 ln -s {$current_dir}/functions ~/.config/fish
