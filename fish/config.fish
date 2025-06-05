@@ -48,6 +48,7 @@ if status is-interactive
      alias lg="lazygit"
      alias pbcopy='wl-copy'
      alias pbpaste='wl-paste'
+     alias tmkill="tmux kill-server"  # kill tmux server for end of day cleanup
 
      #
      # Run on new terminal; nothing amazing just geeokness
