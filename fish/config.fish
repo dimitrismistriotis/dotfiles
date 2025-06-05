@@ -1,6 +1,6 @@
 
 if status is-interactive
-
+     #
      # Commands to run in interactive sessions can go here
      #
      # After version 4.0.1: https://fishshell.com/docs/current/cmds/fish_add_path.html
@@ -8,14 +8,13 @@ if status is-interactive
      #
      set PATH ~/bin $PATH
 
-
      #
      # Micro Editor
      #
      if type -q 'micro'
           # echo "micro exists"
           #
-          # Expors for any editor:
+          # Exports for any editor:
           #
           export EDITOR='micro'
           export VISUAL='micro'
@@ -49,6 +48,7 @@ if status is-interactive
      alias lg="lazygit"
      alias pbcopy='wl-copy'
      alias pbpaste='wl-paste'
+     alias tmkill="tmux kill-server"  # kill tmux server for end of day cleanup
 
      #
      # Run on new terminal; nothing amazing just geeokness
