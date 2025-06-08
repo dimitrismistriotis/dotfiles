@@ -177,22 +177,7 @@ post_omakumb_gnome_tweaking:
 .PHONY download_nerdfonts:
 download_nerdfonts:
 	@echo "Download NerdFonts"
-	#
-	# References:
-	#
-	# https://www.nerdfonts.com/font-downloads
-	# https://medium.com/@almatins/install-nerdfont-or-any-fonts-using-the-command-line-in-debian-or-other-linux-f3067918a88c
-	#
-	# Follow Ups:
-	#
-	# Do not Download if already there
-	# Add more fonts, perhaps all?
-	#
-	wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
-	cd ~/.local/share/fonts \
-	unzip FiraCode.zip
-	rm ~/.local/share/fonts/FiraCode.zip*
-	fc-cache -fv
+	$(CURDIR)/font_downloader_and_installer
 
 ,PHONY: install_additional_packages
 install_additional_packages:
