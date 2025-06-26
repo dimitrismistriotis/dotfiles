@@ -69,6 +69,11 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# brew install zoxide
 	# brew install lsd
 
+.PHONY brew_development
+brew_development:  # Development environments, can be installed from elsewhere
+	brew install oven-sh/bun/bun
+
+
 
 .PHONY zoxide_for_bash_and_fish:
 zoxide_for_bash_and_fish:
