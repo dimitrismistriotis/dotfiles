@@ -6,6 +6,7 @@ help:
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
 	@echo "make link_tmux_configuration"
+	@echo "make link_code_configuration"
 	@echo "make wezterm_config"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
@@ -69,7 +70,7 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# brew install zoxide
 	# brew install lsd
 
-.PHONY brew_development
+.PHONY brew_development:
 brew_development:  # Development environments, can be installed from elsewhere
 	brew install oven-sh/bun/bun
 
@@ -102,13 +103,21 @@ zoxide_for_bash_and_fish:
 remove_screen_reader:
 	sudo dpkg --purge orca gnome-orca
 
+
 .PHONY link_starship_configuration:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
+
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
 	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
+
+
+.PHONY link_code_configuration:
+link_code_configuration:
+	ln -s $(CURDIR)/code/settings.json ~/.config/Code/User
+	
 
 .PHONY git_config:
 git_config:
