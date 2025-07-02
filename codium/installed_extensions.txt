@@ -1,8 +1,0 @@
-4ops.terraform
-dracula-theme.theme-dracula
-hashicorp.hcl
-hashicorp.terraform
-MateuszDrewniak.theme-dracula-dark-plus
-mongodb.mongodb-vscode
-shd101wyy.markdown-preview-enhanced
-streetsidesoftware.code-spell-checker
