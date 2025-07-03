@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+#
+# Follow up:
+# Add :
+# 	https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+# 	https://github.com/martinpl/tray-icons-reloaded
+#
+#
+# Install Burn My Windows
+#
+gext install burn-my-windows@schneegans.github.com
+gnome-extensions enable burn-my-windows@schneegans.github.com
+#
+# Copy gsettings schemas so that they can be set from command line:
+#
+sudo cp ~/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas/org.gnome.shell.extensions.burn-my-windows.gschema.xml /usr/share/glib-2.0/schemas/
+sudo cp ~/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas/org.gnome.shell.extensions.burn-my-windows-profile.gschema.xml /usr/share/glib-2.0/schemas/
+#
+# Recompile
+#
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
