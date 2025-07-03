@@ -135,10 +135,11 @@ wezterm_config:
 	sudo apt install wezterm
 	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
 
+
 .PHONY post_omakumb_gnome_tweaking:
 post_omakumb_gnome_tweaking:
 	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
-	$(CURDIR)/setup_burn_my_windows
+	$(CURDIR)/gnome/setup_burn_my_windows
 
 
 .PHONY download_nerdfonts:
