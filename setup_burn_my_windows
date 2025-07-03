@@ -20,3 +20,172 @@ sudo cp ~/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.
 # Recompile
 #
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+#
+# Set values with my preferences
+# Need to clean up ones not used
+#
+
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-animation-time 300
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-randomness 0.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-shake-intensity 3.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-suction-intensity 0.75
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile apparition-twirl-intensity 5.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-animation-time 750
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-blur 15.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-edge-hardness 0.25
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-edge-size 0.75
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-random-color false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-saturation 0.75
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-speed 2.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile aura-glow-start-hue 0.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-blow-force 0.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-gravity -1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile broken-glass-use-pointer false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-horizontal-scale 10.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-pixel-size 10
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile doom-vertical-scale 10.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-a-animation-time 2000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-a-color 'rgb(255, 200, 50)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-a-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-a-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-b-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-b-color 'rgb(160, 180, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-b-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile energize-b-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-3d-noise false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-color-1 'rgba(76, 51, 25, 0.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-color-2 'rgba(180, 55, 30, 0.7)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-color-3 'rgba(255, 76, 38, 0.9)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-color-4 'rgba(255, 166, 25, 1)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-color-5 'rgba(255, 255, 255, 1)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-movement-speed 0.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-random-color false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile fire-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile focus-animation-time 500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile focus-blur-amount 50
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile focus-blur-quality 3
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile focus-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-animation-time 250
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-scale 0.94999999999999996
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-shift -0.050000000000000003
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-squish 0.14999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glide-tilt -0.29999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-animation-time 750
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-color 'rgb(100, 160, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-speed 2.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile glitch-strength 2.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-additive-blending true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-glow-color 'rgba(20, 80, 255, 0.5)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-line-color 'rgba(200, 255, 255, 0.5)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-line-width 2.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile hexagon-scale 3.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-animation-time 2000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-color 'rgb(255, 180, 127)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-turbulence 0.29999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile incinerate-use-pointer true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-overshoot 0.25
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-randomness 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-scale 20
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-tip-color 'rgb(255, 255, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile matrix-trail-color 'rgb(25, 255, 89)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-rays-color 'rgba(255, 255, 255, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-ring-count 3
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-ring-rotation 1.3300000000000001
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-scale-style 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-spark-color 'rgba(255, 255, 255, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-spark-count 4
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-spark-rotation 0.29999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-0 'rgba(233, 249, 1, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-1 'rgba(233, 249, 1, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-2 'rgba(91, 255, 1, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-3 'rgba(91, 255, 1, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-4 'rgba(0, 240, 236, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-color-5 'rgba(0, 240, 236, 1.0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile mushroom-star-count 5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile paint-brush-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile paint-brush-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile paint-brush-size 3
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wheel-animation-time 300
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wheel-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wheel-pixel-size 10.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wheel-spoke-count 12
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wipe-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wipe-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixel-wipe-pixel-size 10
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixelate-animation-time 500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixelate-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixelate-noise 40.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile pixelate-pixel-size 10
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-animation-time 1250
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-color 'rgb(121, 233, 24)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-details 15.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-rotation-speed 0.29999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile portal-whirling 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-animation-type 0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-app ''
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-color-scheme 0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-high-priority false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-power-mode 0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-power-profile 0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile profile-window-type 0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-animation-time 750
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-brightness 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-speed-b 0.80000000000000004
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-speed-g 0.90000000000000002
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile rgbwarp-speed-r 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile snap-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile snap-color 'rgb(50, 40, 35)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile snap-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile snap-scale 3.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-animation-split 0.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-horizontal-sparkle-position 0.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-sparkle-rot 0.33000000000000002
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-sparkle-size 0.75
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-vertical-sparkle-position 0.5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile team-rocket-window-rotation true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-animation-time 1000
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-scratch-color 'rgb(170, 0, 0)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-scratch-count 5
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-scratch-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile trex-scratch-warp 0.14999999999999999
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-animation-time 400
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-effect-color 'rgb(255, 255, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-animation-time 750
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-color 'rgb(100, 160, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-enable-effect true
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-scale 1.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-speed 2.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile tv-glitch-strength 2.0
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-animation-time 1500
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-color-1 'rgb(255, 100, 200)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-color-2 'rgb(100, 100, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-color-3 'rgb(100, 200, 255)'
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-enable-effect false
+gsettings set org.gnome.shell.extensions.burn-my-windows-profile wisps-scale 1.0
