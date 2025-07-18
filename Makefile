@@ -27,6 +27,7 @@ additional_packages:
 	sudo apt-get update
 	sudo apt-get install -y enpass
 
+
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
@@ -35,6 +36,7 @@ install_brew:  # Run Homebrew Installation Script
 .PHONY install_fish_shell:
 install_fish_shell:
 	sudo apt get install fish
+
 
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
@@ -70,10 +72,10 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# brew install zoxide
 	# brew install lsd
 
+
 .PHONY brew_development:
 brew_development:  # Development environments, can be installed from elsewhere
 	brew install oven-sh/bun/bun
-
 
 
 .PHONY zoxide_for_bash_and_fish:
@@ -146,6 +148,7 @@ post_omakumb_gnome_tweaking:
 download_nerdfonts:
 	@echo "Download NerdFonts"
 	$(CURDIR)/font_downloader_and_installer
+
 
 ,PHONY: install_additional_packages
 install_additional_packages:
