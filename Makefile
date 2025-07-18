@@ -211,5 +211,4 @@ ulauncher_additions:
 # Need to fix flameshot:
 # script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
 # and associate with print screen automatically
-# Added to Ulauncher with icon, also can be automated.
 #
