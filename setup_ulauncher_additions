@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "Adding gradia command to Ulauncher"
+
+# Create desktop entry for gradia interactive screenshot
+mkdir -p ~/.local/share/applications
+
+cat > ~/.local/share/applications/gradia-interactive.desktop << 'EOF'
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gradia Interactive Screenshot
+GenericName=Screenshot Tool
+Comment=Take interactive screenshots with gradia
+Exec=gradia --screenshot=INTERACTIVE
+Icon=camera-photo
+Terminal=false
+Categories=Graphics;Photography;
+Keywords=screenshot;capture;gradia;
+EOF
+
+echo "Desktop entry created at ~/.local/share/applications/gradia-interactive.desktop"
+echo "You can now add 'gradia' as a keyword in Ulauncher that runs 'gradia --screenshot=INTERACTIVE'"

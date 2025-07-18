@@ -38,6 +38,11 @@ install_fish_shell:
 	sudo apt get install fish
 
 
+.PHONY snap_packages:
+snap_packages:  # Brew packages with utilities and frameworks
+	sudo snap install gradia
+
+
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
 	brew update
@@ -188,6 +193,11 @@ setup_wallpaper_squirrels:
 	@echo "Wallpaper Setup - Legoland Squirrels"
 	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_squirrels.jpg"
 	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
+
+
+.PHONY ulauncher_additions:
+ulauncher_additions:
+	$(CURDIR)/setup_ulauncher_additions
 
 
 #
