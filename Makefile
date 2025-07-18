@@ -175,6 +175,21 @@ configure_fastfetch:
 	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
 
 
+
+.PHONY setup_wallpaper_castle:
+setup_wallpaper_castle:
+	@echo "Wallpaper Setup - Legoland Welsh Castle"
+	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
+	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
+
+
+.PHONY setup_wallpaper_squirrels:
+setup_wallpaper_squirrels:
+	@echo "Wallpaper Setup - Legoland Welsh Castle"
+	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_squirrels.jpg"
+	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
+
+
 #
 # Follow Ups:
 #
