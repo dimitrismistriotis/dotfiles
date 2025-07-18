@@ -38,6 +38,16 @@ install_fish_shell:
 	sudo apt get install fish
 
 
+.PHONY snap_packages:
+snap_packages:  # Brew packages with utilities and frameworks
+	#
+	# Gradia from "It's FOSS - Linux Portal":
+	#
+	# https://www.youtube.com/watch?v=OQqv1UeURqA
+	#
+	sudo snap install gradia
+
+
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
 	brew update
@@ -190,11 +200,15 @@ setup_wallpaper_squirrels:
 	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
 
 
+.PHONY ulauncher_additions:
+ulauncher_additions:
+	$(CURDIR)/setup_ulauncher_additions
+
+
 #
 # Follow Ups:
 #
 # Need to fix flameshot:
 # script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
 # and associate with print screen automatically
-# Added to Ulauncher with icon, also can be automated.
 #
