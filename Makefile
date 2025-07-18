@@ -185,7 +185,7 @@ setup_wallpaper_castle:
 
 .PHONY setup_wallpaper_squirrels:
 setup_wallpaper_squirrels:
-	@echo "Wallpaper Setup - Legoland Welsh Castle"
+	@echo "Wallpaper Setup - Legoland Squirrels"
 	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_squirrels.jpg"
 	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
 
