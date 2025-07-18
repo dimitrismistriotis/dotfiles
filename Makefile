@@ -40,6 +40,11 @@ install_fish_shell:
 
 .PHONY snap_packages:
 snap_packages:  # Brew packages with utilities and frameworks
+	#
+	# Gradia from "It's FOSS - Linux Portal":
+	#
+	# https://www.youtube.com/watch?v=OQqv1UeURqA
+	#
 	sudo snap install gradia
 
 
