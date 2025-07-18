@@ -33,7 +33,7 @@ Name=Flameshot GUI
 GenericName=Screenshot Tool
 Comment=Take screenshots with flameshot
 Exec=script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
-Icon=/home/dimitrios/dotfiles/icons/flameshot-icon.svg
+Icon=$(pwd)/icons/flameshot-icon.svg
 Terminal=false
 Categories=Graphics;Photography;
 Keywords=screenshot;capture;flameshot;
