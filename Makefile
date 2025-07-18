@@ -27,6 +27,7 @@ additional_packages:
 	sudo apt-get update
 	sudo apt-get install -y enpass
 
+
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
@@ -35,6 +36,7 @@ install_brew:  # Run Homebrew Installation Script
 .PHONY install_fish_shell:
 install_fish_shell:
 	sudo apt get install fish
+
 
 .PHONY brew_packages:
 brew_packages:  # Brew packages with utilities and frameworks
@@ -70,10 +72,10 @@ brew_packages:  # Brew packages with utilities and frameworks
 	# brew install zoxide
 	# brew install lsd
 
+
 .PHONY brew_development:
 brew_development:  # Development environments, can be installed from elsewhere
 	brew install oven-sh/bun/bun
-
 
 
 .PHONY zoxide_for_bash_and_fish:
@@ -147,6 +149,7 @@ download_nerdfonts:
 	@echo "Download NerdFonts"
 	$(CURDIR)/font_downloader_and_installer
 
+
 ,PHONY: install_additional_packages
 install_additional_packages:
 	@echo "Install Additional Packages"
@@ -170,6 +173,21 @@ configure_fastfetch:
 	ln -s $(CURDIR)/config_files/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 	rm -rf ~/.config/fastfetch/assets/greek_fire_no_background.png
 	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
+
+
+
+.PHONY setup_wallpaper_castle:
+setup_wallpaper_castle:
+	@echo "Wallpaper Setup - Legoland Welsh Castle"
+	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
+	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
+
+
+.PHONY setup_wallpaper_squirrels:
+setup_wallpaper_squirrels:
+	@echo "Wallpaper Setup - Legoland Welsh Castle"
+	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_squirrels.jpg"
+	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
 
 
 #
