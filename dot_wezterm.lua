@@ -31,7 +31,9 @@ config.color_scheme = 'Tokyo Night (Gogh)'
 --
 config.window_background_image = home .."/dotfiles/images/gradient-particle-wave-background_45176454.jpg"
 config.window_background_image_hsb = {
-  -- Darken the background image by reducing it to 1/3rd
+  --
+  -- Darken the background image
+  --
   brightness = 0.02,
 
   -- You can adjust the hue by scaling its value.
