@@ -10,24 +10,25 @@
 # - changed palette
 # - trimmed down some OSes, removed conda, php, java, kotlin, and haskell
 # - double line break
+# - Added "Fire" from https://github.com/itsfoss/text-script-files/blob/master/config/starship/fiery.toml
 #
 format = """
 [](red)\
 $os\
 [ ](bg:red)\
 $username\
-[](bg:peach fg:red)\
+[ ](bg:peach fg:red)\
 $directory\
-[](bg:yellow fg:peach)\
+[ ](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:green)\
+[ ](fg:yellow bg:green)\
 $c\
 $rust\
 $golang\
 $nodejs\
 $python\
-[](fg:green bg:sapphire)\
+[ ](fg:green bg:sapphire)\
 [ ](fg:sapphire)\
 $cmd_duration\
 $line_break\
