@@ -53,6 +53,11 @@ From Brave Search:
 
 [Things to do After Installing Ubuntu 22.04](https://itsfoss.com/things-to-do-after-installing-ubuntu-22-04/)
 
+### Wallpapers
+
+Lots from <https://www.wallpaperflare.com/> lately.
+Did not find an easy way to write a download script to automate scrapping them.
+
 ### Other Software
 
 #### VSCodium
@@ -66,4 +71,3 @@ VSCodium is a community-driven, freely-licensed binary distribution of Microsoft
 Background image:
 
 <https://www.freepik.com/free-vector/gradient-particle-wave-background_45176454.htm>
-
