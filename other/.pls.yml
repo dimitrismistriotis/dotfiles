@@ -1,7 +1,0 @@
-#
-# cd
-# ln -s ~/projects/dotfiles/other/.pls.yml
-#
-prefs:
-  icon: emoji
-
