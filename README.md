@@ -1,25 +1,15 @@
-# dotfiles
+# Dotfiles
 
 ## Checkout
 
-Whenever needed assumes that it is cloned in the home directory.
+Whenever needed, as some paths can only be hardcoded, assumes that it is cloned in the home directory.
 
 ```shell
 cd ~
 git clone git@github.com:dimitrismistriotis/dotfiles.git
 ```
 
-Needed as some paths can only be hardcoded.
-
-## Initialization
-
-By running "initialize" script:
-
-```bash
-./initialize
-```
-
-then use `make`.
+then use `make` to see list of customisations and apply those you want/need.
 
 ## Adding a Second Passphrase on Ubuntu drive
 
@@ -51,8 +41,6 @@ From Brave Search:
 
 [Modern Unix](https://github.com/ibraheemdev/modern-unix)
 
-[Things to do After Installing Ubuntu 22.04](https://itsfoss.com/things-to-do-after-installing-ubuntu-22-04/)
-
 ### Wallpapers
 
 Lots from <https://www.wallpaperflare.com/> lately.
@@ -68,6 +56,11 @@ VSCodium is a community-driven, freely-licensed binary distribution of Microsoft
 
 ## Attribution
 
-Background image:
+Background image for WezTerm:
 
 <https://www.freepik.com/free-vector/gradient-particle-wave-background_45176454.htm>
+
+## Next Steps - Ongoing
+
+- Organise `Makefile` to allow actions to happen in sequence
+- Moce `initialize` commands to `Makefile`
