@@ -212,3 +212,6 @@ ulauncher_additions:
 # script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
 # and associate with print screen automatically
 #
+# or with Gradia:
+# gradia --screenshot=INTERACTIVE
+#

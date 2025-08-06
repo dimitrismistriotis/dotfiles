@@ -64,7 +64,27 @@ config.keys = {
       key="\"",
       mods="CTRL|SHIFT",
       action=wezterm.action.ActivateTab(1),
-    }
+    },
+    {
+      key = "UpArrow",
+      mods = "CTRL",
+      action = wezterm.action.ActivatePaneDirection("Up"),
+    },
+    {
+      key = "DownArrow",
+      mods = "CTRL",
+      action = wezterm.action.ActivatePaneDirection("Down"),
+    },
+    {
+      key = "LeftArrow",
+      mods = "CTRL",
+      action = wezterm.action.ActivatePaneDirection("Left"),
+    },
+    {
+      key = "RightArrow",
+      mods = "CTRL",
+      action = wezterm.action.ActivatePaneDirection("Right"),
+    },
   }
 
 return config
