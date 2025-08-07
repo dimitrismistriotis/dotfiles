@@ -67,22 +67,22 @@ config.keys = {
     },
     {
       key = "UpArrow",
-      mods = "CTRL",
+      mods="CTRL|SHIFT",
       action = wezterm.action.ActivatePaneDirection("Up"),
     },
     {
       key = "DownArrow",
-      mods = "CTRL",
+      mods="CTRL|SHIFT",
       action = wezterm.action.ActivatePaneDirection("Down"),
     },
     {
       key = "LeftArrow",
-      mods = "CTRL",
+      mods="CTRL|SHIFT",
       action = wezterm.action.ActivatePaneDirection("Left"),
     },
     {
       key = "RightArrow",
-      mods = "CTRL",
+      mods="CTRL|SHIFT",
       action = wezterm.action.ActivatePaneDirection("Right"),
     },
   }
