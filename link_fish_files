@@ -12,7 +12,7 @@ if test -f ~/.config/fish/config.fish
     echo "Config file already exists, skipping link."
 else
     echo "Linking config.fish to ~/.config/fish/config.fish"
-    ln {$current_dir}/config.fish ~/.config/fish/config.fish
+    ln {$current_dir}/fish/config.fish ~/.config/fish/config.fish
 end
 
 
@@ -22,6 +22,6 @@ if not test -d ~/.config/fish/functions
     mkdir -p ~/.config/fish/functions
 end
 
-for func_file in {$current_dir}/functions/*.fish
+for func_file in {$current_dir}/fish/functions/*.fish
     ln -s $func_file ~/.config/fish/functions/(basename $func_file)
 end

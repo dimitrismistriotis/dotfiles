@@ -4,7 +4,7 @@
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 # echo ${DIR}
 
-mkdir ~/bin
+mkdir -p ~/bin
 
 for binfile in ${MYDIR}/bin/*; do
 	echo "Linking ${binfile} if not there"
