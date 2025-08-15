@@ -4,7 +4,7 @@
 function ytt_ollama
     echo $argv[1]
     set transcript (ytt $argv[1])
-    set llm_prompt "Please summarise the following text: <text> $transcript </text>"
+    set llm_prompt "Please summarise the following text: <text> $transcript </text>. Do not prompt for any further actions."
     # echo $llm_prompt
     echo $llm_prompt | ollama run gemma3
 end
