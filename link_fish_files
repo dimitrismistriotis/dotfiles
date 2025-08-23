@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
-# set current_dir (dirname (status --current-filename))
-set current_dir (basename $PWD)
+set current_dir (dirname (status --current-filename))
 echo {$current_dir}
 
 echo "Linking fish shell's .config"
@@ -8,13 +7,21 @@ echo "Linking fish shell's .config"
 if not test -d ~/.config/fish
     mkdir -p ~/.config/fish
 end
+
 if test -f ~/.config/fish/config.fish
     echo "Config file already exists, skipping link."
 else
     echo "Linking config.fish to ~/.config/fish/config.fish"
-    ln {$current_dir}/config.fish ~/.config/fish/config.fish
+    ln {$current_dir}/fish/config.fish ~/.config/fish/config.fish
 end
 
 
 echo "Linking fish shell's functions"
-ln -s {$current_dir}/functions ~/.config/fish
+
+if not test -d ~/.config/fish/functions
+    mkdir -p ~/.config/fish/functions
+end
+
+for func_file in {$current_dir}/fish/functions/*.fish
+    ln -s $func_file ~/.config/fish/functions/(basename $func_file)
+end
