@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Things I run together to refresh my package lists.
+#
+
+set -euo pipefail
+
+# This script refreshes the package lists for the system's package manager.
+sudo apt-get update
+sudo apt-get upgrade -y
+
+brew update
+brew upgrade
+brew autoremove
