@@ -21,7 +21,7 @@
   "git.openRepositoryInParentFolders": "always",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Shades of Purple (Super Dark)",
   "window.titleBarStyle": "custom",
   "ruff.path": [
     "/home/linuxbrew/.linuxbrew/bin/ruff"
