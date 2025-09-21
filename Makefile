@@ -2,6 +2,7 @@
 help:
 	@echo "make help"
 	@echo "make additional_packages"
+	@echo "make arch_additional"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
@@ -26,6 +27,20 @@ additional_packages:
 	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
 	sudo apt-get update
 	sudo apt-get install -y enpass
+
+
+#
+# For additional on Arch
+#
+.PHONY arch_additional:
+arch_additional:
+	@echo "Additional for Arch Installation"
+	sudo pacman -S micro # Micro editor
+	#
+	# Was instructed to use yay:
+	#
+	yay -S vscodium-bin # VSCodium
+	yay -S enpass-bin   # Enpass
 
 
 .PHONY install_brew:
@@ -215,3 +230,4 @@ ulauncher_additions:
 # or with Gradia:
 # gradia --screenshot=INTERACTIVE
 #
+
