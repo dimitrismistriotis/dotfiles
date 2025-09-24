@@ -3,6 +3,7 @@ help:
 	@echo "make help"
 	@echo "make additional_packages"
 	@echo "make arch_additional"
+	@echo "make customise_omarchy"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
@@ -42,6 +43,10 @@ arch_additional:
 	yay -S vscodium-bin # VSCodium
 	yay -S enpass-bin   # Enpass
 
+.PHONY customise_omarchy:
+customise_omarchy:
+	@echo "Customise Omarchy"
+	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
