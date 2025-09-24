@@ -42,6 +42,7 @@ arch_additional:
 	#
 	yay -S vscodium-bin # VSCodium
 	yay -S enpass-bin   # Enpass
+	yay -S ttf-nerd-fonts-symbols-mono wezterm
 
 .PHONY customise_omarchy:
 customise_omarchy:
