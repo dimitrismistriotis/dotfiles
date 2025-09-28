@@ -46,6 +46,7 @@ arch_additional:
 	yay -S enpass-bin		# Enpass
 	yay -S ttf-nerd-fonts-symbols-mono wezterm
 	yay -S fish				# Fish shell
+	yay -S claude-code		# Claude Code; using it a lot lately
 
 .PHONY customise_omarchy:
 customise_omarchy:
