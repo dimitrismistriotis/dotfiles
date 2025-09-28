@@ -40,9 +40,12 @@ arch_additional:
 	#
 	# Was instructed to use yay:
 	#
-	yay -S vscodium-bin # VSCodium
-	yay -S enpass-bin   # Enpass
+	yay -S ttf-fira-code	# Font used in Wezterm
+	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
+	yay -S vscodium-bin		# VSCodium
+	yay -S enpass-bin		# Enpass
 	yay -S ttf-nerd-fonts-symbols-mono wezterm
+	yay -S fish				# Fish shell
 
 .PHONY customise_omarchy:
 customise_omarchy:
