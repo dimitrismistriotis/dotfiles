@@ -48,6 +48,7 @@ arch_additional:
 	yay -S fish				# Fish shell
 	yay -S claude-code		# Claude Code; using it a lot lately
 	yay -S telegram-desktop	# Telegram Desktop
+	yay -S uv				# Astral's uv for Python
 
 .PHONY customise_omarchy:
 customise_omarchy:
