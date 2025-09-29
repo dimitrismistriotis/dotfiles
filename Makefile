@@ -47,6 +47,7 @@ arch_additional:
 	yay -S ttf-nerd-fonts-symbols-mono wezterm
 	yay -S fish				# Fish shell
 	yay -S claude-code		# Claude Code; using it a lot lately
+	yay -S telegram-desktop	# Telegram Desktop
 
 .PHONY customise_omarchy:
 customise_omarchy:
@@ -240,4 +241,3 @@ ulauncher_additions:
 # or with Gradia:
 # gradia --screenshot=INTERACTIVE
 #
-
