@@ -64,3 +64,7 @@ Background image for WezTerm:
 
 - Organise `Makefile` to allow actions to happen in sequence
 - Moce `initialize` commands to `Makefile`
+
+### Cloudflare DNS
+
+See: <https://developers.cloudflare.com/1.1.1.1/ip-addresses/>
