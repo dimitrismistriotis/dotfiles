@@ -36,6 +36,7 @@ additional_packages:
 .PHONY arch_additional:
 arch_additional:
 	@echo "Additional for Arch Installation"
+	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
 	#
 	# Was instructed to use yay:
@@ -242,3 +243,4 @@ ulauncher_additions:
 # or with Gradia:
 # gradia --screenshot=INTERACTIVE
 #
+
