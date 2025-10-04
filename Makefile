@@ -38,6 +38,7 @@ arch_additional:
 	@echo "Additional for Arch Installation"
 	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
+	sudo pacman -S git-delta
 	#
 	# Was instructed to use yay:
 	#
