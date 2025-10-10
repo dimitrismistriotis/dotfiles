@@ -29,5 +29,6 @@
   "ruff.nativeServer": "on",
   "[terraform]": {
       "editor.formatOnSave": true
-  }
+  },
+  "github.copilot.nextEditSuggestions.enabled": true
 }
