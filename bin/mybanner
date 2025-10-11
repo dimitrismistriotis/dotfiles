@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 figlet "$1" | \
-  python -c 'import sys;[sys.stdout.write(line.rstrip() + "\n") for line in sys.stdin]'
+  python -c 'import sys;[sys.stdout.write("# " + line.rstrip() + "\n") for line in sys.stdin]'
 #
 # Add input in captialised string to allow searching
 #
-echo "${1^l}"
-echo ""
+echo "# ${1^l}"
+echo "# "
