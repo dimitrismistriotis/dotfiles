@@ -2,6 +2,8 @@
 help:
 	@echo "make help"
 	@echo "make additional_packages"
+	@echo "make arch_additional"
+	@echo "make customise_omarchy"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
@@ -27,6 +29,33 @@ additional_packages:
 	sudo apt-get update
 	sudo apt-get install -y enpass
 
+
+#
+# For additional on Arch
+#
+.PHONY arch_additional:
+arch_additional:
+	@echo "Additional for Arch Installation"
+	sudo pacman -Syy  # Update Packages
+	sudo pacman -S micro # Micro editor
+	sudo pacman -S git-delta
+	#
+	# Was instructed to use yay:
+	#
+	yay -S ttf-fira-code	# Font used in Wezterm
+	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
+	yay -S vscodium-bin		# VSCodium
+	yay -S enpass-bin		# Enpass
+	yay -S ttf-nerd-fonts-symbols-mono wezterm
+	yay -S fish				# Fish shell
+	yay -S claude-code		# Claude Code; using it a lot lately
+	yay -S telegram-desktop	# Telegram Desktop
+	yay -S uv				# Astral's uv for Python
+
+.PHONY customise_omarchy:
+customise_omarchy:
+	@echo "Customise Omarchy"
+	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
@@ -215,3 +244,4 @@ ulauncher_additions:
 # or with Gradia:
 # gradia --screenshot=INTERACTIVE
 #
+

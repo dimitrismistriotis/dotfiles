@@ -31,7 +31,9 @@ if status is-interactive
      # Homebrew:
      # https://docs.brew.sh/Homebrew-on-Linux
      #
-     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+     if test -f /home/linuxbrew/.linuxbrew/bin/brew
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+     end
      #
      # Starship:
      # https://starship.rs/

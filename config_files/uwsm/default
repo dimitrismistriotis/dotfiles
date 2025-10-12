@@ -1,0 +1,9 @@
+#
+# ~/.config/uwsm/default
+#
+# Changes require a relaunch of Hyprland to take effect.
+#
+#export TERMINAL=kitty
+export TERMINAL=wezterm
+# export EDITOR=nvim
+export EDITOR=micro
