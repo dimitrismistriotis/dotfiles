@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 #
-# Create a Wezterm workspace with 2 tabs
+# Create a Wezterm workspace with 1 tab
 # Usage: workspace <directory> <script>
 #
 
@@ -21,14 +21,12 @@ end
 # Get absolute path
 set abs_dir (realpath $dir)
 
-# Get current pane ID to ensure we create tabs in the same window
-set pane_id (wezterm cli get-pane-direction next 2>/dev/null; or wezterm cli list --format json | jq -r '.[0].pane_id')
-
-# Create first tab and run the script
-wezterm cli spawn --cwd $abs_dir -- fish -c "$script; exec fish"
-
-# Create second tab in the same window (this will be the default/active one)
+# Create a second tab in the same directory
 wezterm cli spawn --cwd $abs_dir
 
-# Activate the second tab
-wezterm cli activate-tab --tab-relative -1
+# Change to the directory in the current tab
+cd $abs_dir
+
+# Run the script in the current tab
+fish -c "$script; exec fish"
+
