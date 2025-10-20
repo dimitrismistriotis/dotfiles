@@ -29,5 +29,6 @@
   "[terraform]": {
       "editor.formatOnSave": true
   },
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Shades of Purple (Super Dark)"
 }
