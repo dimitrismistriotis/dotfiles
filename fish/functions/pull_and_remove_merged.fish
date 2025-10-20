@@ -3,7 +3,7 @@ function pull_and_remove_merged
 	git fetch -p
 	echo ""  # Spacing
 	if type -q git-trim
-		git-trim --no-confirm
+		git-trim --no-confirm --delete 'remote:*'
 	else
 		delete_merged_branches
 	end
