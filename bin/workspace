@@ -1,0 +1,32 @@
+#!/usr/bin/env fish
+#
+# Create a Wezterm workspace with 1 tab
+# Usage: workspace <directory> <script>
+#
+
+if test (count $argv) -lt 2
+    echo "Usage: workspace <directory> <script>"
+    exit 1
+end
+
+set dir $argv[1]
+set script $argv[2]
+
+# Verify directory exists
+if not test -d $dir
+    echo "Error: Directory '$dir' does not exist"
+    exit 1
+end
+
+# Get absolute path
+set abs_dir (realpath $dir)
+
+# Create a second tab in the same directory
+wezterm cli spawn --cwd $abs_dir
+
+# Change to the directory in the current tab
+cd $abs_dir
+
+# Run the script in the current tab
+fish -c "$script; exec fish"
+

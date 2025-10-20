@@ -21,7 +21,6 @@
   "git.openRepositoryInParentFolders": "always",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Shades of Purple (Super Dark)",
   "window.titleBarStyle": "custom",
   "ruff.path": [
     "/home/linuxbrew/.linuxbrew/bin/ruff"
@@ -30,5 +29,6 @@
   "[terraform]": {
       "editor.formatOnSave": true
   },
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Shades of Purple (Super Dark)"
 }
