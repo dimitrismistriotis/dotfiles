@@ -4,6 +4,8 @@ function pull_and_remove_merged
 	echo ""  # Spacing
 	if type -q git-trim
 		git-trim --no-confirm --delete 'remote:*'
+		# Sometimes git-trim is unresponsive
+		delete_merged_branches
 	else
 		delete_merged_branches
 	end
