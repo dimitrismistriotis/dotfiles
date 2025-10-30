@@ -2,9 +2,12 @@
 help:
 	@echo "make help"
 	@echo "make additional_packages"
+	@echo "make arch_additional"
+	@echo "make customise_omarchy"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
+	@echo "make link_ghostty_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make link_code_configuration"
 	@echo "make wezterm_config"
@@ -28,6 +31,36 @@ additional_packages:
 	sudo apt-get install -y enpass
 
 
+#
+# For additional on Arch
+#
+.PHONY arch_additional:
+arch_additional:
+	@echo "Additional for Arch Installation"
+	sudo pacman -Syy  # Update Packages
+	sudo pacman -S micro # Micro editor
+	sudo pacman -S git-delta
+	#
+	# Was instructed to use yay:
+	#
+	yay -S ttf-fira-code	# Font used in Wezterm
+	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
+	yay -S vscodium-bin		# VSCodium
+	yay -S enpass-bin		# Enpass
+	yay -S ttf-nerd-fonts-symbols-mono wezterm
+	yay -S fish				# Fish shell
+	yay -S claude-code		# Claude Code; using it a lot lately
+	yay -S telegram-desktop	# Telegram Desktop
+	yay -S uv				# Astral's uv for Python
+	yay -Sy brave-bin		# Brave Browser
+	yay -Sy lollypop		# Lollypop Player
+
+
+.PHONY customise_omarchy:
+customise_omarchy:
+	@echo "Customise Omarchy"
+	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
+
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
@@ -44,7 +77,6 @@ snap_packages:  # Brew packages with utilities and frameworks
 	# Gradia from "It's FOSS - Linux Portal":
 	#
 	# https://www.youtube.com/watch?v=OQqv1UeURqA
-	#
 	sudo snap install gradia
 
 
@@ -106,11 +138,9 @@ zoxide_for_bash_and_fish:
 	@echo "zoxide init fish | source"
 
 
-#
 # https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
 # To allow removal if packages not there, example KDE:
 # https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-#
 .PHONY remove_screen_reader:
 remove_screen_reader:
 	sudo dpkg --purge orca gnome-orca
@@ -120,6 +150,19 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
+
+.PHONY link_ghostty_configuration:
+link_ghostty_configuration:
+	mkdir -p ~/.config/ghostty
+	ln -s $(CURDIR)/config_files/ghostty/config ~/.config/ghostty/config
+
+
+.PHONY link_fish_configuration:
+link_fish_configuration:
+	mkdir -p ~/.config/fish/functions
+	rm ~/.config/fish/config.fish
+	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
+	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
@@ -215,3 +258,4 @@ ulauncher_additions:
 # or with Gradia:
 # gradia --screenshot=INTERACTIVE
 #
+
