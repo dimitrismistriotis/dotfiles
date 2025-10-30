@@ -7,6 +7,7 @@ help:
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
+	@echo "make link_ghostty_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make link_code_configuration"
 	@echo "make wezterm_config"
@@ -76,7 +77,6 @@ snap_packages:  # Brew packages with utilities and frameworks
 	# Gradia from "It's FOSS - Linux Portal":
 	#
 	# https://www.youtube.com/watch?v=OQqv1UeURqA
-	#
 	sudo snap install gradia
 
 
@@ -138,11 +138,9 @@ zoxide_for_bash_and_fish:
 	@echo "zoxide init fish | source"
 
 
-#
 # https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
 # To allow removal if packages not there, example KDE:
 # https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-#
 .PHONY remove_screen_reader:
 remove_screen_reader:
 	sudo dpkg --purge orca gnome-orca
@@ -152,6 +150,15 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
+.PHONY link_ghostty_configuration:
+link_ghostty_configuration:
+	mkdir -p ~/.config/ghostty
+	ln -s $(CURDIR)/config_files/ghostty/config ~/.config/ghostty/config
+
+.PHONY link_fish_configuration:
+link_fish_configuration:
+	rm ~/.config/fish/config.fish
+	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
