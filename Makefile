@@ -159,8 +159,10 @@ link_ghostty_configuration:
 
 .PHONY link_fish_configuration:
 link_fish_configuration:
+	mkdir -p ~/.config/fish/functions
 	rm ~/.config/fish/config.fish
 	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
+	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:

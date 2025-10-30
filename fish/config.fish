@@ -20,9 +20,12 @@ if status is-interactive
 
      # Zoxide
      # https://github.com/ajeetdsouza/zoxide
+     
      zoxide init fish | source
+     
      # Homebrew:
      # https://docs.brew.sh/Homebrew-on-Linux
+
      if test -f /home/linuxbrew/.linuxbrew/bin/brew
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
      end
