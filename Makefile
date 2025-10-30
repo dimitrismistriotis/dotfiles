@@ -150,10 +150,12 @@ remove_screen_reader:
 link_starship_configuration:
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
+
 .PHONY link_ghostty_configuration:
 link_ghostty_configuration:
 	mkdir -p ~/.config/ghostty
 	ln -s $(CURDIR)/config_files/ghostty/config ~/.config/ghostty/config
+
 
 .PHONY link_fish_configuration:
 link_fish_configuration:
