@@ -3,7 +3,7 @@ help:
 	@echo "make help"
 	@echo "make additional_packages"
 	@echo "make arch_additional"
-	@echo "make customise_omarchy"
+	@echo "make omarchy_extra_themes"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
 	@echo "make link_starship_configuration"
