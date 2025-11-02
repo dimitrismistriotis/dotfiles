@@ -10,6 +10,7 @@ help:
 	@echo "make link_ghostty_configuration"
 	@echo "make link_tmux_configuration"
 	@echo "make link_code_configuration"
+	@echo "make link_umsm_default"
 	@echo "make wezterm_config"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
@@ -259,3 +260,32 @@ ulauncher_additions:
 # gradia --screenshot=INTERACTIVE
 #
 
+#                    ▄
+#                   ▟█▙
+#                  ▟███▙
+#                 ▟█████▙
+#                ▟███████▙
+#               ▂▔▀▜██████▙
+#              ▟██▅▂▝▜█████▙
+#             ▟█████████████▙
+#            ▟███████████████▙
+#           ▟█████████████████▙
+#          ▟███████████████████▙
+#         ▟█████████▛▀▀▜████████▙
+#        ▟████████▛      ▜███████▙
+#       ▟█████████        ████████▙
+#      ▟██████████        █████▆▅▄▃▂
+#     ▟██████████▛        ▜█████████▙
+#    ▟██████▀▀▀              ▀▀██████▙
+#   ▟███▀▘                       ▝▀███▙
+#  ▟▛▀                               ▀▜▙
+#
+# Arch Specific
+# Logo: https://gist.github.com/LnLcFlx/18eb10bc74ed9e497d0fedc69468f933 
+# and https://www.reddit.com/r/archlinux/comments/g8iygf/arch_linux_logo_using_unicode_block_characters/
+
+.PHONY link_umsm_default:
+link_umsm_default:
+	rm ~/.config/uwsm/default
+	ln -s $(CURDIR)/dot_config/uwsm/default ~/.config/uwsm/default
+	ls -lah ~/.config/uwsm/default
