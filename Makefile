@@ -32,36 +32,6 @@ additional_packages:
 	sudo apt-get install -y enpass
 
 
-#
-# For additional on Arch
-#
-.PHONY arch_additional:
-arch_additional:
-	@echo "Additional for Arch Installation"
-	sudo pacman -Syy  # Update Packages
-	sudo pacman -S micro # Micro editor
-	sudo pacman -S git-delta
-	#
-	# Was instructed to use yay:
-	#
-	yay -S ttf-fira-code	# Font used in Wezterm
-	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
-	yay -S vscodium-bin		# VSCodium
-	yay -S enpass-bin		# Enpass
-	yay -S ttf-nerd-fonts-symbols-mono wezterm
-	yay -S fish				# Fish shell
-	yay -S claude-code		# Claude Code; using it a lot lately
-	yay -S telegram-desktop	# Telegram Desktop
-	yay -S uv				# Astral's uv for Python
-	yay -Sy brave-bin		# Brave Browser
-	yay -Sy lollypop		# Lollypop Player
-
-
-.PHONY customise_omarchy:
-customise_omarchy:
-	@echo "Customise Omarchy"
-	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
-
 .PHONY install_brew:
 install_brew:  # Run Homebrew Installation Script
 	./install_homebrew
@@ -273,3 +243,30 @@ link_umsm_default:
 	rm ~/.config/uwsm/default
 	ln -s $(CURDIR)/dot_config/uwsm/default ~/.config/uwsm/default
 	ls -lah ~/.config/uwsm/default
+
+.PHONY arch_additional:
+arch_additional:
+	@echo "Additional for Arch Installation"
+	sudo pacman -Syy  # Update Packages
+	sudo pacman -S micro # Micro editor
+	sudo pacman -S git-delta
+	#
+	# Was instructed to use yay:
+	#
+	yay -S ttf-fira-code	# Font used in Wezterm
+	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
+	yay -S vscodium-bin		# VSCodium
+	yay -S enpass-bin		# Enpass
+	yay -S ttf-nerd-fonts-symbols-mono wezterm
+	yay -S fish				# Fish shell
+	yay -S claude-code		# Claude Code; using it a lot lately
+	yay -S telegram-desktop	# Telegram Desktop
+	yay -S uv				# Astral's uv for Python
+	yay -Sy brave-bin		# Brave Browser
+	yay -Sy lollypop		# Lollypop Player
+
+
+.PHONY omarchy_extra_themes:
+omarchy_extra_themes:
+	@echo "Omarchy Extra Themes"
+	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
