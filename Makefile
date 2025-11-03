@@ -264,6 +264,7 @@ arch_additional:
 	yay -S uv				# Astral's uv for Python
 	yay -Sy brave-bin		# Brave Browser
 	yay -Sy lollypop		# Lollypop Player
+	yay -Sy git-trim		# To remove merged branches
 
 
 .PHONY omarchy_extra_themes:
