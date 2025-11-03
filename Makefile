@@ -207,12 +207,11 @@ download_nerdfonts:
 ,PHONY: install_additional_packages
 install_additional_packages:
 	@echo "Install Additional Packages"
-	#
+
 	# Maintenance
 	#
 	sudo apt autoremove
 
-	#
 	# Exfat support for USB drives: allows to copy files larger than 4.3Gb
 	# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
 	#
@@ -227,21 +226,6 @@ configure_fastfetch:
 	ln -s $(CURDIR)/config_files/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 	rm -rf ~/.config/fastfetch/assets/greek_fire_no_background.png
 	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
-
-
-
-.PHONY setup_wallpaper_castle:
-setup_wallpaper_castle:
-	@echo "Wallpaper Setup - Legoland Welsh Castle"
-	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
-	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_welsh_castle.jpg"
-
-
-.PHONY setup_wallpaper_squirrels:
-setup_wallpaper_squirrels:
-	@echo "Wallpaper Setup - Legoland Squirrels"
-	gsettings set org.gnome.desktop.background picture-uri "file://$(CURDIR)/images/legoland_squirrels.jpg"
-	gsettings set org.gnome.desktop.background picture-uri-dark "file://$(CURDIR)/images/legoland_squirrels.jpg"
 
 
 .PHONY ulauncher_additions:
@@ -281,7 +265,7 @@ ulauncher_additions:
 #  ▟▛▀                               ▀▜▙
 #
 # Arch Specific
-# Logo: https://gist.github.com/LnLcFlx/18eb10bc74ed9e497d0fedc69468f933 
+# Logo: https://gist.github.com/LnLcFlx/18eb10bc74ed9e497d0fedc69468f933
 # and https://www.reddit.com/r/archlinux/comments/g8iygf/arch_linux_logo_using_unicode_block_characters/
 
 .PHONY link_umsm_default:
