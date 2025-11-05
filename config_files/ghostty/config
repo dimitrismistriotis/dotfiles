@@ -18,6 +18,8 @@ gtk-toolbar-style = flat
 # Background
 background-opacity = 0.85
 
+theme = TokyoNight
+
 # Cursor styling
 cursor-style = "block"
 cursor-style-blink = false
@@ -37,10 +39,6 @@ command = /usr/bin/fish --login --interactive
 # config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
 # config.font_size = 12
 # 
-# --
-# -- Theme
-# --
-# config.color_scheme = 'Tokyo Night (Gogh)'
 # 
 # config.keys = {
 #     -- Keybindings:
