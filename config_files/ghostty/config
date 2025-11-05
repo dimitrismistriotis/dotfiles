@@ -31,3 +31,52 @@ keybind = shift+insert=paste_from_clipboard
 keybind = control+insert=copy_to_clipboard
 
 command = /usr/bin/fish --login --interactive
+# 
+# config.window_decorations = "TITLE | RESIZE"  -- Default for reference
+# 
+# config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
+# config.font_size = 12
+# 
+# --
+# -- Theme
+# --
+# config.color_scheme = 'Tokyo Night (Gogh)'
+# 
+# config.keys = {
+#     -- Keybindings:
+#     {
+#       key = "\\",
+#       mods = "CTRL",
+#       action = wezterm.action.SplitHorizontal,
+#     },
+#     {
+#       key = "-",
+#       mods = "CTRL",
+#       action = wezterm.action.SplitVertical,
+#     },
+#     {
+#       key="\"",
+#       mods="CTRL|SHIFT",
+#       action=wezterm.action.ActivateTab(1),
+#     },
+#     {
+#       key = "UpArrow",
+#       mods="CTRL|SHIFT",
+#       action = wezterm.action.ActivatePaneDirection("Up"),
+#     },
+#     {
+#       key = "DownArrow",
+#       mods="CTRL|SHIFT",
+#       action = wezterm.action.ActivatePaneDirection("Down"),
+#     },
+#     {
+#       key = "LeftArrow",
+#       mods="CTRL|SHIFT",
+#       action = wezterm.action.ActivatePaneDirection("Left"),
+#     },
+#     {
+#       key = "RightArrow",
+#       mods="CTRL|SHIFT",
+#       action = wezterm.action.ActivatePaneDirection("Right"),
+#     },
+#   }
