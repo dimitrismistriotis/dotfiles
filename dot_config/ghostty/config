@@ -18,8 +18,6 @@ gtk-toolbar-style = flat
 # Background
 background-opacity = 0.85
 
-theme = TokyoNight
-
 # Cursor styling
 cursor-style = "block"
 cursor-style-blink = false
