@@ -38,12 +38,6 @@ keybind = ctrl+shift+end=goto_tab:999999
 
 command = /usr/bin/fish --login --interactive
 
-# config.window_decorations = "TITLE | RESIZE"  -- Default for reference
-#
-# config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
-# config.font_size = 12
-# This is the configuration file for Ghostty.
-#
 # This template file has been automatically created at the following
 # path since Ghostty couldn't find any existing config files on your system:
 #
