@@ -35,38 +35,22 @@ keybind = ctrl+backslash=new_split:right
 keybind = ctrl+minus=new_split:down
 keybind = ctrl+shift+up=goto_split:top
 keybind = ctrl+shift+down=goto_split:bottom
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right
 
 command = /usr/bin/fish --login --interactive
-#
+
 # config.window_decorations = "TITLE | RESIZE"  -- Default for reference
 #
 # config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
 # config.font_size = 12
-#
-#
+
 # config.keys = {
 #     {
 #       key="\"",
 #       mods="CTRL|SHIFT",
 #       action=wezterm.action.ActivateTab(1),
 #     },
-#     {
-#       key = "DownArrow",
-#       mods="CTRL|SHIFT",
-#       action = wezterm.action.ActivatePaneDirection("Down"),
-#     },
-#     {
-#       key = "LeftArrow",
-#       mods="CTRL|SHIFT",
-#       action = wezterm.action.ActivatePaneDirection("Left"),
-#     },
-#     {
-#       key = "RightArrow",
-#       mods="CTRL|SHIFT",
-#       action = wezterm.action.ActivatePaneDirection("Right"),
-#     },
-#   }
-
 
 # This is the configuration file for Ghostty.
 #
