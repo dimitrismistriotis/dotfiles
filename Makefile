@@ -125,7 +125,8 @@ link_starship_configuration:
 .PHONY link_ghostty_configuration:
 link_ghostty_configuration:
 	mkdir -p ~/.config/ghostty
-	ln -s $(CURDIR)/config_files/ghostty/config ~/.config/ghostty/config
+	rm -f ~/.config/ghostty/config
+	ln -s $(CURDIR)/dot_config/ghostty/config ~/.config/ghostty/config
 
 
 .PHONY link_fish_configuration:
