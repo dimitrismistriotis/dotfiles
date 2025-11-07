@@ -36,6 +36,7 @@ keybind = ctrl+shift+down=goto_split:bottom
 keybind = ctrl+shift+left=goto_split:left
 keybind = ctrl+shift+right=goto_split:right
 keybind = ctrl+shift+home=goto_tab:1
+keybind = ctrl+shift+end=goto_tab:999999
 
 command = /usr/bin/fish --login --interactive
 
