@@ -119,6 +119,7 @@ remove_screen_reader:
 
 .PHONY link_starship_configuration:
 link_starship_configuration:
+	rm -f ~/.config/starship.toml
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
 
