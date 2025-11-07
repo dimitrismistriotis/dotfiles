@@ -62,7 +62,7 @@ resize-overlay = never
 gtk-toolbar-style = flat
 
 # Background
-background-opacity = 0.85
+background-opacity = 0.95
 
 # Cursor styling
 cursor-style = "block"
