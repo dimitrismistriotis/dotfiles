@@ -27,6 +27,8 @@ omakumb
 omarchy
 Omarchy
 pacman
+softwrap
+tabstospaces
 ulauncher
 umsm
 uwsm
