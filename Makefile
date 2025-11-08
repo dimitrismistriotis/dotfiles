@@ -271,4 +271,5 @@ arch_additional:
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes:
 	@echo "Omarchy Extra Themes"
+	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
