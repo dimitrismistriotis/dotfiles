@@ -266,6 +266,7 @@ arch_additional:
 	yay -Sy brave-bin		# Brave Browser
 	yay -Sy lollypop		# Lollypop Player
 	yay -Sy git-trim		# To remove merged branches
+	yay -Sy figlet			# Using it for ASCII banners
 
 
 .PHONY omarchy_extra_themes:
