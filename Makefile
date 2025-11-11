@@ -204,17 +204,6 @@ ulauncher_additions:
 	$(CURDIR)/setup_ulauncher_additions
 
 
-#
-# Follow Ups:
-#
-# Need to fix flameshot:
-# script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
-# and associate with print screen automatically
-#
-# or with Gradia:
-# gradia --screenshot=INTERACTIVE
-#
-
 #                    ▄
 #                   ▟█▙
 #                  ▟███▙
@@ -266,6 +255,7 @@ arch_additional:
 	yay -Sy brave-bin		# Brave Browser
 	yay -Sy lollypop		# Lollypop Player
 	yay -Sy git-trim		# To remove merged branches
+	yay -Sy figlet			# Using it for ASCII banners
 
 
 .PHONY omarchy_extra_themes:
