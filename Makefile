@@ -139,6 +139,7 @@ link_fish_configuration:
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration:
+	rm -f ~/.tmux.conf
 	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
 
 
@@ -257,7 +258,7 @@ arch_additional:
 	yay -Sy lollypop		# Lollypop Player
 	yay -Sy git-trim		# To remove merged branches
 	yay -Sy figlet			# Using it for ASCII banners
-
+	yay -Sy tmux			# Our beloved multiplexer
 
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes:
