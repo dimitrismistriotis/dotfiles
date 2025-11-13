@@ -31,4 +31,3 @@ tabstospaces
 ulauncher
 umsm
 uwsm
-wezterm
