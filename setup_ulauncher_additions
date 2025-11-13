@@ -21,23 +21,3 @@ EOF
 
 echo "Desktop entry created at ~/.local/share/applications/gradia-interactive.desktop"
 echo "You can now add 'gradia' as a keyword in Ulauncher that runs 'gradia --screenshot=INTERACTIVE'"
-
-echo "Adding flameshot command to Ulauncher"
-
-# Create desktop entry for flameshot
-cat > ~/.local/share/applications/flameshot-gui.desktop << 'EOF'
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Flameshot GUI
-GenericName=Screenshot Tool
-Comment=Take screenshots with flameshot
-Exec=script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null
-Icon=$(pwd)/icons/flameshot-icon.svg
-Terminal=false
-Categories=Graphics;Photography;
-Keywords=screenshot;capture;flameshot;
-EOF
-
-echo "Desktop entry created at ~/.local/share/applications/flameshot-gui.desktop"
-echo "You can now add 'flameshot' as a keyword in Ulauncher that runs the flameshot GUI"
