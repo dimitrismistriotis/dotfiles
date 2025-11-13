@@ -230,7 +230,6 @@ arch_additional:
 
 	# Was instructed to use yay:
 
-	yay -S ttf-fira-code								# Font used in some terminals and editors
 	yay -S ttf-nerd-fonts-symbols-mono 	# Nerd Font Symbols Mono
 	yay -S code-nerd-fonts							# Nerd fonts
 	yay -S vscodium-bin									# VSCodium
