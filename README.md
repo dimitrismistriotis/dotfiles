@@ -54,12 +54,6 @@ VSCodium is a community-driven, freely-licensed binary distribution of Microsoft
 
 <https://vscodium.com/>
 
-## Attribution
-
-Background image for WezTerm:
-
-<https://www.freepik.com/free-vector/gradient-particle-wave-background_45176454.htm>
-
 ## Next Steps - Ongoing
 
 - Organise `Makefile` to allow actions to happen in sequence

@@ -11,10 +11,8 @@ help:
 	@echo "make link_tmux_configuration"
 	@echo "make link_code_configuration"
 	@echo "make link_umsm_default"
-	@echo "make wezterm_config"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
-	@echo "make download_nerdfonts"
 	@echo "make install_additional_packages"
 	@echo "make configure_fastfetch"
 
@@ -156,25 +154,11 @@ git_config:
 	git config --global merge.commit no
 	git config --global merge.ff no
 
-.PHONY wezterm_config:
-wezterm_config:
-	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
-	echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-	sudo apt update
-	sudo apt install wezterm
-	ln -s $(CURDIR)/dot_wezterm.lua  ~/.wezterm.lua
-
 
 .PHONY post_omakumb_gnome_tweaking:
 post_omakumb_gnome_tweaking:
 	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
 	$(CURDIR)/gnome/setup_burn_my_windows
-
-
-.PHONY download_nerdfonts:
-download_nerdfonts:
-	@echo "Download NerdFonts"
-	$(CURDIR)/font_downloader_and_installer
 
 
 ,PHONY: install_additional_packages
@@ -236,29 +220,30 @@ link_umsm_default:
 	ln -s $(CURDIR)/dot_config/uwsm/default ~/.config/uwsm/default
 	ls -lah ~/.config/uwsm/default
 
+
 .PHONY arch_additional:
 arch_additional:
 	@echo "Additional for Arch Installation"
 	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
 	sudo pacman -S git-delta
-	#
+
 	# Was instructed to use yay:
-	#
-	yay -S ttf-fira-code	# Font used in Wezterm
-	yay -S code-nerd-fonts	# Nerd fonts are used in Wezterm
-	yay -S vscodium-bin		# VSCodium
-	yay -S enpass-bin		# Enpass
-	yay -S ttf-nerd-fonts-symbols-mono wezterm
-	yay -S fish				# Fish shell
-	yay -S claude-code		# Claude Code; using it a lot lately
-	yay -S telegram-desktop	# Telegram Desktop
-	yay -S uv				# Astral's uv for Python
-	yay -Sy brave-bin		# Brave Browser
-	yay -Sy lollypop		# Lollypop Player
-	yay -Sy git-trim		# To remove merged branches
-	yay -Sy figlet			# Using it for ASCII banners
-	yay -Sy tmux			# Our beloved multiplexer
+
+	yay -S ttf-nerd-fonts-symbols-mono 	# Nerd Font Symbols Mono
+	yay -S code-nerd-fonts							# Nerd fonts
+	yay -S vscodium-bin									# VSCodium
+	yay -S enpass-bin										# Enpass
+	yay -S fish													# Fish shell
+	yay -S claude-code									# Claude Code; using it a lot lately
+	yay -S telegram-desktop							# Telegram Desktop
+	yay -S uv														# Astral's uv for Python
+	yay -Sy brave-bin										# Brave Browser
+	yay -Sy lollypop										# Lollypop Player
+	yay -Sy git-trim										# To remove merged branches
+	yay -Sy figlet											# Using it for ASCII banners
+	yay -Sy tmux												# Our beloved multiplexer
+
 
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes:

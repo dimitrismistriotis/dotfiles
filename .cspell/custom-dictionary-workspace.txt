@@ -11,8 +11,6 @@ Exfat
 fastfetch
 Fastfetch
 figlet
-fira
-FiraCode
 FOSS
 ghostty
 gpgsign
@@ -31,4 +29,3 @@ tabstospaces
 ulauncher
 umsm
 uwsm
-wezterm
