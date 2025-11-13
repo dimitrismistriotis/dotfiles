@@ -17,11 +17,8 @@
 [pull]
 	rebase = true
 
-#
-#
 # Setup from following article:
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
-#
 [column]
  	ui = auto
 [branch]
@@ -35,10 +32,9 @@
 [commit]
 	# gpgsign = true
 	verbose = true
-#
+
 # Use Delta https://github.com/dandavison/delta for diffs
 # brew install git-delta
-#
 [core]
     pager = delta
 
