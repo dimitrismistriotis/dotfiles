@@ -13,7 +13,6 @@ Fastfetch
 figlet
 fira
 FiraCode
-flameshot
 FOSS
 ghostty
 gpgsign
