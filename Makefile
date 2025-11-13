@@ -13,7 +13,6 @@ help:
 	@echo "make link_umsm_default"
 	@echo "make git_config"
 	@echo "make post_omakumb_gnome_tweaking"
-	@echo "make download_nerdfonts"
 	@echo "make install_additional_packages"
 	@echo "make configure_fastfetch"
 
@@ -160,12 +159,6 @@ git_config:
 post_omakumb_gnome_tweaking:
 	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
 	$(CURDIR)/gnome/setup_burn_my_windows
-
-
-.PHONY download_nerdfonts:
-download_nerdfonts:
-	@echo "Download NerdFonts"
-	$(CURDIR)/font_downloader_and_installer
 
 
 ,PHONY: install_additional_packages
