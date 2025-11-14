@@ -2,7 +2,6 @@
 help:
 	@echo "make help"
 	@echo "make additional_packages"
-	@echo "make arch_additional"
 	@echo "make omarchy_extra_themes"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
@@ -12,22 +11,8 @@ help:
 	@echo "make link_code_configuration"
 	@echo "make link_umsm_default"
 	@echo "make git_config"
-	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make install_additional_packages"
 	@echo "make configure_fastfetch"
-
-
-.PHONY additional_packages:
-additional_packages:
-	@echo "Install Additional Packages"
-	@echo "Cromium"
-	sudo apt install -y chromium
-	sudo apt-get install -y wl-clipboard
-	@echo "Enpass"
-	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
-	sudo apt-get update
-	sudo apt-get install -y enpass
 
 
 .PHONY install_brew:
@@ -155,12 +140,6 @@ git_config:
 	git config --global merge.ff no
 
 
-.PHONY post_omakumb_gnome_tweaking:
-post_omakumb_gnome_tweaking:
-	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
-	$(CURDIR)/gnome/setup_burn_my_windows
-
-
 ,PHONY: install_additional_packages
 install_additional_packages:
 	@echo "Install Additional Packages"
@@ -221,8 +200,8 @@ link_umsm_default:
 	ls -lah ~/.config/uwsm/default
 
 
-.PHONY arch_additional:
-arch_additional:
+.PHONY additional_packages:
+additional_packages:
 	@echo "Additional for Arch Installation"
 	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
