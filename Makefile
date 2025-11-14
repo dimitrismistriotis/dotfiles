@@ -216,19 +216,18 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	# Was instructed to use yay:
 
-	yay -S ttf-nerd-fonts-symbols-mono 	# Nerd Font Symbols Mono
-	yay -S code-nerd-fonts							# Nerd fonts
-	yay -S vscodium-bin									# VSCodium
-	yay -S enpass-bin										# Enpass
-	yay -S fish													# Fish shell
-	yay -S claude-code									# Claude Code; using it a lot lately
-	yay -S telegram-desktop							# Telegram Desktop
-	yay -S uv														# Astral's uv for Python
-	yay -Sy brave-bin										# Brave Browser
-	yay -Sy lollypop										# Lollypop Player
-	yay -Sy git-trim										# To remove merged branches
-	yay -Sy figlet											# Using it for ASCII banners
-	yay -Sy tmux												# Our beloved multiplexer
+	yay -S ttf-nerd-fonts-symbols-mono --noconfirm	# Nerd Font Symbols Mono
+	yay -S code-nerd-fonts --noconfirm	# Nerd fonts
+	yay -S vscodium-bin --noconfirm	# VSCodium
+	yay -S enpass-bin --noconfirm	# Enpass
+	yay -S fish --noconfirm	# Fish shell
+	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
+	yay -S telegram-desktop --noconfirm	# Telegram Desktop
+	yay -S uv --noconfirm	# Astral's uv for Python
+	yay -Sy brave-bin --noconfirm	# Brave Browser
+	yay -Sy lollypop --noconfirm	# Lollypop Player
+	yay -S figlet --noconfirm	# Using it for ASCII banners
+	yay -S tmux --noconfirm	# Our beloved multiplexer
 
 
 .PHONY omarchy_extra_themes:
