@@ -92,14 +92,6 @@ zoxide_for_bash_and_fish:
 	@echo "zoxide init fish | source"
 
 
-# https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
-# To allow removal if packages not there, example KDE:
-# https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-.PHONY remove_screen_reader:
-remove_screen_reader:
-	sudo dpkg --purge orca gnome-orca
-
-
 .PHONY link_starship_configuration:
 link_starship_configuration:
 	rm -f ~/.config/starship.toml
