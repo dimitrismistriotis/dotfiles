@@ -2,7 +2,6 @@
 help:
 	@echo "make help"
 	@echo "make additional_packages"
-	@echo "make arch_additional"
 	@echo "make omarchy_extra_themes"
 	@echo "make brew_packages"
 	@echo "make zoxide_for_bash_and_fish"
@@ -12,22 +11,8 @@ help:
 	@echo "make link_code_configuration"
 	@echo "make link_umsm_default"
 	@echo "make git_config"
-	@echo "make post_omakumb_gnome_tweaking"
 	@echo "make install_additional_packages"
 	@echo "make configure_fastfetch"
-
-
-.PHONY additional_packages:
-additional_packages:
-	@echo "Install Additional Packages"
-	@echo "Cromium"
-	sudo apt install -y chromium
-	sudo apt-get install -y wl-clipboard
-	@echo "Enpass"
-	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
-	sudo apt-get update
-	sudo apt-get install -y enpass
 
 
 .PHONY install_brew:
@@ -107,14 +92,6 @@ zoxide_for_bash_and_fish:
 	@echo "zoxide init fish | source"
 
 
-# https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
-# To allow removal if packages not there, example KDE:
-# https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-.PHONY remove_screen_reader:
-remove_screen_reader:
-	sudo dpkg --purge orca gnome-orca
-
-
 .PHONY link_starship_configuration:
 link_starship_configuration:
 	rm -f ~/.config/starship.toml
@@ -153,12 +130,6 @@ git_config:
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
-
-
-.PHONY post_omakumb_gnome_tweaking:
-post_omakumb_gnome_tweaking:
-	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
-	$(CURDIR)/gnome/setup_burn_my_windows
 
 
 ,PHONY: install_additional_packages
@@ -221,8 +192,8 @@ link_umsm_default:
 	ls -lah ~/.config/uwsm/default
 
 
-.PHONY arch_additional:
-arch_additional:
+.PHONY additional_packages:
+additional_packages:
 	@echo "Additional for Arch Installation"
 	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
@@ -230,19 +201,18 @@ arch_additional:
 
 	# Was instructed to use yay:
 
-	yay -S ttf-nerd-fonts-symbols-mono 	# Nerd Font Symbols Mono
-	yay -S code-nerd-fonts							# Nerd fonts
-	yay -S vscodium-bin									# VSCodium
-	yay -S enpass-bin										# Enpass
-	yay -S fish													# Fish shell
-	yay -S claude-code									# Claude Code; using it a lot lately
-	yay -S telegram-desktop							# Telegram Desktop
-	yay -S uv														# Astral's uv for Python
-	yay -Sy brave-bin										# Brave Browser
-	yay -Sy lollypop										# Lollypop Player
-	yay -Sy git-trim										# To remove merged branches
-	yay -Sy figlet											# Using it for ASCII banners
-	yay -Sy tmux												# Our beloved multiplexer
+	yay -S ttf-nerd-fonts-symbols-mono --noconfirm	# Nerd Font Symbols Mono
+	yay -S code-nerd-fonts --noconfirm	# Nerd fonts
+	yay -S vscodium-bin --noconfirm	# VSCodium
+	yay -S enpass-bin --noconfirm	# Enpass
+	yay -S fish --noconfirm	# Fish shell
+	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
+	yay -S telegram-desktop --noconfirm	# Telegram Desktop
+	yay -S uv --noconfirm	# Astral's uv for Python
+	yay -Sy brave-bin --noconfirm	# Brave Browser
+	yay -Sy lollypop --noconfirm	# Lollypop Player
+	yay -S figlet --noconfirm	# Using it for ASCII banners
+	yay -S tmux --noconfirm	# Our beloved multiplexer
 
 
 .PHONY omarchy_extra_themes:
