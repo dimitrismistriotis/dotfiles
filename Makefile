@@ -250,3 +250,10 @@ omarchy_extra_themes:
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
+
+.PHONY yomarchy_personal_preferences:
+yomarchy_personal_preferences:
+	@echo "Omarchy Personal Preferences"
+	@echo "Set Terminal to Ghostty"
+	omarchy-install-terminal ghostty
+
