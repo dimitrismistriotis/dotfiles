@@ -1,24 +1,10 @@
-.PHONY help:
-help:
-	@echo "make help"
-	@echo "make additional_packages"
-	@echo "make arch_additional"
-	@echo "make omarchy_extra_themes"
-	@echo "make brew_packages"
-	@echo "make zoxide_for_bash_and_fish"
-	@echo "make link_starship_configuration"
-	@echo "make link_ghostty_configuration"
-	@echo "make link_tmux_configuration"
-	@echo "make link_code_configuration"
-	@echo "make link_umsm_default"
-	@echo "make git_config"
-	@echo "make post_omakumb_gnome_tweaking"
-	@echo "make install_additional_packages"
-	@echo "make configure_fastfetch"
+.PHONY: help
+help: ## Show this help message
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-35s\033[0m %s\n", $$1, $$2}'
 
 
 .PHONY additional_packages:
-additional_packages:
+additional_packages: ## Install additional packages (Chromium, wl-clipboard, Enpass)
 	@echo "Install Additional Packages"
 	@echo "Cromium"
 	sudo apt install -y chromium
@@ -31,17 +17,17 @@ additional_packages:
 
 
 .PHONY install_brew:
-install_brew:  # Run Homebrew Installation Script
+install_brew: ## Run Homebrew installation script
 	./install_homebrew
 
 
 .PHONY install_fish_shell:
-install_fish_shell:
+install_fish_shell: ## Install Fish shell
 	sudo apt get install fish
 
 
 .PHONY snap_packages:
-snap_packages:  # Brew packages with utilities and frameworks
+snap_packages: ## Install snap packages (Gradia)
 	#
 	# Gradia from "It's FOSS - Linux Portal":
 	#
@@ -50,7 +36,7 @@ snap_packages:  # Brew packages with utilities and frameworks
 
 
 .PHONY brew_packages:
-brew_packages:  # Brew packages with utilities and frameworks
+brew_packages: ## Install Homebrew packages with utilities and frameworks
 	brew update
 	brew upgrade
 	brew install gcc
@@ -85,12 +71,12 @@ brew_packages:  # Brew packages with utilities and frameworks
 
 
 .PHONY brew_development:
-brew_development:  # Development environments, can be installed from elsewhere
+brew_development: ## Install development environments via Homebrew (Bun)
 	brew install oven-sh/bun/bun
 
 
 .PHONY zoxide_for_bash_and_fish:
-zoxide_for_bash_and_fish:
+zoxide_for_bash_and_fish: ## Display setup instructions for zoxide (smarter cd command)
 	#
 	# A smarter cd command. Supports all major shells.
 	# https://github.com/ajeetdsouza/zoxide
@@ -111,43 +97,43 @@ zoxide_for_bash_and_fish:
 # To allow removal if packages not there, example KDE:
 # https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
 .PHONY remove_screen_reader:
-remove_screen_reader:
+remove_screen_reader: ## Remove Orca screen reader
 	sudo dpkg --purge orca gnome-orca
 
 
 .PHONY link_starship_configuration:
-link_starship_configuration:
+link_starship_configuration: ## Link Starship configuration file
 	rm -f ~/.config/starship.toml
 	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
 
 
 .PHONY link_ghostty_configuration:
-link_ghostty_configuration:
+link_ghostty_configuration: ## Link Ghostty terminal configuration file
 	mkdir -p ~/.config/ghostty
 	rm -f ~/.config/ghostty/config
 	ln -s $(CURDIR)/dot_config/ghostty/config ~/.config/ghostty/config
 
 
 .PHONY link_fish_configuration:
-link_fish_configuration:
+link_fish_configuration: ## Link Fish shell configuration file
 	mkdir -p ~/.config/fish/functions
 	rm ~/.config/fish/config.fish
 	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
 	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 .PHONY link_tmux_configuration:
-link_tmux_configuration:
+link_tmux_configuration: ## Link tmux configuration file
 	rm -f ~/.tmux.conf
 	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
 
 
 .PHONY link_code_configuration:
-link_code_configuration:
+link_code_configuration: ## Link VSCode configuration file
 	ln -s $(CURDIR)/code/settings.json ~/.config/Code/User
 
 
 .PHONY git_config:
-git_config:
+git_config: ## Configure git settings (GPG signing, merge options)
 	# Sign by dedault:
 	git config --global commit.gpgsign true
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
@@ -156,13 +142,13 @@ git_config:
 
 
 .PHONY post_omakumb_gnome_tweaking:
-post_omakumb_gnome_tweaking:
+post_omakumb_gnome_tweaking: ## Post-Omakumb GNOME tweaking (Burn My Windows setup)
 	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
 	$(CURDIR)/gnome/setup_burn_my_windows
 
 
-,PHONY: install_additional_packages
-install_additional_packages:
+.PHONY: install_additional_packages
+install_additional_packages: ## Install additional packages (exfat-fuse)
 	@echo "Install Additional Packages"
 
 	# Maintenance
@@ -176,7 +162,7 @@ install_additional_packages:
 
 
 .PHONY configure_fastfetch:
-configure_fastfetch:
+configure_fastfetch: ## Configure Fastfetch system information tool
 	@echo "Configure Fastfetch"
 	mkdir -p ~/.config/fastfetch/assets
 	rm -rf ~/.config/fastfetch/config.jsonc
@@ -186,7 +172,7 @@ configure_fastfetch:
 
 
 .PHONY ulauncher_additions:
-ulauncher_additions:
+ulauncher_additions: ## Setup Ulauncher additions
 	$(CURDIR)/setup_ulauncher_additions
 
 
@@ -215,14 +201,14 @@ ulauncher_additions:
 # and https://www.reddit.com/r/archlinux/comments/g8iygf/arch_linux_logo_using_unicode_block_characters/
 
 .PHONY link_umsm_default:
-link_umsm_default:
+link_umsm_default: ## Link UWSM default configuration
 	rm ~/.config/uwsm/default
 	ln -s $(CURDIR)/dot_config/uwsm/default ~/.config/uwsm/default
 	ls -lah ~/.config/uwsm/default
 
 
 .PHONY arch_additional:
-arch_additional:
+arch_additional: ## Install additional packages for Arch Linux
 	@echo "Additional for Arch Installation"
 	sudo pacman -Syy  # Update Packages
 	sudo pacman -S micro # Micro editor
@@ -246,13 +232,13 @@ arch_additional:
 
 
 .PHONY omarchy_extra_themes:
-omarchy_extra_themes:
+omarchy_extra_themes: ## Install extra themes for Omarchy
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
 .PHONY yomarchy_personal_preferences:
-yomarchy_personal_preferences:
+yomarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@echo "Omarchy Personal Preferences"
 	@echo "Set Terminal to Ghostty"
 	omarchy-install-terminal ghostty
