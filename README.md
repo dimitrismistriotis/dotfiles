@@ -41,11 +41,6 @@ From Brave Search:
 
 [Modern Unix](https://github.com/ibraheemdev/modern-unix)
 
-### Wallpapers
-
-Lots from <https://www.wallpaperflare.com/> lately.
-Did not find an easy way to write a download script to automate scrapping them.
-
 ### Other Software
 
 #### VSCodium
@@ -53,11 +48,6 @@ Did not find an easy way to write a download script to automate scrapping them.
 VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
 
 <https://vscodium.com/>
-
-## Next Steps - Ongoing
-
-- Organise `Makefile` to allow actions to happen in sequence
-- Moce `initialize` commands to `Makefile`
 
 ### Cloudflare DNS
 
