@@ -63,11 +63,6 @@ configure_fastfetch: ## Configure Fastfetch system information tool
 	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
 
 
-.PHONY ulauncher_additions:
-ulauncher_additions: ## Setup Ulauncher additions
-	$(CURDIR)/setup_ulauncher_additions
-
-
 #                    ▄
 #                   ▟█▙
 #                  ▟███▙
