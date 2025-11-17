@@ -3,20 +3,6 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-35s\033[0m %s\n", $$1, $$2}'
 
 
-.PHONY install_fish_shell:
-install_fish_shell: ## Install Fish shell
-	sudo apt get install fish
-
-
-.PHONY snap_packages:
-snap_packages: ## Install snap packages (Gradia)
-	#
-	# Gradia from "It's FOSS - Linux Portal":
-	#
-	# https://www.youtube.com/watch?v=OQqv1UeURqA
-	sudo snap install gradia
-
-
 .PHONY brew_packages:
 brew_packages: ## Install Homebrew packages with utilities and frameworks
 	brew update
