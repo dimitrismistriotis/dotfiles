@@ -3,24 +3,6 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-35s\033[0m %s\n", $$1, $$2}'
 
 
-.PHONY additional_packages:
-additional_packages: ## Install additional packages (Chromium, wl-clipboard, Enpass)
-	@echo "Install Additional Packages"
-	@echo "Cromium"
-	sudo apt install -y chromium
-	sudo apt-get install -y wl-clipboard
-	@echo "Enpass"
-	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
-	sudo apt-get update
-	sudo apt-get install -y enpass
-
-
-.PHONY install_brew:
-install_brew: ## Run Homebrew installation script
-	./install_homebrew
-
-
 .PHONY install_fish_shell:
 install_fish_shell: ## Install Fish shell
 	sudo apt get install fish
