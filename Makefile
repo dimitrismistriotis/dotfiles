@@ -223,6 +223,7 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S fish --noconfirm	# Fish shell
 	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
 	yay -S telegram-desktop --noconfirm	# Telegram Desktop
+	yay -S discord --noconfirm	# Discord
 	yay -S uv --noconfirm	# Astral's uv for Python
 	yay -Sy brave-bin --noconfirm	# Brave Browser
 	yay -Sy lollypop --noconfirm	# Lollypop Player
