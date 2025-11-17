@@ -3,48 +3,15 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-35s\033[0m %s\n", $$1, $$2}'
 
 
-.PHONY brew_packages:
-brew_packages: ## Install Homebrew packages with utilities and frameworks
-	brew update
-	brew upgrade
-	brew install gcc
-	brew install fd
-	brew install fzf
-	brew install python@3.13
-	brew install bat
-	brew install git-delta
-	brew install corepack
-	brew install gping
-	brew install figlet
-	brew install httpie
-	brew install starship
-	brew install micro  # The text editor
-	brew install tmux
-	brew install tpm  # Tmux Package Manager
-	brew install ripgrep
-	brew install xh
-	brew install git-trim
-	brew install dust	# https://github.com/bootandy/dust du + rust = dust. Like du but more intuitive.
-
-	@echo "Instructions for Git-Delta"
-	bat git_delta.md
-
-	#
-	# These are currently installed from Omakumb
-	# here for reference:
-	#
-	# brew install node
-	# brew install zoxide
-	# brew install lsd
-
-
-# https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
-# To allow removal if packages not there, example KDE:
-# https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-.PHONY remove_screen_reader:
-remove_screen_reader: ## Remove Orca screen reader
-	sudo dpkg --purge orca gnome-orca
-
+#     .--.
+#    |o_o |
+#    |:_/ |
+#   //   \ \
+#  (|     | )
+# /'\_   _/`\
+# \___)=(___/    Przemek Borys
+#
+# Linux Dotfiles General
 
 .PHONY link_starship_configuration:
 link_starship_configuration: ## Link Starship configuration file
@@ -84,20 +51,6 @@ git_config: ## Configure git settings (GPG signing, merge options)
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
-
-
-.PHONY: install_additional_packages
-install_additional_packages: ## Install additional packages (exfat-fuse)
-	@echo "Install Additional Packages"
-
-	# Maintenance
-	#
-	sudo apt autoremove
-
-	# Exfat support for USB drives: allows to copy files larger than 4.3Gb
-	# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
-	#
-	sudo apt install -y exfat-fuse
 
 
 .PHONY configure_fastfetch:
