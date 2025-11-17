@@ -141,12 +141,6 @@ git_config: ## Configure git settings (GPG signing, merge options)
 	git config --global merge.ff no
 
 
-.PHONY post_omakumb_gnome_tweaking:
-post_omakumb_gnome_tweaking: ## Post-Omakumb GNOME tweaking (Burn My Windows setup)
-	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
-	$(CURDIR)/gnome/setup_burn_my_windows
-
-
 .PHONY: install_additional_packages
 install_additional_packages: ## Install additional packages (exfat-fuse)
 	@echo "Install Additional Packages"
