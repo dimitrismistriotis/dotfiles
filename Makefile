@@ -38,29 +38,6 @@ brew_packages: ## Install Homebrew packages with utilities and frameworks
 	# brew install lsd
 
 
-.PHONY brew_development:
-brew_development: ## Install development environments via Homebrew (Bun)
-	brew install oven-sh/bun/bun
-
-
-.PHONY zoxide_for_bash_and_fish:
-zoxide_for_bash_and_fish: ## Display setup instructions for zoxide (smarter cd command)
-	#
-	# A smarter cd command. Supports all major shells.
-	# https://github.com/ajeetdsouza/zoxide
-	#
-	@echo ""
-	@echo "Zoxide or bash:"
-	@echo ""
-	@echo 'eval "$(zoxide init bash)"'
-
-	@echo ""
-	@echo "Zoxide or fish:"
-	@echo ""
-	@echo "Add this to your configuration (usually ~/.config/fish/config.fish)"
-	@echo "zoxide init fish | source"
-
-
 # https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
 # To allow removal if packages not there, example KDE:
 # https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
