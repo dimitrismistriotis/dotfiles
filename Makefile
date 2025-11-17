@@ -229,6 +229,10 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S figlet --noconfirm	# Using it for ASCII banners
 	yay -S tmux --noconfirm	# Our beloved multiplexer
 
+	# Development
+	yay -S pycharm --noconfirm	# Pycharm IDE
+
+
 
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes: ## Install extra themes for Omarchy
