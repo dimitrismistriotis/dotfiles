@@ -33,6 +33,7 @@ link_fish_configuration: ## Link Fish shell configuration file
 	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
 	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
+
 .PHONY link_tmux_configuration:
 link_tmux_configuration: ## Link tmux configuration file
 	rm -f ~/.tmux.conf
