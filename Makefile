@@ -134,3 +134,11 @@ omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@echo "Omarchy Personal Preferences"
 	@echo "Set Terminal to Ghostty"
 	omarchy-install-terminal ghostty
+
+
+.PHONY omarchy_personal_bindings:
+omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
+	@echo "Omarchy Personal Key Bindings"
+	rm ~/.config/hypr/bindings.conf
+	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
+	
