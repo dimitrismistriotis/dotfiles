@@ -127,6 +127,7 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	# Development
 	yay -S pycharm --noconfirm	# Pycharm IDE
+	yay -S render-cli-bin  # Shop uses Render
 
 
 
