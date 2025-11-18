@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
-MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-
-TARGET_DIRECTORY=~/.config/micro
-
-mkdir ${TARGET_DIRECTORY}
-ln -s ${MYDIR}/micro/* ${TARGET_DIRECTORY}

@@ -45,6 +45,13 @@ link_code_configuration: ## Link VSCode configuration file
 	ln -s $(CURDIR)/code/settings.json ~/.config/Code/User
 
 
+.PHONY link_micro_configuration:
+link_micro_configuration: ## Link Micro editor configuration files
+	rm -rf ~/.config/micro
+	mkdir -p ~/.config/micro
+	ln -s $(CURDIR)/micro/* ~/.config/micro
+
+
 .PHONY git_config:
 git_config: ## Configure git settings (GPG signing, merge options)
 	# Sign by dedault:
