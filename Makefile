@@ -128,6 +128,7 @@ arch_additional: ## Install additional packages for Arch Linux
 	# Development
 	yay -S pycharm --noconfirm	# Pycharm IDE
 	yay -S render-cli-bin  # Shop uses Render
+	yay -S pre-commit	# Pre Commit hools for Git
 
 
 
@@ -150,4 +151,3 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@echo "Omarchy Personal Key Bindings"
 	rm ~/.config/hypr/bindings.conf
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
-	
