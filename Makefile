@@ -136,6 +136,7 @@ arch_additional: ## Install additional packages for Arch Linux
 omarchy_extra_themes: ## Install extra themes for Omarchy
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
+	omarchy-theme-install https://github.com/jjdizz1l/aetheria
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
 
