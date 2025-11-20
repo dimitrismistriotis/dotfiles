@@ -131,6 +131,10 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S pre-commit	# Pre Commit hools for Git
 
 
+.PHONY omarchy_removals:
+omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
+	yay -R 1password-cli 1password-beta
+
 
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes: ## Install extra themes for Omarchy
@@ -152,3 +156,4 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@echo "Omarchy Personal Key Bindings"
 	rm ~/.config/hypr/bindings.conf
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
+
