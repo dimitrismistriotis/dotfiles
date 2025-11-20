@@ -129,6 +129,7 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S pycharm --noconfirm	# Pycharm IDE
 	yay -S render-cli-bin  # Shop uses Render
 	yay -S pre-commit	# Pre Commit hools for Git
+	yay -S bun	# Bun JS Package Manager
 
 
 .PHONY omarchy_removals:
