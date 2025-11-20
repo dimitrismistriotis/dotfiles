@@ -3,103 +3,15 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-35s\033[0m %s\n", $$1, $$2}'
 
 
-.PHONY additional_packages:
-additional_packages: ## Install additional packages (Chromium, wl-clipboard, Enpass)
-	@echo "Install Additional Packages"
-	@echo "Cromium"
-	sudo apt install -y chromium
-	sudo apt-get install -y wl-clipboard
-	@echo "Enpass"
-	echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-	wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
-	sudo apt-get update
-	sudo apt-get install -y enpass
-
-
-.PHONY install_brew:
-install_brew: ## Run Homebrew installation script
-	./install_homebrew
-
-
-.PHONY install_fish_shell:
-install_fish_shell: ## Install Fish shell
-	sudo apt get install fish
-
-
-.PHONY snap_packages:
-snap_packages: ## Install snap packages (Gradia)
-	#
-	# Gradia from "It's FOSS - Linux Portal":
-	#
-	# https://www.youtube.com/watch?v=OQqv1UeURqA
-	sudo snap install gradia
-
-
-.PHONY brew_packages:
-brew_packages: ## Install Homebrew packages with utilities and frameworks
-	brew update
-	brew upgrade
-	brew install gcc
-	brew install fd
-	brew install fzf
-	brew install python@3.13
-	brew install bat
-	brew install git-delta
-	brew install corepack
-	brew install gping
-	brew install figlet
-	brew install httpie
-	brew install starship
-	brew install micro  # The text editor
-	brew install tmux
-	brew install tpm  # Tmux Package Manager
-	brew install ripgrep
-	brew install xh
-	brew install git-trim
-	brew install dust	# https://github.com/bootandy/dust du + rust = dust. Like du but more intuitive.
-
-	@echo "Instructions for Git-Delta"
-	bat git_delta.md
-
-	#
-	# These are currently installed from Omakumb
-	# here for reference:
-	#
-	# brew install node
-	# brew install zoxide
-	# brew install lsd
-
-
-.PHONY brew_development:
-brew_development: ## Install development environments via Homebrew (Bun)
-	brew install oven-sh/bun/bun
-
-
-.PHONY zoxide_for_bash_and_fish:
-zoxide_for_bash_and_fish: ## Display setup instructions for zoxide (smarter cd command)
-	#
-	# A smarter cd command. Supports all major shells.
-	# https://github.com/ajeetdsouza/zoxide
-	#
-	@echo ""
-	@echo "Zoxide or bash:"
-	@echo ""
-	@echo 'eval "$(zoxide init bash)"'
-
-	@echo ""
-	@echo "Zoxide or fish:"
-	@echo ""
-	@echo "Add this to your configuration (usually ~/.config/fish/config.fish)"
-	@echo "zoxide init fish | source"
-
-
-# https://askubuntu.com/questions/278693/how-do-i-stop-orca-screen-reader
-# To allow removal if packages not there, example KDE:
-# https://superuser.com/questions/518859/ignore-packages-that-are-not-currently-installed-when-using-apt-get-remove
-.PHONY remove_screen_reader:
-remove_screen_reader: ## Remove Orca screen reader
-	sudo dpkg --purge orca gnome-orca
-
+#     .--.
+#    |o_o |
+#    |:_/ |
+#   //   \ \
+#  (|     | )
+# /'\_   _/`\
+# \___)=(___/    Przemek Borys
+#
+# Linux Dotfiles General
 
 .PHONY link_starship_configuration:
 link_starship_configuration: ## Link Starship configuration file
@@ -121,6 +33,7 @@ link_fish_configuration: ## Link Fish shell configuration file
 	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
 	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
+
 .PHONY link_tmux_configuration:
 link_tmux_configuration: ## Link tmux configuration file
 	rm -f ~/.tmux.conf
@@ -132,6 +45,13 @@ link_code_configuration: ## Link VSCode configuration file
 	ln -s $(CURDIR)/code/settings.json ~/.config/Code/User
 
 
+.PHONY link_micro_configuration:
+link_micro_configuration: ## Link Micro editor configuration files
+	rm -rf ~/.config/micro
+	mkdir -p ~/.config/micro
+	ln -s $(CURDIR)/micro/* ~/.config/micro
+
+
 .PHONY git_config:
 git_config: ## Configure git settings (GPG signing, merge options)
 	# Sign by dedault:
@@ -139,26 +59,6 @@ git_config: ## Configure git settings (GPG signing, merge options)
 	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
 	git config --global merge.commit no
 	git config --global merge.ff no
-
-
-.PHONY post_omakumb_gnome_tweaking:
-post_omakumb_gnome_tweaking: ## Post-Omakumb GNOME tweaking (Burn My Windows setup)
-	@echo "Post Omakumb Gnome Tweaking - Burn My Windows Setup"
-	$(CURDIR)/gnome/setup_burn_my_windows
-
-
-.PHONY: install_additional_packages
-install_additional_packages: ## Install additional packages (exfat-fuse)
-	@echo "Install Additional Packages"
-
-	# Maintenance
-	#
-	sudo apt autoremove
-
-	# Exfat support for USB drives: allows to copy files larger than 4.3Gb
-	# https://askubuntu.com/questions/999580/why-is-exfat-greyed-out-in-gparted
-	#
-	sudo apt install -y exfat-fuse
 
 
 .PHONY configure_fastfetch:
@@ -169,11 +69,6 @@ configure_fastfetch: ## Configure Fastfetch system information tool
 	ln -s $(CURDIR)/config_files/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 	rm -rf ~/.config/fastfetch/assets/greek_fire_no_background.png
 	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
-
-
-.PHONY ulauncher_additions:
-ulauncher_additions: ## Setup Ulauncher additions
-	$(CURDIR)/setup_ulauncher_additions
 
 
 #                    ▄
@@ -216,30 +111,50 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	# Was instructed to use yay:
 
-	yay -S ttf-nerd-fonts-symbols-mono 	# Nerd Font Symbols Mono
-	yay -S code-nerd-fonts							# Nerd fonts
-	yay -S vscodium-bin									# VSCodium
-	yay -S enpass-bin										# Enpass
-	yay -S fish													# Fish shell
-	yay -S claude-code									# Claude Code; using it a lot lately
-	yay -S telegram-desktop							# Telegram Desktop
-	yay -S uv														# Astral's uv for Python
-	yay -Sy brave-bin										# Brave Browser
-	yay -Sy lollypop										# Lollypop Player
-	yay -Sy git-trim										# To remove merged branches
-	yay -Sy figlet											# Using it for ASCII banners
-	yay -Sy tmux												# Our beloved multiplexer
+	yay -S ttf-nerd-fonts-symbols-mono --noconfirm	# Nerd Font Symbols Mono
+	yay -S code-nerd-fonts --noconfirm	# Nerd fonts
+	yay -S vscodium-bin --noconfirm	# VSCodium
+	yay -S enpass-bin --noconfirm	# Enpass
+	yay -S fish --noconfirm	# Fish shell
+	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
+	yay -S telegram-desktop --noconfirm	# Telegram Desktop
+	yay -S discord --noconfirm	# Discord
+	yay -S uv --noconfirm	# Astral's uv for Python
+	yay -Sy brave-bin --noconfirm	# Brave Browser
+	yay -Sy lollypop --noconfirm	# Lollypop Player
+	yay -S figlet --noconfirm	# Using it for ASCII banners
+	yay -S tmux --noconfirm	# Our beloved multiplexer
+
+	# Development
+	yay -S pycharm --noconfirm	# Pycharm IDE
+	yay -S render-cli-bin  # Shop uses Render
+	yay -S pre-commit	# Pre Commit hools for Git
+	yay -S bun	# Bun JS Package Manager
+
+
+.PHONY omarchy_removals:
+omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
+	yay -R 1password-cli 1password-beta
 
 
 .PHONY omarchy_extra_themes:
 omarchy_extra_themes: ## Install extra themes for Omarchy
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
+	omarchy-theme-install https://github.com/jjdizz1l/aetheria
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
-.PHONY yomarchy_personal_preferences:
-yomarchy_personal_preferences: ## Configure Omarchy personal preferences
+
+.PHONY omarchy_personal_preferences:
+omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@echo "Omarchy Personal Preferences"
 	@echo "Set Terminal to Ghostty"
 	omarchy-install-terminal ghostty
+
+
+.PHONY omarchy_personal_bindings:
+omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
+	@echo "Omarchy Personal Key Bindings"
+	rm ~/.config/hypr/bindings.conf
+	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 

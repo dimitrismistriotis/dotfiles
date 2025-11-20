@@ -12,6 +12,11 @@
 # - double line break
 # - Added "Fire" from https://github.com/itsfoss/text-script-files/blob/master/config/starship/fiery.toml
 #
+# Omarchy's default:
+# https://github.com/basecamp/omarchy/blob/master/config/starship.toml
+# 
+# Check periodically in case it gets integrated to theming or something similar
+#
 format = """
 [](red)\
 $os\

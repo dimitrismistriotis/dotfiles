@@ -4,7 +4,8 @@ if status is-interactive
      #
      # After version 4.0.1: https://fishshell.com/docs/current/cmds/fish_add_path.html
      # fish_add_path ~/bin
-     set PATH ~/bin $PATH
+     # set PATH ~/.local/bin ~/bin  $PATH
+     set PATH ~/bin  $PATH
 
      # Micro Editor
      if type -q 'micro'
