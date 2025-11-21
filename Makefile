@@ -158,3 +158,14 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	rm ~/.config/hypr/bindings.conf
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
+#     _    _ _
+#    / \  | | |
+#   / _ \ | | |
+#  / ___ \| | |
+# /_/   \_\_|_|
+# 
+# All
+# 
+.PHONY all:
+all:	## Placeholder to make "all" Makefile entries
+	@echo 'Placeholder to make "all" Makefile entries'
