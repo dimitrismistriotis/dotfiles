@@ -11,7 +11,7 @@ help: ## Show this help message
 # /'\_   _/`\
 # \___)=(___/    Przemek Borys
 #
-# Linux Dotfiles General
+# General Linux Dotfiles
 
 .PHONY link_starship_configuration:
 link_starship_configuration: ## Link Starship configuration file
@@ -53,12 +53,58 @@ link_micro_configuration: ## Link Micro editor configuration files
 
 
 .PHONY git_config:
-git_config: ## Configure git settings (GPG signing, merge options)
-	# Sign by dedault:
-	git config --global commit.gpgsign true
-	# https://stackoverflow.com/questions/5519007/how-do-i-make-git-merges-default-be-no-ff-no-commit
-	git config --global merge.commit no
+git_config: ## Configure git settings (all settings except user info)
+	# Setup from following article:
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+
+	@echo "Configuring git global settings..."
+
+	# Push settings
+	git config --global push.default simple
+	git config --global push.autoSetupRemote true
+
+	# Aliases
+	git config --global alias.plr "pull --rebase"
+	git config --global alias.commitlog "log --pretty=format:'%ad - %an: %s' --date=iso"
+
+	# Color
+	git config --global color.ui true
+
+	# Merge settings
 	git config --global merge.ff no
+	git config --global merge.commit no
+	git config --global merge.conflictstyle diff3
+
+	# Init
+	git config --global init.defaultBranch master
+
+	# Pull
+	git config --global pull.rebase true
+
+	# Column
+	git config --global column.ui auto
+
+	# Branch & Tag sorting
+	git config --global branch.sort -committerdate
+	git config --global tag.sort version:refname
+
+	# Fetch settings
+	git config --global fetch.prune true
+	git config --global fetch.pruneTags true
+	git config --global fetch.all true
+
+	# Commit settings
+	git config --global commit.gpgsign true
+	git config --global commit.verbose true
+
+	# Delta pager settings: https://github.com/dandavison/delta 
+	git config --global core.pager delta
+	git config --global interactive.diffFilter "delta --color-only"
+	git config --global delta.navigate true
+	git config --global delta.light false
+
+	# Diff settings
+	git config --global diff.colorMoved default
 
 
 .PHONY configure_fastfetch:
