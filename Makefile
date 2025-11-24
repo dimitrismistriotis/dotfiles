@@ -147,9 +147,7 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 
 .PHONY omarchy_personal_preferences:
 omarchy_personal_preferences: ## Configure Omarchy personal preferences
-	@echo "Omarchy Personal Preferences"
-	@echo "Set Terminal to Ghostty"
-	omarchy-install-terminal ghostty
+	@echo "Omarchy Personal Preferences, Placeholder"
 
 
 .PHONY omarchy_personal_bindings:
