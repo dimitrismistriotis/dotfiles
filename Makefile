@@ -147,9 +147,7 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 
 .PHONY omarchy_personal_preferences:
 omarchy_personal_preferences: ## Configure Omarchy personal preferences
-	@echo "Omarchy Personal Preferences"
-	@echo "Set Terminal to Ghostty"
-	omarchy-install-terminal ghostty
+	@echo "Omarchy Personal Preferences, Placeholder"
 
 
 .PHONY omarchy_personal_bindings:
@@ -158,3 +156,17 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	rm ~/.config/hypr/bindings.conf
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
+.PHONY omarchy_all:
+omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
+
+#     _    _ _
+#    / \  | | |
+#   / _ \ | | |
+#  / ___ \| | |
+# /_/   \_\_|_|
+# 
+# All
+
+.PHONY all:
+all: omarchy_all link_starship_configuration link_ghostty_configuration link_fish_configuration link_tmux_configuration link_code_configuration link_micro_configuration git_config configure_fastfetch	## Make "all" Makefile entries
+	@echo 'End of make all Makefile entries'
