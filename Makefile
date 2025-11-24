@@ -168,5 +168,5 @@ omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_th
 # All
 
 .PHONY all:
-all: omarchy_all	## Make "all" Makefile entries
+all: omarchy_all link_starship_configuration link_ghostty_configuration link_fish_configuration link_tmux_configuration link_code_configuration link_micro_configuration git_config configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
