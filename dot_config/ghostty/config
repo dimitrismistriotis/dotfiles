@@ -1,6 +1,10 @@
 # Dynamic theme colors
 config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
+# Slowdown mouse scrolling
+mouse-scroll-multiplier = 0.95
+
+
 # Ghostty's Instructions for creating a config file:
 #
 #   /home/dimitrios/.config/ghostty/config
