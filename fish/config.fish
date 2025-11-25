@@ -1,10 +1,10 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    #
-    # After version 4.0.1: https://fishshell.com/docs/current/cmds/fish_add_path.html
-    # fish_add_path ~/bin
-    # set PATH ~/.local/bin ~/bin  $PATH
-    set PATH ~/bin  $PATH
+    # Commands to run in interactive sessions
+
+    # Path Additions
+    # https://fishshell.com/docs/current/cmds/fish_add_path.html
+    fish_add_path ~/bin
+    # fish_add_path ~/.local/bin
 
     # Micro Editor
     if type -q 'micro'
