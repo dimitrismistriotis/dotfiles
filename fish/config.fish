@@ -1,4 +1,3 @@
-
 if status is-interactive
      # Commands to run in interactive sessions can go here
      #
@@ -23,13 +22,6 @@ if status is-interactive
      # https://github.com/ajeetdsouza/zoxide
      
      zoxide init fish | source
-     
-     # Homebrew:
-     # https://docs.brew.sh/Homebrew-on-Linux
-
-     if test -f /home/linuxbrew/.linuxbrew/bin/brew
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-     end
 
      # Starship:
      # https://starship.rs/
