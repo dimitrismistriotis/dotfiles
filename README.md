@@ -11,17 +11,10 @@ git clone git@github.com:dimitrismistriotis/dotfiles.git
 
 then use `make` to see list of customisations and apply those you want/need.
 
-## Links - Suggestions
+## Suggestions
 
 [Modern Unix](https://github.com/ibraheemdev/modern-unix)
 
-### Other Software
-
-#### VSCodium
-
-VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
-
-<https://vscodium.com/>
 
 ### Cloudflare DNS
 
