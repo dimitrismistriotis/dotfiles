@@ -26,3 +26,12 @@ VSCodium is a community-driven, freely-licensed binary distribution of Microsoft
 ### Cloudflare DNS
 
 See: <https://developers.cloudflare.com/1.1.1.1/ip-addresses/>
+
+### HDMI Configuration
+
+Reference: <https://ewinnington.github.io/posts/omarchy-hdmi-audio>
+
+```shell
+pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo
+pactl set-default-sink alsa_output.pci-0000_00_1f.3.hdmi-stereo
+```
