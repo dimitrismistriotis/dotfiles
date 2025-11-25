@@ -113,7 +113,7 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	yay -S ttf-nerd-fonts-symbols-mono --noconfirm	# Nerd Font Symbols Mono
 	yay -S code-nerd-fonts --noconfirm	# Nerd fonts
-	yay -S vscodium-bin --noconfirm	# VSCodium
+	yay -S vscodium-bin --noconfirm	# VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
 	yay -S enpass-bin --noconfirm	# Enpass
 	yay -S fish --noconfirm	# Fish shell
 	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
