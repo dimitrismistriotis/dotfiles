@@ -5,6 +5,9 @@ if status is-interactive
     # https://fishshell.com/docs/current/cmds/fish_add_path.html
     fish_add_path ~/bin
     # fish_add_path ~/.local/bin
+    # Added by LM Studio CLI (lms)
+    set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
+    # End of LM Studio CLI section
 
     # Micro Editor
     if type -q 'micro'
@@ -43,3 +46,7 @@ if status is-interactive
 
     fastfetch
 end
+
+
+
+
