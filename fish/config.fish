@@ -6,7 +6,9 @@ if status is-interactive
     fish_add_path ~/bin
     # fish_add_path ~/.local/bin
     # Added by LM Studio CLI (lms)
-    set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
+    if test -d /home/dimitri0s/.lmstudio/bin
+        set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
+    end
     # End of LM Studio CLI section
 
     # Micro Editor
