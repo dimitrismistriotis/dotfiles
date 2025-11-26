@@ -6,8 +6,9 @@ if status is-interactive
     fish_add_path ~/bin
     # fish_add_path ~/.local/bin
     # Added by LM Studio CLI (lms)
-    if test -d /home/dimitri0s/.lmstudio/bin
-        set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
+    if test -d ~/.lmstudio/bin
+        # set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
+        fish_add_path -a ~/.lmstudio/bin
     end
     # End of LM Studio CLI section
 
