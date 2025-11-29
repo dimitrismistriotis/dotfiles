@@ -178,6 +178,8 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S pre-commit	# Pre Commit hools for Git
 	yay -S bun	# Bun JS Package Manager
 
+	# Other Browsers
+	yay -S librewolf-bin --noconfirm # librewolf Browser, Firefox fork
 
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
