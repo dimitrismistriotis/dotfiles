@@ -26,12 +26,10 @@ if status is-interactive
 
     # Zoxide
     # https://github.com/ajeetdsouza/zoxide
- 
     zoxide init fish | source
 
     # Starship:
     # https://starship.rs/
-
     starship init fish | source
 
     # Set up fzf key bindings
@@ -49,7 +47,3 @@ if status is-interactive
 
     fastfetch
 end
-
-
-
-
