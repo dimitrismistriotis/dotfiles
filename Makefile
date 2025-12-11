@@ -178,6 +178,9 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S pre-commit	# Pre Commit hools for Git
 	yay -S bun	# Bun JS Package Manager
 
+	# Other Browsers
+	yay -S librewolf-bin --noconfirm # librewolf Browser, Firefox fork
+	yay -S zen-browser-bin --noconfirm # Zen privacy oriented browser
 
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
@@ -217,3 +220,4 @@ omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_th
 .PHONY all:
 all: omarchy_all link_starship_configuration link_ghostty_configuration link_fish_configuration link_tmux_configuration link_code_configuration link_micro_configuration git_config configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
+
