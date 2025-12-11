@@ -170,6 +170,7 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -Sy lollypop --noconfirm	# Lollypop Player
 	yay -S figlet --noconfirm	# Using it for ASCII banners
 	yay -S tmux --noconfirm	# Our beloved multiplexer
+	yay -S lvsk-calendar
 
 	# Development
 	yay -S pycharm --noconfirm	# Pycharm IDE
