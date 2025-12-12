@@ -178,7 +178,9 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S pre-commit --noconfirm # Pre Commit hools for Git
 	yay -S bun --noconfirm # Bun JS Package Manager
 
-	# Other Browsers
+
+.PHONY arch_additional_browsers:
+arch_additional_browsers: ## Install additional Other Browsers for Arch Linux
 	yay -S librewolf-bin --noconfirm # librewolf Browser, Firefox fork
 	yay -S zen-browser-bin --noconfirm # Zen privacy oriented browser
 
@@ -213,7 +215,7 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
 .PHONY omarchy_all:
-omarchy_all: arch_additional arch_additional_utilities omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
+omarchy_all: arch_additional arch_additional_utilities arch_additional_browsers omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
 
 #     _    _ _
 #    / \  | | |
