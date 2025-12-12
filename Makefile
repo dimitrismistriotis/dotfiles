@@ -159,24 +159,24 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	yay -S ttf-nerd-fonts-symbols-mono --noconfirm # Nerd Font Symbols Mono
 	yay -S code-nerd-fonts --noconfirm # Nerd fonts
-	yay -S vscodium-bin --noconfirm # VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
 	yay -S enpass-bin --noconfirm # Enpass
 	yay -S fish --noconfirm # Fish shell
-	yay -S claude-code --noconfirm # Claude Code; using it a lot lately
 	yay -S telegram-desktop --noconfirm # Telegram Desktop
 	yay -S discord --noconfirm # Discord
-	yay -S uv --noconfirm # Astral's uv for Python
 	yay -Sy brave-bin --noconfirm # Brave Browser
 	yay -Sy lollypop --noconfirm # Lollypop Player
-	yay -S figlet --noconfirm # Using it for ASCII banners
-	yay -S tmux --noconfirm # Our beloved multiplexer
 	yay -S lvsk-calendar --noconfirm # Nice Calendar
 
 	# Development
+	yay -S claude-code --noconfirm # Claude Code; using it a lot lately
+	yay -S vscodium-bin --noconfirm # VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
+	yay -S uv --noconfirm # Astral's uv for Python
 	yay -S pycharm --noconfirm # Pycharm IDE
 	yay -S render-cli-bin # Shop uses Render
 	yay -S pre-commit --noconfirm # Pre Commit hools for Git
 	yay -S bun --noconfirm # Bun JS Package Manager
+	yay -S figlet --noconfirm # Using it for ASCII banners
+	yay -S tmux --noconfirm # Our beloved multiplexer
 
 
 .PHONY arch_additional_browsers:
