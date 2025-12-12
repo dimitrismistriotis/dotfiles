@@ -182,6 +182,12 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S librewolf-bin --noconfirm # librewolf Browser, Firefox fork
 	yay -S zen-browser-bin --noconfirm # Zen privacy oriented browser
 
+
+.PHONY arch_additional_utilities:
+arch_additional_utilities: ## Install additional utility packages for Arch Linux
+	yay -S extra/wget --noconfirm # wget - Network utility to retrieve files from the web
+
+
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
 	yay -R 1password-cli 1password-beta
@@ -207,7 +213,7 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
 .PHONY omarchy_all:
-omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
+omarchy_all: arch_additional arch_additional_utilities omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
 
 #     _    _ _
 #    / \  | | |
