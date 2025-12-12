@@ -157,30 +157,40 @@ arch_additional: ## Install additional packages for Arch Linux
 
 	# Was instructed to use yay:
 
-	yay -S ttf-nerd-fonts-symbols-mono --noconfirm	# Nerd Font Symbols Mono
-	yay -S code-nerd-fonts --noconfirm	# Nerd fonts
-	yay -S vscodium-bin --noconfirm	# VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
-	yay -S enpass-bin --noconfirm	# Enpass
-	yay -S fish --noconfirm	# Fish shell
-	yay -S claude-code --noconfirm	# Claude Code; using it a lot lately
-	yay -S telegram-desktop --noconfirm	# Telegram Desktop
-	yay -S discord --noconfirm	# Discord
-	yay -S uv --noconfirm	# Astral's uv for Python
-	yay -Sy brave-bin --noconfirm	# Brave Browser
-	yay -Sy lollypop --noconfirm	# Lollypop Player
-	yay -S figlet --noconfirm	# Using it for ASCII banners
-	yay -S tmux --noconfirm	# Our beloved multiplexer
-	yay -S lvsk-calendar
+	yay -S ttf-nerd-fonts-symbols-mono --noconfirm # Nerd Font Symbols Mono
+	yay -S code-nerd-fonts --noconfirm # Nerd fonts
+	yay -S enpass-bin --noconfirm # Enpass
+	yay -S fish --noconfirm # Fish shell
+	yay -S telegram-desktop --noconfirm # Telegram Desktop
+	yay -S discord --noconfirm # Discord
+	yay -Sy brave-bin --noconfirm # Brave Browser
+	yay -Sy lollypop --noconfirm # Lollypop Player
+	yay -S lvsk-calendar --noconfirm # Nice Calendar
 
-	# Development
-	yay -S pycharm --noconfirm	# Pycharm IDE
-	yay -S render-cli-bin  # Shop uses Render
-	yay -S pre-commit	# Pre Commit hools for Git
-	yay -S bun	# Bun JS Package Manager
 
-	# Other Browsers
+.PHONY arch_additional_development:
+arch_additional_development: ## Install additional packages for Development in Arch Linux
+	yay -S claude-code --noconfirm # Claude Code; using it a lot lately
+	yay -S vscodium-bin --noconfirm # VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
+	yay -S uv --noconfirm # Astral's uv for Python
+	yay -S pycharm --noconfirm # Pycharm IDE
+	yay -S render-cli-bin # Shop uses Render
+	yay -S pre-commit --noconfirm # Pre Commit hools for Git
+	yay -S bun --noconfirm # Bun JS Package Manager
+	yay -S figlet --noconfirm # Using it for ASCII banners
+	yay -S tmux --noconfirm # Our beloved multiplexer
+
+
+.PHONY arch_additional_browsers:
+arch_additional_browsers: ## Install additional Other Browsers for Arch Linux
 	yay -S librewolf-bin --noconfirm # librewolf Browser, Firefox fork
 	yay -S zen-browser-bin --noconfirm # Zen privacy oriented browser
+
+
+.PHONY arch_additional_utilities:
+arch_additional_utilities: ## Install additional utility packages for Arch Linux
+	yay -S extra/wget --noconfirm # wget - Network utility to retrieve files from the web
+
 
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
@@ -207,7 +217,14 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
 .PHONY omarchy_all:
-omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
+omarchy_all: arch_additional \
+	arch_additional_utilities \
+	arch_additional_development \
+	arch_additional_browsers \
+	omarchy_removals \
+	link_umsm_default \
+	omarchy_extra_themes \
+	omarchy_personal_bindings	## All Omarchy entries
 
 #     _    _ _
 #    / \  | | |
@@ -218,6 +235,14 @@ omarchy_all: arch_additional omarchy_removals link_umsm_default omarchy_extra_th
 # All
 
 .PHONY all:
-all: omarchy_all link_starship_configuration link_ghostty_configuration link_fish_configuration link_tmux_configuration link_code_configuration link_micro_configuration git_config configure_fastfetch	## Make "all" Makefile entries
+all: omarchy_all \
+	link_starship_configuration \
+	link_ghostty_configuration \
+	link_fish_configuration \
+	link_tmux_configuration \
+	link_code_configuration \
+	link_micro_configuration \
+	git_config \
+	configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
 
