@@ -167,7 +167,9 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -Sy lollypop --noconfirm # Lollypop Player
 	yay -S lvsk-calendar --noconfirm # Nice Calendar
 
-	# Development
+
+.PHONY arch_additional_development:
+arch_additional_development: ## Install additional packages for Development in Arch Linux
 	yay -S claude-code --noconfirm # Claude Code; using it a lot lately
 	yay -S vscodium-bin --noconfirm # VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.
 	yay -S uv --noconfirm # Astral's uv for Python
@@ -217,6 +219,7 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 .PHONY omarchy_all:
 omarchy_all: arch_additional \
 	arch_additional_utilities \
+	arch_additional_development \
 	arch_additional_browsers \
 	omarchy_removals \
 	link_umsm_default \
