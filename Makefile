@@ -215,7 +215,13 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
 
 .PHONY omarchy_all:
-omarchy_all: arch_additional arch_additional_utilities arch_additional_browsers omarchy_removals link_umsm_default omarchy_extra_themes omarchy_personal_bindings	## All Omarchy entries
+omarchy_all: arch_additional \
+	arch_additional_utilities \
+	arch_additional_browsers \
+	omarchy_removals \
+	link_umsm_default \
+	omarchy_extra_themes \
+	omarchy_personal_bindings	## All Omarchy entries
 
 #     _    _ _
 #    / \  | | |
@@ -226,6 +232,14 @@ omarchy_all: arch_additional arch_additional_utilities arch_additional_browsers 
 # All
 
 .PHONY all:
-all: omarchy_all link_starship_configuration link_ghostty_configuration link_fish_configuration link_tmux_configuration link_code_configuration link_micro_configuration git_config configure_fastfetch	## Make "all" Makefile entries
+all: omarchy_all \
+	link_starship_configuration \
+	link_ghostty_configuration \
+	link_fish_configuration \
+	link_tmux_configuration \
+	link_code_configuration \
+	link_micro_configuration \
+	git_config \
+	configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
 
