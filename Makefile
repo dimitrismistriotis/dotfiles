@@ -201,6 +201,7 @@ omarchy_removals: ## Remove packages installed from Omarchy where I use alternat
 omarchy_extra_themes: ## Install extra themes for Omarchy
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
+	omarchy-theme-install https://github.com/tahfizhabib/omarchy-vurple-theme
 	omarchy-theme-install https://github.com/jjdizz1l/aetheria
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 
