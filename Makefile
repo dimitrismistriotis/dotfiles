@@ -209,7 +209,7 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 .PHONY omarchy_personal_preferences:
 omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@echo "Omarchy Personal Preferences, Placeholder"
-
+	hyprwhspr mic-osd enable
 
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
@@ -225,7 +225,8 @@ omarchy_all: arch_additional \
 	omarchy_removals \
 	link_umsm_default \
 	omarchy_extra_themes \
-	omarchy_personal_bindings	## All Omarchy entries
+	omarchy_personal_bindings \
+	omarchy_personal_preferences ## All Omarchy entries
 
 #     _    _ _
 #    / \  | | |
