@@ -211,11 +211,20 @@ omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@echo "Omarchy Personal Preferences, Placeholder"
 	hyprwhspr mic-osd enable
 
+
+.PHONY lsvk_calendar_config:
+lsvk_calendar_config:
+	@echo "Lvsk Calendar Config"
+	rm ~/.config/lvsk-calendar/config
+	ln -s $(CURDIR)/dot_config/lvsk-calendar/config ~/.config/lvsk-calendar/config
+
+
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@echo "Omarchy Personal Key Bindings"
 	rm ~/.config/hypr/bindings.conf
 	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
+
 
 .PHONY omarchy_all:
 omarchy_all: arch_additional \
@@ -224,6 +233,7 @@ omarchy_all: arch_additional \
 	arch_additional_browsers \
 	omarchy_removals \
 	link_umsm_default \
+	lsvk_calendar_config \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
 	omarchy_personal_preferences ## All Omarchy entries
