@@ -4,7 +4,9 @@ if status is-interactive
     # Path Additions
     # https://fishshell.com/docs/current/cmds/fish_add_path.html
     fish_add_path ~/bin
-    # fish_add_path ~/.local/bin
+    if test -d ~/.local/bin
+        fish_add_path ~/.local/bin
+    end
     # Added by LM Studio CLI (lms)
     if test -d ~/.lmstudio/bin
         # set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
@@ -43,7 +45,7 @@ if status is-interactive
     alias pbpaste='wl-paste'
     alias tmkill="tmux kill-server"  # kill tmux server for end of day cleanup
 
-    # Run on new terminal; nothing amazing just geeokness
+    # Run on new terminal; nothing amazing just geekness
 
     fastfetch
 end
