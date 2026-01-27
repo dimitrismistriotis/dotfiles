@@ -15,29 +15,24 @@ help: ## Show this help message
 
 .PHONY link_starship_configuration:
 link_starship_configuration: ## Link Starship configuration file
-	rm -f ~/.config/starship.toml
-	ln -s $(CURDIR)/config_files/starship.toml ~/.config/starship.toml
+	@$(CURDIR)/link_config.sh "Starship Configuration" "$(CURDIR)/config_files/starship.toml" "~/.config/starship.toml"
 
 
 .PHONY link_ghostty_configuration:
 link_ghostty_configuration: ## Link Ghostty terminal configuration file
-	mkdir -p ~/.config/ghostty
-	rm -f ~/.config/ghostty/config
-	ln -s $(CURDIR)/dot_config/ghostty/config ~/.config/ghostty/config
+	@$(CURDIR)/link_config.sh "Ghostty Configuration" "$(CURDIR)/dot_config/ghostty/config" "~/.config/ghostty/config" --mkdir
 
 
 .PHONY link_fish_configuration:
 link_fish_configuration: ## Link Fish shell configuration file
-	mkdir -p ~/.config/fish/functions
-	rm ~/.config/fish/config.fish
-	ln -s $(CURDIR)/fish/config.fish ~/.config/fish/config.fish
-	ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
+	@mkdir -p ~/.config/fish/functions
+	@$(CURDIR)/link_config.sh "Fish Configuration" "$(CURDIR)/fish/config.fish" "~/.config/fish/config.fish"
+	@ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration: ## Link tmux configuration file
-	rm -f ~/.tmux.conf
-	ln -s $(CURDIR)/config_files/.tmux.conf ~/.tmux.conf
+	@$(CURDIR)/link_config.sh "Tmux Configuration" "$(CURDIR)/config_files/.tmux.conf" "~/.tmux.conf"
 
 
 .PHONY link_code_configuration:
@@ -110,11 +105,9 @@ git_config: ## Configure git settings (all settings except user info)
 .PHONY configure_fastfetch:
 configure_fastfetch: ## Configure Fastfetch system information tool
 	@echo "Configure Fastfetch"
-	mkdir -p ~/.config/fastfetch/assets
-	rm -rf ~/.config/fastfetch/config.jsonc
-	ln -s $(CURDIR)/config_files/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
-	rm -rf ~/.config/fastfetch/assets/greek_fire_no_background.png
-	ln -s $(CURDIR)/images/greek_fire_no_background.png ~/.config/fastfetch/assets/greek_fire_no_background.png
+	@mkdir -p ~/.config/fastfetch/assets
+	@$(CURDIR)/link_config.sh "Fastfetch Config" "$(CURDIR)/config_files/fastfetch/config.jsonc" "~/.config/fastfetch/config.jsonc"
+	@$(CURDIR)/link_config.sh "Fastfetch Asset" "$(CURDIR)/images/greek_fire_no_background.png" "~/.config/fastfetch/assets/greek_fire_no_background.png"
 
 
 #                    ▄
@@ -143,9 +136,8 @@ configure_fastfetch: ## Configure Fastfetch system information tool
 
 .PHONY link_umsm_default:
 link_umsm_default: ## Link UWSM default configuration
-	rm ~/.config/uwsm/default
-	ln -s $(CURDIR)/dot_config/uwsm/default ~/.config/uwsm/default
-	ls -lah ~/.config/uwsm/default
+	@$(CURDIR)/link_config.sh "UWSM Default Configuration" "$(CURDIR)/dot_config/uwsm/default" "~/.config/uwsm/default"
+	@ls -lah ~/.config/uwsm/default
 
 
 .PHONY arch_additional:
@@ -208,22 +200,20 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 
 .PHONY omarchy_personal_preferences:
 omarchy_personal_preferences: ## Configure Omarchy personal preferences
-	@echo "Omarchy Personal Preferences, Placeholder"
+	@echo "Omarchy Personal Preferences"
 	hyprwhspr mic-osd enable
+
+	@$(CURDIR)/link_config.sh "Omarchy Screensaver" "$(CURDIR)/dot_config/omarchy/branding/screensaver.txt" "~/.config/omarchy/branding/screensaver.txt"
 
 
 .PHONY lsvk_calendar_config:
-lsvk_calendar_config:
-	@echo "Lvsk Calendar Config"
-	rm ~/.config/lvsk-calendar/config
-	ln -s $(CURDIR)/dot_config/lvsk-calendar/config ~/.config/lvsk-calendar/config
+lsvk_calendar_config: ## Configure Lvsk Calendar
+	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config"
 
 
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
-	@echo "Omarchy Personal Key Bindings"
-	rm ~/.config/hypr/bindings.conf
-	ln -s $(CURDIR)/dot_config/hypr/bindings.conf ~/.config/hypr/bindings.conf
+	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.conf" "~/.config/hypr/bindings.conf"
 
 
 .PHONY omarchy_all:
