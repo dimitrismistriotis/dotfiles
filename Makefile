@@ -200,8 +200,10 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 
 .PHONY omarchy_personal_preferences:
 omarchy_personal_preferences: ## Configure Omarchy personal preferences
-	@echo "Omarchy Personal Preferences, Placeholder"
+	@echo "Omarchy Personal Preferences"
 	hyprwhspr mic-osd enable
+
+	@$(CURDIR)/link_config.sh "Omarchy Screensaver" "$(CURDIR)/dot_config/omarchy/branding/screensaver.txt" "~/.config/omarchy/branding/screensaver.txt"
 
 
 .PHONY lsvk_calendar_config:
