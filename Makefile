@@ -196,6 +196,7 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 	omarchy-theme-install https://github.com/tahfizhabib/omarchy-vurple-theme
 	omarchy-theme-install https://github.com/jjdizz1l/aetheria
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
+	omarchy-theme-install https://github.com/oldjobobo/omarchy-phosphor-os-theme
 
 
 .PHONY omarchy_personal_preferences:
