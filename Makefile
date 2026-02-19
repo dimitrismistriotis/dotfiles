@@ -159,6 +159,7 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -Sy lollypop --noconfirm # Lollypop Player
 	yay -S lvsk-calendar --noconfirm # Nice Calendar
 	yay -S yt-dlp --noconfirm # Content Downloader
+	yay -S hyprwhspr --noconfirm # Native speech-to-text for Linux
 
 .PHONY arch_additional_development:
 arch_additional_development: ## Install additional packages for Development in Arch Linux
