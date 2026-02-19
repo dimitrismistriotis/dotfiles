@@ -210,7 +210,7 @@ omarchy_personal_preferences: ## Configure Omarchy personal preferences
 
 .PHONY lsvk_calendar_config:
 lsvk_calendar_config: ## Configure Lvsk Calendar
-	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config"
+	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config" --mkdir
 
 
 .PHONY omarchy_personal_bindings:
