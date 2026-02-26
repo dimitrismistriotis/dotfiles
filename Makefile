@@ -13,6 +13,11 @@ help: ## Show this help message
 #
 # General Linux Dotfiles
 
+.PHONY link_claude_code_configuration:
+link_claude_code_configuration: ## Link Claude Code configuration file
+	@$(CURDIR)/link_config.sh "Claude Code Configuration" "$(CURDIR)/dot_config/claude/settings.json" "~/.config/claude/settings.json" --mkdir
+
+
 .PHONY link_starship_configuration:
 link_starship_configuration: ## Link Starship configuration file
 	@$(CURDIR)/link_config.sh "Starship Configuration" "$(CURDIR)/config_files/starship.toml" "~/.config/starship.toml"
@@ -245,6 +250,7 @@ all: omarchy_all \
 	link_tmux_configuration \
 	link_code_configuration \
 	link_micro_configuration \
+	link_claude_code_configuration \
 	git_config \
 	configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
