@@ -89,3 +89,6 @@ keybind = ctrl+shift+home=goto_tab:1
 keybind = ctrl+shift+end=goto_tab:999999
 
 command = /usr/bin/fish --login --interactive
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll
