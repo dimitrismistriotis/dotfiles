@@ -37,7 +37,7 @@ link_fish_configuration: ## Link Fish shell configuration file
 
 .PHONY link_tmux_configuration:
 link_tmux_configuration: ## Link tmux configuration file
-	@$(CURDIR)/link_config.sh "Tmux Configuration" "$(CURDIR)/config_files/.tmux.conf" "~/.tmux.conf"
+	@$(CURDIR)/link_config.sh "Tmux Configuration" "$(CURDIR)/config_files/.tmux.conf" "~/.config/tmux/tmux.conf"
 
 
 .PHONY link_code_configuration:
