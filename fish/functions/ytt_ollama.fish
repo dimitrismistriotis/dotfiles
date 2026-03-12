@@ -1,7 +1,10 @@
 #
-# ⏯️ As I use ytt | ollama to ask it to sumarise a YT Video
+# Use Ollama to ask it to sumarise a YT Video
 #
 function ytt_ollama
+    set model_to_use "llama3.2"
+    # echo $model_to_use
+
     if test -z "$argv[1]"
         read -P "Enter YouTube URL: " yt_url
     else
@@ -13,5 +16,5 @@ function ytt_ollama
     set transcript (ytt $yt_url)
     set llm_prompt "Please summarise the following text: <text> $transcript </text>. Do not prompt for any further actions."
     # echo $llm_prompt
-    echo $llm_prompt | ollama run gemma3
+    echo $llm_prompt | ollama run $model_to_use
 end
