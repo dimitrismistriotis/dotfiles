@@ -177,6 +177,7 @@ arch_additional_development: ## Install additional packages for Development in A
 	yay -S bun --noconfirm # Bun JS Package Manager
 	yay -S figlet --noconfirm # Using it for ASCII banners
 	yay -S tmux --noconfirm # Our beloved multiplexer
+	yay -S tennis --noconfirm # View csv files
 
 
 .PHONY arch_additional_browsers:
