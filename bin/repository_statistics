@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Inspired from https://piechowski.io/post/git-commands-before-reading-code/
+
+if command -v tennis &> /dev/null; then
+  (echo "File,Times Changed Last Year" && git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -21 | tail -20 | awk '{print $2 "," $1}') | tennis --title="What Changes the Most"
+else
+  echo -e "File\tTimes Changed Last Year"
+  git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -21 | tail -20 | awk '{print $2 "\t" $1}'
+fi
+
+if command -v tennis &> /dev/null; then
+  (echo "Contributor,Contributions" && git shortlog -sn --no-merges | awk '{count=$1; $1=""; sub(/^ /, ""); print $0 "," count}') | tennis --title "Contributions"
+else
+  echo -e "Contributor\tContributions"
+  git shortlog -sn --no-merges | awk '{count=$1; $1=""; sub(/^ /, ""); print $0 "\t" count}'
+fi
+
+if command -v tennis &> /dev/null; then
+  (echo "Month,Commits" && git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c | sort -k2 | awk '{print $2 "," $1}') | tennis --title "Project Velocity"
+else
+  echo -e "Month\tCommits"
+  git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c | sort -k2 | awk '{print $2 "\t" $1}'
+fi
