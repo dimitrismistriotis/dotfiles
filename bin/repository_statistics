@@ -2,5 +2,9 @@
 
 # Inspired from https://piechowski.io/post/git-commands-before-reading-code/
 
-echo -e "File\tTimes Changed Last Year"
-git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -21 | tail -20 | awk '{print $2 "\t" $1}'
+if command -v tennis &> /dev/null; then
+  (echo "File,Times Changed Last Year" && git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -21 | tail -20 | awk '{print $2 "," $1}') | tennis --title="What Changes the Most"
+else
+  echo -e "File\tTimes Changed Last Year"
+  git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -21 | tail -20 | awk '{print $2 "\t" $1}'
+fi
