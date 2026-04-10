@@ -15,3 +15,10 @@ else
   echo -e "Contributor\tContributions"
   git shortlog -sn --no-merges | awk '{count=$1; $1=""; sub(/^ /, ""); print $0 "\t" count}'
 fi
+
+if command -v tennis &> /dev/null; then
+  (echo "Month,Commits" && git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c | sort -k2 | awk '{print $2 "," $1}') | tennis --title "Project Velocity"
+else
+  echo -e "Month\tCommits"
+  git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c | sort -k2 | awk '{print $2 "\t" $1}'
+fi
