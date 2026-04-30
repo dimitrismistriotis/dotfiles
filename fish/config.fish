@@ -7,6 +7,9 @@ if status is-interactive
     if test -d ~/.local/bin
         fish_add_path ~/.local/bin
     end
+    if test -d ~/.cargo/bin  # For rust compiled commands
+        fish_add_path ~/.cargo/bin
+    end
     # Added by LM Studio CLI (lms)
     if test -d ~/.lmstudio/bin
         # set -gx PATH $PATH /home/dimitri0s/.lmstudio/bin
