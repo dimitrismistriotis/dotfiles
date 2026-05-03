@@ -165,6 +165,8 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S lvsk-calendar --noconfirm # Nice Calendar
 	yay -S yt-dlp --noconfirm # Content Downloader
 	yay -S hyprwhspr --noconfirm # Native speech-to-text for Linux
+	yay -S yazi --noconfirm # Blazing fast terminal file manager
+
 
 .PHONY arch_additional_development:
 arch_additional_development: ## Install additional packages for Development in Arch Linux
@@ -256,4 +258,3 @@ all: omarchy_all \
 	git_config \
 	configure_fastfetch	## Make "all" Makefile entries
 	@echo 'End of make all Makefile entries'
-
