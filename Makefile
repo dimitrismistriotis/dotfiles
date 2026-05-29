@@ -200,7 +200,7 @@ arch_clean_up: ##  Remnove support packages not referenced
 
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
-	yay -R 1password-cli 1password-beta
+	yay -R 1password-cli 1password-beta spotify
 
 
 .PHONY omarchy_extra_themes:
