@@ -193,6 +193,11 @@ arch_additional_utilities: ## Install additional utility packages for Arch Linux
 	yay -S extra/wget --noconfirm # wget - Network utility to retrieve files from the web
 
 
+.PHONY arch_clean_up:
+arch_clean_up: ##  Remnove support packages not referenced
+	sudo pacman -Rns $(pacman -Qdtq)
+
+
 .PHONY omarchy_removals:
 omarchy_removals: ## Remove packages installed from Omarchy where I use alternatives
 	yay -R 1password-cli 1password-beta
