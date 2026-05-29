@@ -194,8 +194,8 @@ arch_additional_utilities: ## Install additional utility packages for Arch Linux
 
 
 .PHONY arch_clean_up:
-arch_clean_up: ##  Remnove support packages not referenced
-	sudo pacman -Rns $(pacman -Qdtq)
+arch_clean_up: ##  Remove support packages not referenced
+	sudo pacman -Rns $$(pacman -Qdtq)
 
 
 .PHONY omarchy_removals:
