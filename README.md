@@ -28,3 +28,13 @@ Reference: <https://ewinnington.github.io/posts/omarchy-hdmi-audio>
 pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo
 pactl set-default-sink alsa_output.pci-0000_00_1f.3.hdmi-stereo
 ```
+
+To codify:
+
+```
+```shell
+  mkdir -p ~/development && cd ~/development
+  git clone https://github.com/flutter/flutter.git -b stable
+```
+
+```
