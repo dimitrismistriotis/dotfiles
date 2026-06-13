@@ -17,6 +17,7 @@ if status is-interactive
     end
     # End of LM Studio CLI section
     if test -d ~/development/flutter/bin # For Flutter and suggested location
+        set -Ux CHROME_EXECUTABLE /usr/bin/chromium
         fish_add_path ~/development/flutter/bin
     end
 
