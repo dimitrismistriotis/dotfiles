@@ -211,6 +211,9 @@ omarchy_extra_themes: ## Install extra themes for Omarchy
 	omarchy-theme-install https://github.com/jjdizz1l/aetheria
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
 	omarchy-theme-install https://github.com/oldjobobo/omarchy-phosphor-os-theme
+	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-shadesofjade-theme
+	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-turbonite-theme
+	omarchy-theme-install https://github.com/signaldirective/rebel-rebel
 
 
 .PHONY omarchy_personal_preferences:
