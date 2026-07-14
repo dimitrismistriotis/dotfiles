@@ -19,6 +19,13 @@ if status is-interactive
     if test -d ~/development/flutter/bin # For Flutter and suggested location
         set -Ux CHROME_EXECUTABLE /usr/bin/chromium
         fish_add_path ~/development/flutter/bin
+        fish_add_path ~/.pub-cache/bin
+    end
+    if test -d /opt/android-sdk # Android SDK
+        set -gx ANDROID_HOME /opt/android-sdk
+        set -gx ANDROID_SDK_ROOT /opt/android-sdk
+        fish_add_path -a $ANDROID_HOME/cmdline-tools/latest/bin
+        fish_add_path -a $ANDROID_HOME/platform-tools
     end
 
     # Micro Editor
