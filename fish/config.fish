@@ -7,7 +7,7 @@ if status is-interactive
     if test -d ~/.local/bin
         fish_add_path ~/.local/bin
     end
-    if test -d ~/.cargo/bin  # For rust compiled commands
+    if test -d ~/.cargo/bin # For rust compiled commands
         fish_add_path ~/.cargo/bin
     end
     # Added by LM Studio CLI (lms)
@@ -16,9 +16,20 @@ if status is-interactive
         fish_add_path -a ~/.lmstudio/bin
     end
     # End of LM Studio CLI section
+    if test -d ~/development/flutter/bin # For Flutter and suggested location
+        set -Ux CHROME_EXECUTABLE /usr/bin/chromium
+        fish_add_path ~/development/flutter/bin
+        fish_add_path ~/.pub-cache/bin
+    end
+    if test -d /opt/android-sdk # Android SDK
+        set -gx ANDROID_HOME /opt/android-sdk
+        set -gx ANDROID_SDK_ROOT /opt/android-sdk
+        fish_add_path -a $ANDROID_HOME/cmdline-tools/latest/bin
+        fish_add_path -a $ANDROID_HOME/platform-tools
+    end
 
     # Micro Editor
-    if type -q 'micro'
+    if type -q micro
         # echo "micro exists"
         #
         # Exports for any editor:
@@ -46,7 +57,7 @@ if status is-interactive
     alias lg="lazygit"
     alias pbcopy='wl-copy'
     alias pbpaste='wl-paste'
-    alias tmkill="tmux kill-server"  # kill tmux server for end of day cleanup
+    alias tmkill="tmux kill-server" # kill tmux server for end of day cleanup
 
     # Run on new terminal; nothing amazing just geekness
 
