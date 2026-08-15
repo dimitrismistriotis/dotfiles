@@ -1,4 +1,14 @@
 # Changes require a restart to take effect.
+#
+# NOTE (Omarchy 4 "Quarto"): these env vars no longer decide what the Hyprland
+# bindings launch. Super+Return goes through xdg-terminal-exec, and
+# Super+Shift+B runs omarchy-launch-browser, which explicitly ignores $BROWSER
+# (`env -u BROWSER xdg-settings get default-web-browser`).
+# The desktop defaults live in:
+#   ~/.config/xdg-terminals.list  (terminal)
+#   ~/.config/mimeapps.list       (browser)
+# and are set by `make omarchy_default_apps`. Keep the values below in sync;
+# they still apply to CLI tools that honour $TERMINAL / $BROWSER.
 
 # Install other terminals via Install > Terminal
 export TERMINAL=ghostty

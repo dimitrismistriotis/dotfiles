@@ -229,6 +229,20 @@ lsvk_calendar_config: ## Configure Lvsk Calendar
 	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config" --mkdir
 
 
+.PHONY omarchy_default_apps:
+omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handlers, not $BROWSER/$TERMINAL)
+	@echo "Omarchy Default Apps"
+	# Since Omarchy 4 ("Quarto") the keybindings resolve these through XDG,
+	# not through the env vars in dot_config/uwsm/default:
+	#   Super+Shift+B -> omarchy-launch-browser -> xdg-settings default-web-browser
+	#   Super+Return  -> xdg-terminal-exec       -> ~/.config/xdg-terminals.list
+	omarchy default browser brave     # writes ~/.config/mimeapps.list
+	omarchy default terminal ghostty  # writes ~/.config/xdg-terminals.list
+	omarchy default editor nvim
+	@omarchy default browser
+	@omarchy default terminal
+
+
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.conf" "~/.config/hypr/bindings.conf"
@@ -241,6 +255,7 @@ omarchy_all: arch_additional \
 	arch_additional_browsers \
 	omarchy_removals \
 	link_umsm_default \
+	omarchy_default_apps \
 	lsvk_calendar_config \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
