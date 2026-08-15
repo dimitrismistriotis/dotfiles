@@ -238,7 +238,6 @@ omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handle
 	#   Super+Return  -> xdg-terminal-exec       -> ~/.config/xdg-terminals.list
 	omarchy default browser brave     # writes ~/.config/mimeapps.list
 	omarchy default terminal ghostty  # writes ~/.config/xdg-terminals.list
-	omarchy default editor nvim
 	@omarchy default browser
 	@omarchy default terminal
 
