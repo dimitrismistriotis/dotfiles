@@ -252,7 +252,9 @@ omarchy_keyboard_layout: ## Link Hyprland input config (UK + Greek, Alt+Shift to
 
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
-	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.conf" "~/.config/hypr/bindings.conf"
+	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.lua" "~/.config/hypr/bindings.lua"
+	@hyprctl reload >/dev/null 2>&1 || true
+	@hyprctl configerrors
 
 
 .PHONY omarchy_all:
