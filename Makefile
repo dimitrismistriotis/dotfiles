@@ -229,9 +229,32 @@ lsvk_calendar_config: ## Configure Lvsk Calendar
 	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config" --mkdir
 
 
+.PHONY omarchy_default_apps:
+omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handlers, not $BROWSER/$TERMINAL)
+	@echo "Omarchy Default Apps"
+	# Since Omarchy 4 ("Quarto") the keybindings resolve these through XDG,
+	# not through the env vars in dot_config/uwsm/default:
+	#   Super+Shift+B -> omarchy-launch-browser -> xdg-settings default-web-browser
+	#   Super+Return  -> xdg-terminal-exec       -> ~/.config/xdg-terminals.list
+	omarchy default browser brave     # writes ~/.config/mimeapps.list
+	omarchy default terminal ghostty  # writes ~/.config/xdg-terminals.list
+	@omarchy default browser
+	@omarchy default terminal
+
+
+.PHONY omarchy_keyboard_layout:
+omarchy_keyboard_layout: ## Link Hyprland input config (UK + Greek; the Alt+Shift toggle lives in omarchy_personal_bindings)
+	@$(CURDIR)/link_config.sh "Omarchy Keyboard Layout" "$(CURDIR)/dot_config/hypr/input.lua" "~/.config/hypr/input.lua"
+	@hyprctl reload >/dev/null 2>&1 || true
+	@hyprctl getoption input:kb_layout 2>/dev/null | head -1
+	@hyprctl getoption input:kb_options 2>/dev/null | head -1
+
+
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
-	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.conf" "~/.config/hypr/bindings.conf"
+	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.lua" "~/.config/hypr/bindings.lua"
+	@hyprctl reload >/dev/null 2>&1 || true
+	@hyprctl configerrors
 
 
 .PHONY omarchy_all:
@@ -241,7 +264,9 @@ omarchy_all: arch_additional \
 	arch_additional_browsers \
 	omarchy_removals \
 	link_umsm_default \
+	omarchy_default_apps \
 	lsvk_calendar_config \
+	omarchy_keyboard_layout \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
 	omarchy_personal_preferences ## All Omarchy entries
