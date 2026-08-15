@@ -46,3 +46,29 @@ o.bind("SUPER + SHIFT + M", "Music", { launch = "lollypop", focus = "lollypop" }
 -- hyprwhspr speech-to-text: press once to start, again to stop.
 -- Installed by `yay -S hyprwhspr` (see arch_additional in the Makefile).
 o.bind("SUPER + ALT + D", "Speech-to-text", "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh record")
+
+-- Alt + Shift cycles the keyboard layout (gb <-> gr, set in hypr/input.lua).
+--
+-- Done here rather than with xkb's grp:alt_shift_toggle, which is unusable
+-- alongside shift:both_capslock_cancel -- see the comment in hypr/input.lua.
+--
+-- `release = true` fires on the key-up, and the modmask demands that BOTH Alt
+-- and Shift still be held at that moment. So whichever of the two is let go
+-- first triggers the switch, the second one no longer matches, and the pair
+-- toggles exactly once in either press order.
+--
+-- Keycodes, not keysyms: shift:both_capslock_cancel makes <LFSH> resolve to
+-- Caps_Lock at level 2, so by the time Shift is released with Shift held its
+-- keysym is no longer Shift_L and a "ALT + SHIFT + Shift_L" bind never fires.
+--   code:50 = Left Shift, code:62 = Right Shift, code:64 = Left Alt.
+-- Right Alt is left out on purpose -- it is ISO_Level3_Shift (AltGr) and is
+-- needed for composing.
+--
+-- "all" rather than "current": the Keychron V3 Max registers as several
+-- keyboard devices and each keeps its own layout index, so switching only the
+-- active one leaves the rest behind.
+local switch_layout = "hyprctl switchxkblayout all next"
+
+o.bind("ALT + SHIFT + code:50", "Switch keyboard layout", switch_layout, { release = true })
+o.bind("ALT + SHIFT + code:62", "Switch keyboard layout", switch_layout, { release = true })
+o.bind("ALT + SHIFT + code:64", "Switch keyboard layout", switch_layout, { release = true })

@@ -7,7 +7,8 @@
 
 hl.config({
   input = {
-    -- UK layout plus Greek, toggled with Alt + Shift.
+    -- UK layout plus Greek. The Alt + Shift toggle lives in hypr/bindings.lua,
+    -- not here -- see the long comment on kb_options below.
     --
     -- Order matters: Hyprland resolves keybindings against the FIRST entry in
     -- kb_layout, not the active layout. Greek is non-Latin, so leading with it
@@ -16,7 +17,21 @@ hl.config({
 
     -- compose:caps                -> Caps Lock acts as the compose key (Omarchy default)
     -- shift:both_capslock_cancel  -> both Shifts together = Caps Lock (Omarchy default)
-    -- grp:alt_shift_toggle        -> Alt + Shift cycles gb <-> gr
-    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alt_shift_toggle",
+    --
+    -- grp:alt_shift_toggle is deliberately NOT here. It and
+    -- shift:both_capslock_cancel both redefine <LFSH>/<RTSH>, and the shift
+    -- option wins in the compiled keymap:
+    --
+    --   key <LFSH> { type= "ALPHABETIC", symbols[1]= [ Shift_L, Caps_Lock ] };
+    --
+    -- so the Shift half of the toggle is gone. Only <LALT> keeps its
+    -- ISO_Next_Group, which means the switch fires on Shift-then-Alt and does
+    -- nothing on Alt-then-Shift -- which is how most people press it. It also
+    -- switches only the one device that saw the keypress, so a keyboard that
+    -- presents several endpoints (Keychron V3 Max) ends up half-Greek.
+    --
+    -- Verify with:
+    --   xkbcli compile-keymap --layout gb,gr --options "<the string above>"
+    kb_options = "compose:caps,shift:both_capslock_cancel",
   },
 })

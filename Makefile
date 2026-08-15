@@ -243,7 +243,7 @@ omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handle
 
 
 .PHONY omarchy_keyboard_layout:
-omarchy_keyboard_layout: ## Link Hyprland input config (UK + Greek, Alt+Shift to switch)
+omarchy_keyboard_layout: ## Link Hyprland input config (UK + Greek; the Alt+Shift toggle lives in omarchy_personal_bindings)
 	@$(CURDIR)/link_config.sh "Omarchy Keyboard Layout" "$(CURDIR)/dot_config/hypr/input.lua" "~/.config/hypr/input.lua"
 	@hyprctl reload >/dev/null 2>&1 || true
 	@hyprctl getoption input:kb_layout 2>/dev/null | head -1
