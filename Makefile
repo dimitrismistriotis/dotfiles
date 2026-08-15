@@ -243,6 +243,14 @@ omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handle
 	@omarchy default terminal
 
 
+.PHONY omarchy_keyboard_layout:
+omarchy_keyboard_layout: ## Link Hyprland input config (UK + Greek, Alt+Shift to switch)
+	@$(CURDIR)/link_config.sh "Omarchy Keyboard Layout" "$(CURDIR)/dot_config/hypr/input.lua" "~/.config/hypr/input.lua"
+	@hyprctl reload >/dev/null 2>&1 || true
+	@hyprctl getoption input:kb_layout 2>/dev/null | head -1
+	@hyprctl getoption input:kb_options 2>/dev/null | head -1
+
+
 .PHONY omarchy_personal_bindings:
 omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@$(CURDIR)/link_config.sh "Omarchy Personal Key Bindings" "$(CURDIR)/dot_config/hypr/bindings.conf" "~/.config/hypr/bindings.conf"
@@ -257,6 +265,7 @@ omarchy_all: arch_additional \
 	link_umsm_default \
 	omarchy_default_apps \
 	lsvk_calendar_config \
+	omarchy_keyboard_layout \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
 	omarchy_personal_preferences ## All Omarchy entries
