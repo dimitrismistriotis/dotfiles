@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# World Clock
+#
+# https://github.com/ptgamr/oma-world-clock
+omarchy plugin add https://github.com/ptgamr/oma-world-clock.git --enable
+
