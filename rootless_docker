@@ -15,3 +15,37 @@ read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][e
 if systemctl is-active --quiet docker.service; then
   sudo systemctl stop docker.socket docker.service
 fi
+
+# Setup for system and current user
+
+# 1. Rootless extras. Pulls rootlesskit, which is all that is needed:
+#    slirp4netns and fuse-overlayfs are optdeps we can skip, because rootlesskit
+#    has gvisor-tap-vsock built in and a modern kernel does native overlayfs in
+#    a user namespace.
+omarchy pkg aur add docker-rootless-extras
+
+# 2. Enable and start the per-user daemon.
+#
+#    NOTE: upstream Docker docs say to run `dockerd-rootless-setuptool.sh install`
+#    here. That script does NOT exist on Arch -- docker-rootless-extras ships the
+#    systemd user units itself (/usr/lib/systemd/user/docker.{service,socket}),
+#    so there is nothing for it to install. Running it just fails with
+#    "unknown command".
+systemctl --user enable --now docker
+
+# 3. Point the CLI at it via DOCKER_HOST.
+#
+#    NOTE: there is no `rootless` docker context to switch to -- that context is
+#    created by dockerd-rootless-setuptool.sh, which we never run. DOCKER_HOST
+#    takes precedence over contexts anyway, so it is the only mechanism needed.
+#    Set it per-shell (machine-local, not in this repo -- the path is host specific):
+#      bash: ~/.bashrc
+#      fish: ~/.config/fish/conf.d/docker_rootless.fish
+#    and for Hyprland keybind dispatchers (lazydocker), hl.env in
+#    ~/.config/hypr/hyprland.lua -- needs a full Hyprland restart to take effect.
+echo ""
+echo "Now export DOCKER_HOST in your shell rc files:"
+echo '  export DOCKER_HOST="unix://${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/docker.sock"'
+
+# Optional: keep containers alive after logout (the user daemon stops on logout).
+# loginctl enable-linger $USER
