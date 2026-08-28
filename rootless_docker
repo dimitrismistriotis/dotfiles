@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-# Rootless Docker from notes. Better run this as a copy/paste of
-# each command as some tweaking might be required.
+# Rootless Docker setup for Arch Linux with Omarchy. Review and run each
+# command individually if your system differs from the assumptions below.
 
-echo "First create backups of all volumes needed"
+echo "Back up any Docker volumes or other data you want to keep before continuing."
+echo "Rootless Docker uses a different data directory, so existing rootful"
+echo "containers, images, and volumes will not appear in the rootless daemon."
 echo ""
-echo "sudo systemctl start docker.socket"
-echo "make backup or any other command"
-
 read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
 # Stop existing docker service
