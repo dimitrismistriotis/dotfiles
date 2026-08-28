@@ -23,6 +23,11 @@ link_starship_configuration: ## Link Starship configuration file
 	@$(CURDIR)/link_config.sh "Starship Configuration" "$(CURDIR)/config_files/starship.toml" "~/.config/starship.toml"
 
 
+.PHONY bash_configuration:
+bash_configuration: ## Link Bash configuration file
+	@$(CURDIR)/link_config.sh "Bash Configuration" "$(CURDIR)/bash/.bashrc" "~/.bashrc"
+
+
 .PHONY link_ghostty_configuration:
 link_ghostty_configuration: ## Link Ghostty terminal configuration file
 	@$(CURDIR)/link_config.sh "Ghostty Configuration" "$(CURDIR)/dot_config/ghostty/config" "~/.config/ghostty/config" --mkdir
@@ -32,6 +37,7 @@ link_ghostty_configuration: ## Link Ghostty terminal configuration file
 link_fish_configuration: ## Link Fish shell configuration file
 	@mkdir -p ~/.config/fish/functions
 	@$(CURDIR)/link_config.sh "Fish Configuration" "$(CURDIR)/fish/config.fish" "~/.config/fish/config.fish"
+	@$(CURDIR)/link_config.sh "Fish Rootless Docker Configuration" "$(CURDIR)/fish/conf.d/docker_rootless.fish" "~/.config/fish/conf.d/docker_rootless.fish" --mkdir
 	@ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 
@@ -281,6 +287,7 @@ omarchy_all: arch_additional \
 
 .PHONY all:
 all: omarchy_all \
+	bash_configuration \
 	link_starship_configuration \
 	link_ghostty_configuration \
 	link_fish_configuration \
