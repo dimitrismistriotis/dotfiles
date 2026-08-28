@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Rootless Docker from notes. Better run this as a copy/paste of
+# each command as some tweaking might be required.
+
+echo "First create backups of all volumes needed"
+echo ""
+echo "sudo systemctl start docker.socket"
+echo "make backup or any other command"
+
+read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+
+# Stop existing docker service
+
+if systemctl is-active --quiet docker.service; then
+  sudo systemctl stop docker.socket docker.service
+fi
