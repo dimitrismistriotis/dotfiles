@@ -32,6 +32,7 @@ link_ghostty_configuration: ## Link Ghostty terminal configuration file
 link_fish_configuration: ## Link Fish shell configuration file
 	@mkdir -p ~/.config/fish/functions
 	@$(CURDIR)/link_config.sh "Fish Configuration" "$(CURDIR)/fish/config.fish" "~/.config/fish/config.fish"
+	@$(CURDIR)/link_config.sh "Fish Rootless Docker Configuration" "$(CURDIR)/fish/conf.d/docker_rootless.fish" "~/.config/fish/conf.d/docker_rootless.fish" --mkdir
 	@ln -s $(CURDIR)/fish/functions/* ~/.config/fish/functions/
 
 
