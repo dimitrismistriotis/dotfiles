@@ -25,3 +25,8 @@ omarchy plugin add https://github.com/Bhanu4417/OmaVideos.git --enable
 
 # Power + Battery Health
 omarchy plugin add https://github.com/patcastle/omarchy-battery-health.git --enable
+
+# From Competition:
+# https://omarchy.org/news/2026/08/the-first-plugin-competition-winners/
+#
+
