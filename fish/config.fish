@@ -40,9 +40,6 @@ if status is-interactive
         export MICRO_TRUECOLOR=1
     end
 
-    # Rootless Docker: point the CLI at the per-user daemon, not sudo + root daemon.
-    export DOCKER_HOST='unix:///run/user/1000/docker.sock'
-
     # Zoxide
     # https://github.com/ajeetdsouza/zoxide
     zoxide init fish | source
