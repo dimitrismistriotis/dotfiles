@@ -35,3 +35,6 @@ omarchy plugin add https://github.com/ZerubbabelT/portwatch.git --enable
 # https://omarchy.org/news/2026/08/the-first-plugin-competition-winners/
 #
 
+# Download Viedos from X, YT, etc.
+#
+omarchy plugin add https://github.com/Bhanu4417/OmaVideos.git --enable
