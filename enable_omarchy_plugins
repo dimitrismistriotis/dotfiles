@@ -5,3 +5,16 @@
 # https://github.com/ptgamr/oma-world-clock
 omarchy plugin add https://github.com/ptgamr/oma-world-clock.git --enable
 
+# Zen Lock - custom lock screen (wallpaper, avatar, blur, dim)
+#
+# https://github.com/rover-001/zen-lock
+omarchy plugin add https://github.com/rover-001/zen-lock.git --enable
+
+if [ -f ~/Pictures/kvacm-2020/sunset_6k_nofont.jpg ]; then
+    ~/.config/omarchy/plugins/zen.lock/bin/zen-lock wallpaper ~/Pictures/kvacm-2020/sunset_6k_nofont.jpg
+else
+    echo "Zen Lock wallpaper not found: ~/Pictures/kvacm-2020/sunset_6k_nofont.jpg"
+fi
+~/.config/omarchy/plugins/zen.lock/bin/zen-lock darken 0.1
+~/.config/omarchy/plugins/zen.lock/bin/zen-lock blur off
+
