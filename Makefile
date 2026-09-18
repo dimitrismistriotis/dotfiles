@@ -168,7 +168,6 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S discord --noconfirm # Discord
 	yay -Sy brave-bin --noconfirm # Brave Browser
 	yay -Sy lollypop --noconfirm # Lollypop Player
-	yay -S lvsk-calendar --noconfirm # Nice Calendar
 	yay -S yt-dlp --noconfirm # Content Downloader
 	yay -S hyprwhspr --noconfirm # Native speech-to-text for Linux
 	yay -S yazi --noconfirm # Blazing fast terminal file manager
@@ -220,6 +219,8 @@ omarchy_extra_themes: ## Install extra Omarchy themes
 	omarchy-theme-install https://github.com/oldjobobo/omarchy-phosphor-os-theme
 	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-shadesofjade-theme
 	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-turbonite-theme
+	# Black Sand: A cold, near-monochrome Omarchy theme drawn from a black volcanic beach under an overcast sky. https://github.com/pkovzz/omarchy-black-sand-theme
+	omarchy theme install https://github.com/pkovzz/omarchy-black-sand-theme.git
 	omarchy-theme-install https://github.com/signaldirective/rebel-rebel
 
 
@@ -229,11 +230,6 @@ omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	hyprwhspr mic-osd enable
 
 	@$(CURDIR)/link_config.sh "Omarchy Screensaver" "$(CURDIR)/dot_config/omarchy/branding/screensaver.txt" "~/.config/omarchy/branding/screensaver.txt"
-
-
-.PHONY lsvk_calendar_config:
-lsvk_calendar_config: ## Configure Lvsk Calendar
-	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config" --mkdir
 
 
 .PHONY omarchy_default_apps:
@@ -272,7 +268,6 @@ omarchy_all: arch_additional \
 	omarchy_removals \
 	link_umsm_default \
 	omarchy_default_apps \
-	lsvk_calendar_config \
 	omarchy_keyboard_layout \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
