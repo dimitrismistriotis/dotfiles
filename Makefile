@@ -168,7 +168,6 @@ arch_additional: ## Install additional packages for Arch Linux
 	yay -S discord --noconfirm # Discord
 	yay -Sy brave-bin --noconfirm # Brave Browser
 	yay -Sy lollypop --noconfirm # Lollypop Player
-	yay -S lvsk-calendar --noconfirm # Nice Calendar
 	yay -S yt-dlp --noconfirm # Content Downloader
 	yay -S hyprwhspr --noconfirm # Native speech-to-text for Linux
 	yay -S yazi --noconfirm # Blazing fast terminal file manager
@@ -231,11 +230,6 @@ omarchy_personal_preferences: ## Configure Omarchy personal preferences
 	@$(CURDIR)/link_config.sh "Omarchy Screensaver" "$(CURDIR)/dot_config/omarchy/branding/screensaver.txt" "~/.config/omarchy/branding/screensaver.txt"
 
 
-.PHONY lsvk_calendar_config:
-lsvk_calendar_config: ## Configure Lvsk Calendar
-	@$(CURDIR)/link_config.sh "Lvsk Calendar Config" "$(CURDIR)/dot_config/lvsk-calendar/config" "~/.config/lvsk-calendar/config" --mkdir
-
-
 .PHONY omarchy_default_apps:
 omarchy_default_apps: ## Set Omarchy default browser/terminal/editor (XDG handlers, not $BROWSER/$TERMINAL)
 	@echo "Omarchy Default Apps"
@@ -272,7 +266,6 @@ omarchy_all: arch_additional \
 	omarchy_removals \
 	link_umsm_default \
 	omarchy_default_apps \
-	lsvk_calendar_config \
 	omarchy_keyboard_layout \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
