@@ -18,3 +18,7 @@ fi
 ~/.config/omarchy/plugins/zen.lock/bin/zen-lock darken 0.1
 ~/.config/omarchy/plugins/zen.lock/bin/zen-lock blur off
 
+# OmaVideos
+#
+# https://plugins.omarchy.org/plugin.html?id=bhanu.omavideos
+omarchy plugin add https://github.com/Bhanu4417/OmaVideos.git --enable
