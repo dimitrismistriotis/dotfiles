@@ -28,6 +28,14 @@ if status is-interactive
         fish_add_path -a $ANDROID_HOME/platform-tools
     end
 
+    # Rootless Docker keeps its daemon socket in the user runtime directory,
+    # not /var/run/docker.sock. Mirrors the export in ~/.bashrc.
+    set -l docker_runtime_dir $XDG_RUNTIME_DIR
+    test -n "$docker_runtime_dir"; or set docker_runtime_dir /run/user/(id -u)
+    if test -S $docker_runtime_dir/docker.sock
+        set -gx DOCKER_HOST "unix://$docker_runtime_dir/docker.sock"
+    end
+
     # Micro Editor
     if type -q micro
         # echo "micro exists"
