@@ -220,6 +220,7 @@ omarchy_extra_themes: ## Install extra Omarchy themes
 	# Black Sand: A cold, near-monochrome Omarchy theme drawn from a black volcanic beach under an overcast sky. https://github.com/pkovzz/omarchy-black-sand-theme
 	omarchy theme install https://github.com/pkovzz/omarchy-black-sand-theme.git
 	omarchy-theme-install https://github.com/vyrx-dev/omarchy-aamis-theme.git
+	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-blackturq-theme.git
 	omarchy-theme-install https://github.com/signaldirective/rebel-rebel
 
 
