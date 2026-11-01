@@ -212,11 +212,9 @@ omarchy_removals: ## Remove packages installed from Omarchy where I use alternat
 omarchy_extra_themes: ## Install extra Omarchy themes
 	@echo "Omarchy Extra Themes"
 	omarchy-theme-install https://github.com/dotsilva/omarchy-purplewave-theme
-	omarchy-theme-install https://github.com/SeanAnd/omarchy-cyberpunk-theme.git
 	# A dark theme for Omarchy built on the Forest Night — Ethereal:
 	omarchy theme install https://github.com/ForrestKnight/omarchy-forest-night-theme.git
 	omarchy-theme-install https://github.com/Hydradevx/omarchy-azure-glow-theme
-	omarchy-theme-install https://github.com/oldjobobo/omarchy-phosphor-os-theme
 	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-shadesofjade-theme
 	omarchy-theme-install https://github.com/HANCORE-linux/omarchy-turbonite-theme
 	# Black Sand: A cold, near-monochrome Omarchy theme drawn from a black volcanic beach under an overcast sky. https://github.com/pkovzz/omarchy-black-sand-theme
