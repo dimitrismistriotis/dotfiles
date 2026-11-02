@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-git switch -c `date +"%a%d%b%Y"`
+# Previous version, I am contemplating parametrising it:
+# git switch -c `date +"%a%d%b%Y"`
+
+git switch -c "$(date +"%a_%d_%b_%Y" | tr '[:upper:]' '[:lower:]')"
