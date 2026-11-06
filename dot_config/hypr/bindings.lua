@@ -72,7 +72,6 @@ local switch_layout = "hyprctl switchxkblayout all next"
 o.bind("ALT + SHIFT + code:50", "Switch keyboard layout", switch_layout, { release = true })
 o.bind("ALT + SHIFT + code:62", "Switch keyboard layout", switch_layout, { release = true })
 o.bind("ALT + SHIFT + code:64", "Switch keyboard layout", switch_layout, { release = true })
-<<<<<<< HEAD
 
 -- flea --default: begin. Written by `flea --default`; `flea --default off` removes the block whole.
 hl.unbind("SUPER + SHIFT + F")
