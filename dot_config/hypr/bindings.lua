@@ -72,6 +72,7 @@ local switch_layout = "hyprctl switchxkblayout all next"
 o.bind("ALT + SHIFT + code:50", "Switch keyboard layout", switch_layout, { release = true })
 o.bind("ALT + SHIFT + code:62", "Switch keyboard layout", switch_layout, { release = true })
 o.bind("ALT + SHIFT + code:64", "Switch keyboard layout", switch_layout, { release = true })
+<<<<<<< HEAD
 
 -- flea --default: begin. Written by `flea --default`; `flea --default off` removes the block whole.
 hl.unbind("SUPER + SHIFT + F")
@@ -83,3 +84,10 @@ o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", { launch = 'flea --gui "
 -- flea --picker: begin. Written by `flea --picker`; `flea --picker off` removes the block whole.
 o.window("com.thisisgm.flea.picker", { tag = "+floating-window" })
 -- flea --picker: end.
+
+-- Dictation keys from before Alt + Space and Right Alt became the defaults.
+-- Remove these lines to give the keys back to applications.
+if o.dictation_installed and o.dictation_installed() then
+  o.bind("SUPER + CTRL + X", "Toggle dictation", "omarchy-dictation toggle")
+  o.bind_hold("F9", "Start dictation (push-to-talk)", "omarchy-dictation start", "Stop dictation (push-to-talk)", "omarchy-dictation stop")
+end
