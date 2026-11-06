@@ -36,8 +36,10 @@ hl.unbind("SUPER + SHIFT + C")
 o.bind("SUPER + SHIFT + C", "Chromium", { launch = "chromium" })
 
 -- PyCharm in place of Google Photos.
+-- Anchored to the window class: a bare "pycharm" also matches window titles,
+-- so any browser tab or terminal mentioning PyCharm got focused instead.
 hl.unbind("SUPER + SHIFT + P")
-o.bind("SUPER + SHIFT + P", "PyCharm", { launch = "pycharm", focus = "pycharm" })
+o.bind("SUPER + SHIFT + P", "PyCharm", { launch = "pycharm", focus = "^jetbrains-pycharm$" })
 
 -- Lollypop in place of Spotify.
 hl.unbind("SUPER + SHIFT + M")
