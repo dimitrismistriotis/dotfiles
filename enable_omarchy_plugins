@@ -42,3 +42,8 @@ omarchy plugin add https://github.com/Bhanu4417/OmaVideos.git --enable
 # Load a whole desk in one click: workspaces, windows and services per project
 #
 omarchy plugin add https://github.com/novuon/omarchy_tableau.git --enable
+
+#
+# Memory Usage: Compact memory usage with an iStat-inspired pressure, composition, process, paging, and swap panel
+#
+omarchy plugin add https://github.com/egoist/omarchy-memory-usage.git --enable
