@@ -3,4 +3,4 @@
 # Previous version, I am contemplating parametrising it:
 # git switch -c `date +"%a%d%b%Y"`
 
-git switch -c "$(date +"%a_%d_%b_%Y" | tr '[:upper:]' '[:lower:]')"
+git switch -c "$(LC_ALL=en_US.UTF-8 date +"%a_%d_%b_%Y" | tr '[:upper:]' '[:lower:]')"
