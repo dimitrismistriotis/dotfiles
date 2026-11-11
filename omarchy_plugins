@@ -47,3 +47,8 @@ omarchy plugin add https://github.com/novuon/omarchy_tableau.git --enable
 # Memory Usage: Compact memory usage with an iStat-inspired pressure, composition, process, paging, and swap panel
 #
 omarchy plugin add https://github.com/egoist/omarchy-memory-usage.git --enable
+
+# The Omarchy bar split into floating rounded islands for the left, center, and right sections.
+# https://plugins.omarchy.org/plugin.html?id=lobo.islands
+#
+omarchy plugin add https://github.com/DanielLob-o/Islands.git --enable

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# https://www.aihero.dev/skills-grill-me
+# grill-me takes a loose idea and interviews you until you can commit to it.
+npx skills@latest add mattpocock/skills --skill=grill-me
+

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#
+# OpenCode Desktop
+#
+omarchy pkg aur add opencode-desktop-bin
