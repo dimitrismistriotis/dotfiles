@@ -42,3 +42,8 @@ omarchy plugin add https://github.com/Bhanu4417/OmaVideos.git --enable
 # Load a whole desk in one click: workspaces, windows and services per project
 #
 omarchy plugin add https://github.com/novuon/omarchy_tableau.git --enable
+
+# The Omarchy bar split into floating rounded islands for the left, center, and right sections.
+# https://plugins.omarchy.org/plugin.html?id=lobo.islands
+#
+omarchy plugin add https://github.com/DanielLob-o/Islands.git --enable
