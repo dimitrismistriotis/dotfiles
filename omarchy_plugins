@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# World Clock
-#
-# https://github.com/ptgamr/oma-world-clock
-omarchy plugin add https://github.com/ptgamr/oma-world-clock.git --enable
-
 # Zen Lock - custom lock screen (wallpaper, avatar, blur, dim)
 #
 # https://github.com/rover-001/zen-lock
