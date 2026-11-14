@@ -260,6 +260,11 @@ omarchy_personal_bindings: ## Configure Omarchy Personal Key Bindings
 	@hyprctl configerrors
 
 
+.PHONY omarchy_screenshot_colours:
+omarchy_screenshot_colours: ## Link Omasnap screenshot annotation colours (purple default)
+	@$(CURDIR)/link_config.sh "Omasnap Configuration" "$(CURDIR)/dot_config/omasnap/omasnap.conf" "~/.config/omasnap/omasnap.conf" --mkdir
+
+
 .PHONY omarchy_all:
 omarchy_all: arch_additional \
 	arch_additional_utilities \
@@ -271,6 +276,7 @@ omarchy_all: arch_additional \
 	omarchy_keyboard_layout \
 	omarchy_extra_themes \
 	omarchy_personal_bindings \
+	omarchy_screenshot_colours \
 	omarchy_personal_preferences ## All Omarchy entries
 
 #     _    _ _
